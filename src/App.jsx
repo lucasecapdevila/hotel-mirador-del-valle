@@ -1,10 +1,11 @@
 import './App.css'
+import Admin from './components/pages/Admin'
 
 function App() {
 
   return (
     <>
-      <h1>Hola mundo !</h1>
+      <Admin users={false} />
     </>
   )
 }
