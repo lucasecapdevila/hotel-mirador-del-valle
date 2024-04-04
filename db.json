@@ -5,14 +5,18 @@
       "tipoHabitacion": "Suite",
       "precio": 10000,
       "disponibilidad": "Si",
-      "imagen": "https://media.ambito.com/p/0c5616e28bf58d0403a76b5cc372f420/adjuntos/239/imagenes/036/681/0036681201/1200x675/smart/2jpg.jpg"
+      "imagen": "https://media.ambito.com/p/0c5616e28bf58d0403a76b5cc372f420/adjuntos/239/imagenes/036/681/0036681201/1200x675/smart/2jpg.jpg",
+      "descripcionBreve": "Con una elegante decoración moderna, cuenta con una amplia área de estar con sofás y una mesa de café, una cama king-size con ropa de cama de alta calidad, un baño lujoso con acabados de mármol y una bañera profunda, además de servicios adicionales como minibar, servicio de habitaciones y acceso a áreas exclusivas del hotel.",
+      "descripcionAmplia": "La suite es espaciosa y luminosa, con una decoración elegante y moderna. Al entrar, te reciben suaves alfombras y una iluminación cálida que crea una atmósfera acogedora. Las paredes están adornadas con obras de arte cuidadosamente seleccionadas que añaden un toque de sofisticación al ambiente. El área de estar es amplia y cuenta con cómodos sofás y sillones tapizados en tejidos de alta calidad. Una mesa de café de diseño se sitúa en el centro, perfecta para disfrutar de una taza de café o té mientras se contempla la vista desde las amplias ventanas que ofrecen vistas panorámicas a la ciudad o al paisaje natural circundante."
     },
     {
       "numeroHabitacion": "2",
       "tipoHabitacion": "Suite presidencial",
       "precio": 15000,
       "disponibilidad": "No",
-      "imagen": "https://images.hola.com/imagenes/decoracion/20230425230358/dormitorios-inspirados-en-habitaciones-hoteles-am/1-237-22/habitaciones-hotel-9m-m.jpg"
+      "imagen": "https://images.hola.com/imagenes/decoracion/20230425230358/dormitorios-inspirados-en-habitaciones-hoteles-am/1-237-22/habitaciones-hotel-9m-m.jpg",
+      "descripcionBreve": "Suite presidencial con vista a los valles calchaquíes.",
+      "descripcionAmplia": "La suite está equipada con tecnología de vanguardia, incluyendo un televisor de pantalla plana de gran tamaño con canales por cable y acceso a servicios de streaming. También hay un sistema de sonido envolvente que permite disfrutar de una experiencia de entretenimiento inigualable. La zona de descanso cuenta con una lujosa cama king-size con sábanas de alta calidad y almohadas mullidas que invitan al descanso. Junto a la cama, hay mesitas de noche elegantes con lámparas de lectura, proporcionando un ambiente tranquilo y relajante para dormir."
     }
   ],
   "usuarios": [

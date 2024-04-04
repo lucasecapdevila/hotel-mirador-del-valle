@@ -28,3 +28,16 @@
 .nav-tabs .nav-link:hover{
   color: black;
 }
+
+/* Borro las flechas en input tipo number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#formDescripcionBreve,
+#formDescripcionAmplia{
+  height: 120px;
+  resize: none;
+}
