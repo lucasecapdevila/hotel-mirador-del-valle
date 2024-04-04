@@ -23,3 +23,7 @@
   font-size: 18px;
   background-color: #eeeeee;
 }
+
+.nav-tabs .nav-link:hover{
+  color: black;
+}

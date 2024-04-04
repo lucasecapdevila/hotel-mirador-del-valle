@@ -1,0 +1,32 @@
+{
+  "habitaciones": [
+    {
+      "numeroHabitacion": "1",
+      "tipoHabitacion": "Suite",
+      "precio": 10000,
+      "disponibilidad": "Si",
+      "imagen": "https://media.ambito.com/p/0c5616e28bf58d0403a76b5cc372f420/adjuntos/239/imagenes/036/681/0036681201/1200x675/smart/2jpg.jpg"
+    },
+    {
+      "numeroHabitacion": "2",
+      "tipoHabitacion": "Suite presidencial",
+      "precio": 15000,
+      "disponibilidad": "No",
+      "imagen": "https://images.hola.com/imagenes/decoracion/20230425230358/dormitorios-inspirados-en-habitaciones-hoteles-am/1-237-22/habitaciones-hotel-9m-m.jpg"
+    }
+  ],
+  "usuarios": [
+    {
+      "userEmail": "admin@admin.com",
+      "userPassword": "admin12345",
+      "userName": "Administrador",
+      "rol": "Administrador"
+    },
+    {
+      "userEmail": "user@mail.com",
+      "userPassword": "user12345",
+      "userName": "lucas",
+      "rol": "Usuario"
+    }
+  ]
+}
