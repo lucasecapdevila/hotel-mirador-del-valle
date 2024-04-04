@@ -1,7 +1,8 @@
 {
   "habitaciones": [
     {
-      "numeroHabitacion": "1",
+      "id": 1,
+      "numeroHabitacion": 1,
       "tipoHabitacion": "Suite",
       "precio": 10000,
       "disponibilidad": "Si",
@@ -10,7 +11,8 @@
       "descripcionAmplia": "La suite es espaciosa y luminosa, con una decoración elegante y moderna. Al entrar, te reciben suaves alfombras y una iluminación cálida que crea una atmósfera acogedora. Las paredes están adornadas con obras de arte cuidadosamente seleccionadas que añaden un toque de sofisticación al ambiente. El área de estar es amplia y cuenta con cómodos sofás y sillones tapizados en tejidos de alta calidad. Una mesa de café de diseño se sitúa en el centro, perfecta para disfrutar de una taza de café o té mientras se contempla la vista desde las amplias ventanas que ofrecen vistas panorámicas a la ciudad o al paisaje natural circundante."
     },
     {
-      "numeroHabitacion": "2",
+      "id": 2,
+      "numeroHabitacion": 2,
       "tipoHabitacion": "Suite presidencial",
       "precio": 15000,
       "disponibilidad": "No",
