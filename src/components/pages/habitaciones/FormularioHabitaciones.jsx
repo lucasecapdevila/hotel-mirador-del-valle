@@ -1,15 +1,36 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import { crearHabitacionAPI } from "../../../helpers/queries";
 
 const FormularioHabitaciones = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors }
   } = useForm()
 
-  const validar = () => {
-    console.log('Formulario enviado');
+  const habitacionValidada = async(habitacion) => {
+    try {
+      const response = await crearHabitacionAPI(habitacion)
+      if(response.status === 201){
+        Swal.fire({
+          title: "Habitación agregada",
+          text: `La habitación número ${habitacion.numeroHabitacion} fue agregada exitosamente.`,
+          icon: "success"
+        });
+        reset()
+      } else{
+        Swal.fire({
+          title: "Ocurrió un error",
+          text: "Intente agregar la habitación en unos minutos.",
+          icon: "error"
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -18,14 +39,14 @@ const FormularioHabitaciones = () => {
         <h1 className="mt-4 titulos">Agregar habitación</h1>
         <hr />
 
-        <Form className="my-4" onSubmit={handleSubmit(validar)}>
+        <Form className="my-4" onSubmit={handleSubmit(habitacionValidada)}>
           <Form.Group className="mb-3" controlId="formNumHabitacion">
             <Form.Label>Número de habitación</Form.Label>
             <Form.Control
               type="number"
               placeholder="1, 2, 3..."
               {
-                ...register("numHabitacion",{
+                ...register("numeroHabitacion",{
                   required: 'El número de la habitación es obligatorio.',
                   valueAsNumber: true,
                   min: {

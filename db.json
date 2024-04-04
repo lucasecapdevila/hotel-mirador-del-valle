@@ -19,6 +19,47 @@
       "imagen": "https://images.hola.com/imagenes/decoracion/20230425230358/dormitorios-inspirados-en-habitaciones-hoteles-am/1-237-22/habitaciones-hotel-9m-m.jpg",
       "descripcionBreve": "Suite presidencial con vista a los valles calchaquíes.",
       "descripcionAmplia": "La suite está equipada con tecnología de vanguardia, incluyendo un televisor de pantalla plana de gran tamaño con canales por cable y acceso a servicios de streaming. También hay un sistema de sonido envolvente que permite disfrutar de una experiencia de entretenimiento inigualable. La zona de descanso cuenta con una lujosa cama king-size con sábanas de alta calidad y almohadas mullidas que invitan al descanso. Junto a la cama, hay mesitas de noche elegantes con lámparas de lectura, proporcionando un ambiente tranquilo y relajante para dormir."
+    },
+    {
+      "id": "7225",
+      "numHabitacion": 80,
+      "tipoHabitacion": "Deluxe",
+      "precioHabitacion": 6000,
+      "disponibilidad": "true",
+      "imagenHabitacion": "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg",
+      "descripcionBreve": "asdasdasdasdasdasdadads",
+      "descripcionAmplia": "asdasdasdasdasdasdasdasdasdasdasdasdasd"
+    },
+    {
+      "id": "4d28",
+      "numHabitacion": 14,
+      "tipoHabitacion": "Doble Hollywood",
+      "precioHabitacion": 14000,
+      "disponibilidad": "true",
+      "imagenHabitacion": "https://images.pexels.com/photos/262048/pexels-photo-262048.jpeg",
+      "descripcionBreve": "adsasdadsasdasasdadsdadsads",
+      "descripcionAmplia": "adsasdadsasdasasdadsdadsadsasdasdasdasdasdasd"
+    },
+    {
+      "id": "26bb",
+      "numHabitacion": 15,
+      "tipoHabitacion": "Doble",
+      "precioHabitacion": 8000,
+      "disponibilidad": "false",
+      "imagenHabitacion": "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg",
+      "descripcionBreve": "asdasdasdasdasdasdasdasdasdasdasdadsasd",
+      "descripcionAmplia": "asdasdasdasdasdasdasdasdasdasdasdadsasdasdasdasdasdadsasdasd"
+    },
+    {
+      "id": "c894",
+      "numHabitacion": null,
+      "tipoHabitacion": "Doble",
+      "precioHabitacion": 7000,
+      "disponibilidad": "true",
+      "imagenHabitacion": "https://images.pexels.com/photos/210265/pexels-photo-210265.jpeg",
+      "descripcionBreve": "asdasdasdasdasdadsasadsasdadsasdadsadsadsasd",
+      "descripcionAmplia": "asdasdasdasdasdadsasadsasdadsasdadsadsadsasdaasdasdasdasdasdasdasdadsasd",
+      "numeroHabitacion": 16
     }
   ],
   "usuarios": [

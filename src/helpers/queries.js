@@ -1,7 +1,5 @@
 const URI_HABITACIONES = import.meta.env.VITE_API_HABITACIONES
 
-console.log(URI_HABITACIONES);
-
 //  Solicitud tipo GET (o Request) para el array de habitaciones
 export const leerHabitacionesAPI = async() => {
   try {
@@ -17,6 +15,22 @@ export const leerHabitacionesAPI = async() => {
 export const obtenerHabitacionAPI = async(id) => {
   try {
     const response = await fetch(`${URI_HABITACIONES}/${id}`)
+    return response
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+//  Solicitud tipo POST (crear)
+export const crearHabitacionAPI = async(nuevaHabitacion) => {
+  try {
+    const response = await fetch(URI_HABITACIONES, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(nuevaHabitacion)
+    })
     return response
   } catch (error) {
     console.log(error);
