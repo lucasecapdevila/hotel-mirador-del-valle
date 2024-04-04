@@ -1,32 +1,80 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { crearHabitacionAPI } from "../../../helpers/queries";
+import { crearHabitacionAPI, editarHabitacionAPI, obtenerHabitacionAPI } from "../../../helpers/queries";
+import { useEffect } from "react";
 
-const FormularioHabitaciones = () => {
+const FormularioHabitaciones = ({editar, titulo}) => {
+  useEffect(() => {
+    if(editar){
+      cargarDatosEnFormulario()
+    }
+  },[])
+
   const {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors }
   } = useForm()
 
+  const cargarDatosEnFormulario = async() => {
+    //  Traer datos de la habitación:
+    const response = await obtenerHabitacionAPI(id)
+    if(response.status === 200){
+      const habitacionBuscada = await response.json()
+      //  Mostrar datos en el formulario:
+      setValue('numeroHabitacion', habitacionBuscada.numeroHabitacion)
+      setValue('tipoHabitacion', habitacionBuscada.tipoHabitacion)
+      setValue('precioHabitacion', habitacionBuscada.precioHabitacion)
+      setValue('disponibilidad', habitacionBuscada.disponibilidad)
+      setValue('imagenHabitacion', habitacionBuscada.imagenHabitacion)
+      setValue('descripcionBreve', habitacionBuscada.descripcionBreve)
+      setValue('descripcionAmplia', habitacionBuscada.descripcionAmplia)
+    } else{
+      Swal.fire({
+        title: "Ocurrió un error",
+        text: "Intente realizar esta operación en unos minutos.",
+        icon: "error"
+      });
+    }
+  }
+
   const habitacionValidada = async(habitacion) => {
     try {
-      const response = await crearHabitacionAPI(habitacion)
-      if(response.status === 201){
-        Swal.fire({
-          title: "Habitación agregada",
-          text: `La habitación número ${habitacion.numeroHabitacion} fue agregada exitosamente.`,
-          icon: "success"
-        });
-        reset()
+      if(editar){
+        const response = await editarHabitacionAPI(id, habitacion)
+        if(response.status === 200){
+          Swal.fire({
+            title: "Habitación editada",
+            text: `La habitación número ${habitacion.numeroHabitacion} fue modificada exitosamente.`,
+            icon: "success"
+          });
+          //  Redireccionar a tabla de Admin una vez termine la edición
+        } else{
+          Swal.fire({
+            title: "Ocurrió un error",
+            text: "Intente modificar la habitación en unos minutos.",
+            icon: "error"
+          });
+        }
       } else{
-        Swal.fire({
-          title: "Ocurrió un error",
-          text: "Intente agregar la habitación en unos minutos.",
-          icon: "error"
-        });
+        const response = await crearHabitacionAPI(habitacion)
+        if(response.status === 201){
+          Swal.fire({
+            title: "Habitación agregada",
+            text: `La habitación número ${habitacion.numeroHabitacion} fue agregada exitosamente.`,
+            icon: "success"
+          });
+          reset()
+        } else{
+          Swal.fire({
+            title: "Ocurrió un error",
+            text: "Intente agregar la habitación en unos minutos.",
+            icon: "error"
+          });
+        }
       }
     } catch (error) {
       console.log(error);
@@ -36,11 +84,11 @@ const FormularioHabitaciones = () => {
   return (
     <main className="mainPage">
       <section className="container">
-        <h1 className="mt-4 titulos">Agregar habitación</h1>
+        <h1 className="mt-4 titulos">{titulo}</h1>
         <hr />
 
         <Form className="my-4" onSubmit={handleSubmit(habitacionValidada)}>
-          <Form.Group className="mb-3" controlId="formNumHabitacion">
+          <Form.Group className="mb-3" controlId="formNumeroHabitacion">
             <Form.Label>Número de habitación</Form.Label>
             <Form.Control
               type="number"
@@ -119,8 +167,8 @@ const FormularioHabitaciones = () => {
               }
             >
               <option value="">Seleccione una opción</option>
-              <option value={true}>Si</option>
-              <option value={false}>No</option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
             </Form.Select>
             <Form.Text className="text-danger">{errors.disponibilidad?.message}</Form.Text>
           </Form.Group>

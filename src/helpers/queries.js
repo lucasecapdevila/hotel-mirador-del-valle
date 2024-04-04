@@ -36,3 +36,19 @@ export const crearHabitacionAPI = async(nuevaHabitacion) => {
     console.log(error);
   }
 }
+
+//  Solicitud tipo PUT (editar)
+export const editarHabitacionAPI = async(id, habitacion) => {
+  try {
+    const response = await fetch(`${URI_HABITACIONES}/${id}`,{
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(habitacion)
+    })
+    return response
+  } catch (error) {
+    console.log(error);
+  }
+}

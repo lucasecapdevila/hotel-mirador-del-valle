@@ -17,7 +17,7 @@ function App() {
       <hr />
       <hr />
 
-      <FormularioHabitaciones />
+      <FormularioHabitaciones editar={true} titulo='Editar habitación' />
     </>
   )
 }
