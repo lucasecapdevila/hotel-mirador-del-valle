@@ -27,6 +27,7 @@ const FormularioHabitaciones = () => {
               {
                 ...register("numHabitacion",{
                   required: 'El número de la habitación es obligatorio.',
+                  valueAsNumber: true,
                   min: {
                     value: 1,
                     message: 'El número mínimo de habitación es 1.'
@@ -73,6 +74,7 @@ const FormularioHabitaciones = () => {
               {
                 ...register("precioHabitacion",{
                   required: 'El precio de la habitación es obligatorio.',
+                  valueAsNumber: true,
                   min: {
                     value: 5000,
                     message: 'El precio mínimo de una habitación es 5000.'
