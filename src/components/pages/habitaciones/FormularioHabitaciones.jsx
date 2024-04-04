@@ -96,8 +96,8 @@ const FormularioHabitaciones = () => {
               }
             >
               <option value="">Seleccione una opción</option>
-              <option value="Si">Si</option>
-              <option value="No">No</option>
+              <option value={true}>Si</option>
+              <option value={false}>No</option>
             </Form.Select>
             <Form.Text className="text-danger">{errors.disponibilidad?.message}</Form.Text>
           </Form.Group>
