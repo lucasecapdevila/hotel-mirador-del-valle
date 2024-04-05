@@ -12,6 +12,7 @@
 
 .titulos {
   font-family: "Rubik", sans-serif;
+  font-weight: 700;
 }
 
 .anchoColumna{
@@ -22,4 +23,33 @@
   color: black;
   font-size: 18px;
   background-color: #eeeeee;
+}
+
+.nav-tabs .nav-link:hover{
+  color: black;
+}
+
+/* Borro las flechas en input tipo number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#formDescripcionBreve,
+#formDescripcionAmplia{
+  height: 120px;
+  resize: none;
+}
+.btnCardHabitacion{
+  background: #aca650;
+  width: 100%;
+  font-family:  "Rubik", sans-serif;
+}
+.bodyCardHabitacion .card-title, .card-text {
+  color: #485c70;
+}
+.card-img-top-nueva {
+  height: 200px;
+  object-fit: cover;
 }

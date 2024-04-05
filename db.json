@@ -1,0 +1,48 @@
+{
+  "habitaciones": [
+    {
+      "id": "e1e7",
+      "numeroHabitacion": 10,
+      "tipoHabitacion": "Doble",
+      "precioHabitacion": 7500,
+      "disponibilidad": "Si",
+      "imagenHabitacion": "https://images.pexels.com/photos/210265/pexels-photo-210265.jpeg",
+      "descripcionBreve": "asdadsasdasdasdasdasdads",
+      "descripcionAmplia": "asdadsasdasdasdasdasdadsasdadsasdasdasdasdasdads"
+    },
+    {
+      "id": "6bdb",
+      "numeroHabitacion": 11,
+      "tipoHabitacion": "Deluxe",
+      "precioHabitacion": 9000,
+      "disponibilidad": "Si",
+      "imagenHabitacion": "https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg",
+      "descripcionBreve": "fghfghfghfghfghfghfghfghfghfgh",
+      "descripcionAmplia": "fghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfgh"
+    },
+    {
+      "id": "62cd",
+      "numeroHabitacion": 12,
+      "tipoHabitacion": "Suite",
+      "precioHabitacion": 25000,
+      "disponibilidad": "No",
+      "imagenHabitacion": "https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg",
+      "descripcionBreve": "jkljkljkljkljkljkljkljkljkljkljkljkl",
+      "descripcionAmplia": "jkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkl"
+    }
+  ],
+  "usuarios": [
+    {
+      "userEmail": "admin@admin.com",
+      "userPassword": "admin12345",
+      "userName": "Administrador",
+      "rol": "Administrador"
+    },
+    {
+      "userEmail": "user@mail.com",
+      "userPassword": "user12345",
+      "userName": "lucas",
+      "rol": "Usuario"
+    }
+  ]
+}
