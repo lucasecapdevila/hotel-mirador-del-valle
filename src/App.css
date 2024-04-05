@@ -89,10 +89,6 @@ input::-webkit-inner-spin-button {
   color: white;
 }
 
-/* .contenedor:hover{
-  transform: scale(1.05);
-} */
-
 .textoEnImagen{
   position: absolute;
   bottom: 5%;

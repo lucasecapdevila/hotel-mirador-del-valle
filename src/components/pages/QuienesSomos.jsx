@@ -1,7 +1,7 @@
 import { faBriefcase, faDumbbell, faFaceSmile, faUtensils } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
-import { Carousel, Container, Row, Col, Button, Modal } from 'react-bootstrap';
+import { Accordion, Carousel, Container, Row, Col, Button, Modal } from 'react-bootstrap';
 
 const QuienesSomos = () => {
   const [show, setShow] = useState(false);
@@ -167,6 +167,50 @@ const QuienesSomos = () => {
               </div>
             </div>
           </div>
+        </section>
+
+        <section className="my-4">
+          <h3 className='text-center titulos'>Nuestras políticas</h3>
+          <Accordion className='textosAlternativos'>
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>Cancelación</Accordion.Header>
+              <Accordion.Body className='textos'>
+              Las políticas de cancelación pueden variar según la tarifa y las fechas de su reservación. Consulte su confirmación de reservación para verificar la política de cancelación. Si necesita más ayuda, llame directamente al hotel o comuníquese con el servicio al cliente. Como alternativa, puede cancelar su reservación en línea.
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="1">
+              <Accordion.Header>Check-in/check-out</Accordion.Header>
+              <Accordion.Body className='textos'>
+                <p>Edad mínima para registrarse: 18</p>
+                <p>Tarifa de check-out anticipado: $AR0.00</p>
+                <p>Tarifa de check-out prorrogado: $AR0.00</p>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="2">
+              <Accordion.Header>Pago</Accordion.Header>
+              <Accordion.Body className='textos'>
+                <p>Moneda: Peso argentino</p>
+                <p>Tarjetas de crédito aceptadas:</p>
+                <div className='d-flex'>
+                  <div className="w-25">
+                    <img className='img-fluid w-50' src="https://www.logo.wine/a/logo/American_Express/American_Express-Logo.wine.svg" alt="Logo American Express" />
+                  </div>
+                  <div className="w-25">
+                    <img className='img-fluid w-50' src="https://www.logo.wine/a/logo/Visa_Inc./Visa_Inc.-Logo.wine.svg" alt="Logo Visa" />
+                  </div>
+                  <div className="w-25">
+                    <img className='img-fluid w-50' src="https://www.logo.wine/a/logo/Mastercard/Mastercard-Logo.wine.svg" alt="Logo MasterCard" />
+                  </div>
+                </div>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="3">
+              <Accordion.Header>Política sobre mascotas</Accordion.Header>
+              <Accordion.Body className='textos'>
+              Las mascotas son bienvenidas. Tenga en cuenta que se aplica un cargo de $50 USD a los cargos de habitación por mascota, con un límite de dos mascotas. También ofrecemos una cama y tazones para mascotas.
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
         </section>
       </Container>
     </main>
