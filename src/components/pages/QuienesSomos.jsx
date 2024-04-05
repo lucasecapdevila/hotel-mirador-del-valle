@@ -6,6 +6,7 @@ import { Carousel, Container, Row, Col, Button, Modal } from 'react-bootstrap';
 const QuienesSomos = () => {
   const [show, setShow] = useState(false);
   const [lgShow, setLgShow] = useState(false);
+  const [modalShow, setModalShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -140,6 +141,32 @@ const QuienesSomos = () => {
               </ul>
             </Modal.Body>
           </Modal>
+        </section>
+
+        <section className="my-4">
+          <h3 className='text-center titulos'>Comodidades destacadas</h3>
+          <div className='d-flex flex-column flex-md-row justify-content-center'>
+            <div className="m-3 hvr-grow-shadow contenedor">
+              <img className='img-fluid' src="https://images.pexels.com/photos/6796964/pexels-photo-6796964.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Gym del hotel" />
+              <div className='textoEnImagen'>
+                <h4 className='text-uppercase ms-3 titulos'>Gimnasio</h4>
+              </div>
+            </div>
+
+            <div className="m-3 hvr-grow-shadow contenedor">
+              <img className='img-fluid' src="https://images.pexels.com/photos/462129/pexels-photo-462129.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Piscina del hotel" />
+              <div className='textoEnImagen'>
+                <h4 className='text-uppercase ms-3 titulos'>Piscina</h4>
+              </div>
+            </div>
+
+            <div className="m-3 hvr-grow-shadow contenedor">
+              <img className='img-fluid' src="https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Restaurante del hotel" />
+              <div className='textoEnImagen'>
+                <h4 className='text-uppercase ms-3 titulos'>Restaurante</h4>
+              </div>
+            </div>
+          </div>
         </section>
       </Container>
     </main>
