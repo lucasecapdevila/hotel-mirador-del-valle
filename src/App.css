@@ -111,5 +111,6 @@ input::-webkit-inner-spin-button {
   transform: scale(1.1);
 }
 .contenedorDetalleHabitacion{
-  
+  background: #b0b696;
+  color:  #485c70;
 }
