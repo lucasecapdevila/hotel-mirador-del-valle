@@ -15,7 +15,11 @@
 }
 
 .textos{
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", sans-serif !important;
+}
+
+.textosAlternativos{
+  font-family: "Poppins", sans-serif;
 }
 
 .textoJustificado{
@@ -73,4 +77,8 @@ input::-webkit-inner-spin-button {
   width: 100%;
   overflow: hidden;
   opacity: 45%;
+}
+
+.verde{
+  color: #aca650;
 }
