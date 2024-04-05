@@ -5,6 +5,8 @@ import Error404 from "./components/pages/Error404"
 import Footer from "./components/common/Footer"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import FormularioHabitaciones from './components/pages/habitaciones/FormularioHabitaciones'
+import QuienesSomos from './components/pages/QuienesSomos'
+
 
 function App() {
 

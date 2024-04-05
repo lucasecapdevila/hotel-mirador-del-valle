@@ -94,7 +94,7 @@ const FormularioHabitaciones = ({editar, titulo}) => {
 
         <Form className="my-4" onSubmit={handleSubmit(habitacionValidada)}>
           <Form.Group className="mb-3" controlId="formNumeroHabitacion">
-            <Form.Label>Número de habitación</Form.Label>
+            <Form.Label>Número de habitación<span className="text-danger">*</span></Form.Label>
             <Form.Control
               type="number"
               placeholder="1, 2, 3..."
@@ -116,7 +116,7 @@ const FormularioHabitaciones = ({editar, titulo}) => {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formTipoHabitacion">
-            <Form.Label>Tipo de habitación</Form.Label>
+            <Form.Label>Tipo de habitación<span className="text-danger">*</span></Form.Label>
             <Form.Select
               {
                 ...register("tipoHabitacion",{
@@ -141,7 +141,7 @@ const FormularioHabitaciones = ({editar, titulo}) => {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formPrecio">
-            <Form.Label>Precio de habitación</Form.Label>
+            <Form.Label>Precio de habitación<span className="text-danger">*</span></Form.Label>
             <Form.Control
               type="number"
               placeholder="$5.000 - $30.000"
@@ -163,7 +163,7 @@ const FormularioHabitaciones = ({editar, titulo}) => {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formDisponibilidad">
-            <Form.Label>Disponibilidad de habitación</Form.Label>
+            <Form.Label>Disponibilidad de habitación<span className="text-danger">*</span></Form.Label>
             <Form.Select
               {
                 ...register("disponibilidad",{
@@ -179,7 +179,7 @@ const FormularioHabitaciones = ({editar, titulo}) => {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formImagen">
-            <Form.Label>URL de imagen de habitación</Form.Label>
+            <Form.Label>URL de imagen de habitación<span className="text-danger">*</span></Form.Label>
             <Form.Control
               type="text"
               placeholder="Ej: https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg"
@@ -196,7 +196,7 @@ const FormularioHabitaciones = ({editar, titulo}) => {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formDescripcionBreve">
-            <Form.Label>Descripción breve</Form.Label>
+            <Form.Label>Descripción breve<span className="text-danger">*</span></Form.Label>
             <Form.Control
               type="text"
               placeholder="Ej: Una habitación reconfortante."
@@ -218,7 +218,7 @@ const FormularioHabitaciones = ({editar, titulo}) => {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formDescripcionAmplia">
-            <Form.Label>Descripción amplia</Form.Label>
+            <Form.Label>Descripción amplia<span className="text-danger">*</span></Form.Label>
             <Form.Control
               type="text"
               placeholder="Ej: Una habitación reconfortante con vista a los valles calchaquíes que podrás disfrutar con toda tu familia."
