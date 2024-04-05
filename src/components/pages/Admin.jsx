@@ -5,7 +5,7 @@ import ItemHabitacion from "./habitaciones/ItemHabitacion"
 
 const Admin = () => {
   return (
-    <main className="my-3">
+    <main className="my-3 mainPage">
       <Container>
         <Tabs fill defaultActiveKey='habitaciones'>
           <Tab eventKey='habitaciones' title='Habitaciones'>

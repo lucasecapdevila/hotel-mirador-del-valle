@@ -1,28 +1,29 @@
 import {Navbar, Container, Nav} from 'react-bootstrap'
 import logo from "../../assets/iconNav.png"
+import { Link, NavLink } from 'react-router-dom';
 
 const Menu = () => {
     return (
         <>
           <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">
-            <img src={logo} height={80} alt="logo del hotel mirador del valle" />
+        <Navbar.Brand as={Link} to="/">
+            <img src={logo} height={85} alt="logo del hotel mirador del valle" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#home">Inicio</Nav.Link>
-            <Nav.Link href="#link">El hotel</Nav.Link>
-            <Nav.Link href="#link">Contacto</Nav.Link>
-            <Nav.Link href="#link">Galeria</Nav.Link>
-            <Nav.Link href="#link">Habitaciones</Nav.Link>
-            <Nav.Link href="#link">Registro</Nav.Link>
-            <Nav.Link href="#link">Login</Nav.Link>
+            <NavLink end className="nav-link" to="/">INICIO</NavLink>
+            <NavLink end className="nav-link" to="/quienesomos">EL HOTEL</NavLink>
+            <NavLink end className="nav-link" to="/galeriadeimagenes">GALERIA</NavLink>
+            <NavLink end className="nav-link" to="/habitaciones">HABITACIONES</NavLink>
+            <NavLink end className="nav-link" to="/contacto">CONTACTO</NavLink>
+            <NavLink end className="nav-link" to="/registro">REGISTRO</NavLink>
+            <NavLink end className="nav-link" to="/administrador">ADMINISTRADOR</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>   
+    </Navbar> 
         </>
     );
 };
