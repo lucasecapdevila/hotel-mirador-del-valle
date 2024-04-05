@@ -52,3 +52,15 @@ export const editarHabitacionAPI = async(id, habitacion) => {
     console.log(error);
   }
 }
+
+//  Solicitud tipo DELETE (eliminar)
+export const borrarHabitacionAPI = async(id) => {
+  try {
+    const response = await fetch(`${URI_HABITACIONES}/${id}`,{
+      method: "DELETE"
+    })
+    return response
+  } catch (error) {
+    console.log(error);
+  }
+}
