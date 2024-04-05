@@ -2,8 +2,25 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Button, Container, Tab, Table, Tabs } from "react-bootstrap"
 import ItemHabitacion from "./habitaciones/ItemHabitacion"
+import { useEffect, useState } from "react"
+import { leerHabitacionesAPI } from "../../helpers/queries"
 
 const Admin = () => {
+  const [listaHabitaciones, setListaHabitaciones] = useState([])
+
+  useEffect(() => {
+    traerHabitaciones()
+  }, [])
+
+  const traerHabitaciones = async() => {
+    try {
+      const listaHabitacionesAPI = await leerHabitacionesAPI()
+      setListaHabitaciones(listaHabitacionesAPI)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <main className="my-3">
       <Container>
@@ -26,7 +43,9 @@ const Admin = () => {
                 </tr>
               </thead>
               <tbody>
-                <ItemHabitacion />
+                {
+                  listaHabitaciones.map((habitacion) => <ItemHabitacion key={habitacion.id} habitacion={habitacion} setListaHabitaciones={setListaHabitaciones} />)
+                }
               </tbody>
             </Table>
           </Tab>
@@ -49,7 +68,7 @@ const Admin = () => {
                 </tr>
               </thead>
               <tbody>
-                <ItemHabitacion />
+                {/* <ItemHabitacion /> (Debe ser <ItemUsuario></ItemUsuario>*/}
               </tbody>
             </Table>
           </Tab>
