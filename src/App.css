@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 #root{
   display: flex;
@@ -12,7 +12,18 @@
 
 .titulos {
   font-family: "Rubik", sans-serif;
-  font-weight: 700;
+}
+
+.textos{
+  font-family: "Raleway", sans-serif !important;
+}
+
+.textosAlternativos{
+  font-family: "Poppins", sans-serif;
+}
+
+.textoJustificado{
+  text-align: justify;
 }
 
 .anchoColumna{
@@ -52,4 +63,50 @@ input::-webkit-inner-spin-button {
 .card-img-top-nueva {
   height: 200px;
   object-fit: cover;
+}
+
+/* Configuraciones de carrousel (página quienes somos) */
+.carousel-inner .carousel-item{
+  background-color: black;
+}
+
+.carousel-inner .carousel-item img{
+  object-fit: cover;
+  object-position: center;
+  height: 40vh;
+  width: 100%;
+  overflow: hidden;
+  opacity: 45%;
+}
+
+.verde{
+  color: #aca650;
+}
+
+.contenedor{
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.textoEnImagen{
+  position: absolute;
+  bottom: 5%;
+}
+
+.hvr-grow-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+.hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }

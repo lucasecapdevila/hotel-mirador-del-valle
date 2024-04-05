@@ -5,21 +5,24 @@ import Error404 from "./components/pages/Error404"
 import Footer from "./components/common/Footer"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import FormularioHabitaciones from './components/pages/habitaciones/FormularioHabitaciones'
+import QuienesSomos from './components/pages/QuienesSomos'
+
 
 function App() {
 
   return (
     <>
       <BrowserRouter>
-      <Menu></Menu>
-      <Routes>
-       <Route exact path='/' element={<Error404></Error404>}></Route>
-       <Route exact path='/administrador' element={<Admin></Admin>}></Route>
-       <Route exact path='/administrador/crear' element={<Admin></Admin>}></Route>
-       <Route exact path='/administrador/editar' element={<Admin></Admin>}></Route>
-       <Route exact path='*' element={<Error404></Error404>}></Route>
-      </Routes>
-      <Footer></Footer>
+        <Menu></Menu>
+        <Routes>
+          <Route exact path='/' element={<Error404></Error404>}></Route>
+          <Route exact path='/quienesSomos' element={<QuienesSomos></QuienesSomos>}></Route>
+          <Route exact path='/administrador' element={<Admin></Admin>}></Route>
+          <Route exact path='/administrador/crear' element={<Admin></Admin>}></Route>
+          <Route exact path='/administrador/editar' element={<Admin></Admin>}></Route>
+          <Route exact path='*' element={<Error404></Error404>}></Route>
+        </Routes>
+        <Footer></Footer>
       </BrowserRouter>
     </>
   )
