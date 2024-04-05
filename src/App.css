@@ -12,11 +12,14 @@
 
 .titulos {
   font-family: "Rubik", sans-serif;
-  font-weight: 700;
 }
 
 .textos{
   font-family: "Raleway", sans-serif;
+}
+
+.textoJustificado{
+  text-align: justify;
 }
 
 .anchoColumna{
