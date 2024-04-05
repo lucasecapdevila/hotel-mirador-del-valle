@@ -3,8 +3,12 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { crearHabitacionAPI, editarHabitacionAPI, obtenerHabitacionAPI } from "../../../helpers/queries";
 import { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 const FormularioHabitaciones = ({editar, titulo}) => {
+  const {id} = useParams()
+  const navegacion = useNavigate()
+
   useEffect(() => {
     if(editar){
       cargarDatosEnFormulario()
@@ -52,6 +56,7 @@ const FormularioHabitaciones = ({editar, titulo}) => {
             icon: "success"
           });
           //  Redireccionar a tabla de Admin una vez termine la edición
+          navegacion('/administrador')
         } else{
           Swal.fire({
             title: "Ocurrió un error",

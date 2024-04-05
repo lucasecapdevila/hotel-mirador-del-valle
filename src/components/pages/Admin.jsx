@@ -4,6 +4,7 @@ import { Button, Container, Tab, Table, Tabs } from "react-bootstrap"
 import ItemHabitacion from "./habitaciones/ItemHabitacion"
 import { useEffect, useState } from "react"
 import { leerHabitacionesAPI } from "../../helpers/queries"
+import { Link } from "react-router-dom"
 
 const Admin = () => {
   const [listaHabitaciones, setListaHabitaciones] = useState([])
@@ -28,7 +29,7 @@ const Admin = () => {
           <Tab eventKey='habitaciones' title='Habitaciones'>
             <div className="d-flex align-items-center justify-content-between my-2">
               <h2 className="fs-1 fw-bold text-center titulos">Administrador de habitaciones</h2>
-              <Button><FontAwesomeIcon icon={faPlus} /></Button>
+              <Link to='/administrador/crear' className='btn btn-primary'><FontAwesomeIcon icon={faPlus} /></Link>
             </div>
             <hr />
 
