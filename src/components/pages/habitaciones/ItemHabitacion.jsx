@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Button } from "react-bootstrap"
 import Swal from 'sweetalert2'
 import { borrarHabitacionAPI, leerHabitacionesAPI } from "../../../helpers/queries"
+import { Link } from "react-router-dom"
 
 const ItemHabitacion = ({habitacion, setListaHabitaciones}) => {
   const borrarHabitacion = () => {
@@ -47,7 +48,7 @@ const ItemHabitacion = ({habitacion, setListaHabitaciones}) => {
       <td className="text-center">{habitacion.disponibilidad}</td>
       <td className="anchoColumna">
         <div className="d-flex align-items-center justify-content-center">
-          <Button variant="warning" className="ms-0 me-2"><FontAwesomeIcon icon={faFilePen} /></Button>
+          <Link to={`/administrador/editar/${habitacion.id}`} className="btn btn-warning ms-0 me-2"><FontAwesomeIcon icon={faFilePen} /></Link>
           <Button variant="danger" onClick={borrarHabitacion}><FontAwesomeIcon icon={faTrashCan} /></Button>
         </div>
       </td>
