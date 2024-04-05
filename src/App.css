@@ -41,3 +41,15 @@ input::-webkit-inner-spin-button {
   height: 120px;
   resize: none;
 }
+.btnCardHabitacion{
+  background: #aca650;
+  width: 100%;
+  font-family:  "Rubik", sans-serif;
+}
+.bodyCardHabitacion .card-title, .card-text {
+  color: #485c70;
+}
+.card-img-top-nueva {
+  height: 200px;
+  object-fit: cover;
+}
