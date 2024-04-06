@@ -1,34 +1,34 @@
 {
   "habitaciones": [
     {
-      "numeroHabitacion": 86,
+      "id": "e1e7",
+      "numeroHabitacion": 10,
+      "tipoHabitacion": "Doble",
+      "precioHabitacion": 7500,
+      "disponibilidad": "Si",
+      "imagenHabitacion": "https://images.pexels.com/photos/210265/pexels-photo-210265.jpeg",
+      "descripcionBreve": "asdadsasdasdasdasdasdads",
+      "descripcionAmplia": "asdadsasdasdasdasdasdadsasdadsasdasdasdasdasdads"
+    },
+    {
+      "id": "6bdb",
+      "numeroHabitacion": 11,
       "tipoHabitacion": "Deluxe",
       "precioHabitacion": 9000,
       "disponibilidad": "Si",
       "imagenHabitacion": "https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg",
       "descripcionBreve": "fghfghfghfghfghfghfghfghfghfgh",
-      "descripcionAmplia": "fghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfgh",
-      "id": "6bdb"
+      "descripcionAmplia": "fghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfgh"
     },
     {
-      "numeroHabitacion": 21,
+      "id": "62cd",
+      "numeroHabitacion": 12,
       "tipoHabitacion": "Suite",
       "precioHabitacion": 25000,
       "disponibilidad": "No",
       "imagenHabitacion": "https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg",
       "descripcionBreve": "jkljkljkljkljkljkljkljkljkljkljkljkl",
-      "descripcionAmplia": "jkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkl",
-      "id": "62cd"
-    },
-    {
-      "id": "2cad",
-      "numeroHabitacion": 99,
-      "tipoHabitacion": "Sico",
-      "precioHabitacion": 30000,
-      "disponibilidad": "Si",
-      "imagenHabitacion": "https://images.pexels.com/photos/189333/pexels-photo-189333.jpeg",
-      "descripcionBreve": "asdasdasdasdasdasdasdasdads",
-      "descripcionAmplia": "asdasdasdasdasdasdasdasdadsasdasdasdasdasdasdasdasdadsasdasdasdasdasdasdasdasdads"
+      "descripcionAmplia": "jkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkl"
     }
   ],
   "usuarios": [
@@ -36,15 +36,13 @@
       "userEmail": "admin@admin.com",
       "userPassword": "admin12345",
       "userName": "Administrador",
-      "rol": "Administrador",
-      "id": "1e19"
+      "rol": "Administrador"
     },
     {
       "userEmail": "user@mail.com",
       "userPassword": "user12345",
       "userName": "lucas",
-      "rol": "Usuario",
-      "id": "3537"
+      "rol": "Usuario"
     }
   ]
 }

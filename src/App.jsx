@@ -6,6 +6,7 @@ import Footer from "./components/common/Footer"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import FormularioHabitaciones from './components/pages/habitaciones/FormularioHabitaciones'
 import QuienesSomos from './components/pages/QuienesSomos'
+import Habitaciones from './components/pages/Habitaciones'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route exact path='/administrador' element={<Admin></Admin>}></Route>
         <Route exact path='/administrador/crear' element={<FormularioHabitaciones editar={false} titulo='Agregar habitación'></FormularioHabitaciones>}></Route>
         <Route exact path='/administrador/editar/:id' element={<FormularioHabitaciones editar={true} titulo='Editar habitación'></FormularioHabitaciones>}></Route>
+        <Route  exact path="/habitaciones/" element={<Habitaciones></Habitaciones>}></Route>
         <Route exact path='*' element={<Error404></Error404>}></Route>
       </Routes>
       <Footer></Footer>
