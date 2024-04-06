@@ -11,10 +11,10 @@ const CardHabitacion = ({habitacion}) => {
           src={habitacion.imagenHabitacion}
           className="card-img-top-nueva"
         />
-        <Card.Body className="bodyCardHabitacion">
-          <Card.Title>{habitacion.tipoHabitacion}</Card.Title>
-          <Card.Text>{habitacion.descripcionBreve}</Card.Text>
-          <Link className=" btn btnCardHabitacion w-100 fw-semibold" to={'/detalleHabitacion/'+ habitacion.id} >DETALLES</Link>
+        <Card.Body className="bodyCardHabitacion d-flex flex-column">
+          <Card.Title className="titulos">{habitacion.tipoHabitacion}</Card.Title>
+          <Card.Text className="textos">{habitacion.descripcionBreve}</Card.Text>
+          <Link className="btn w-100 fw-semibold mt-auto btnCardHabitacion" to={'/detalleHabitacion/'+ habitacion.id} >DETALLES</Link>
         </Card.Body>
       </Card>
     </Col>

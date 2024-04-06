@@ -21,7 +21,7 @@ const Habitaciones = () => {
     <>
     <div className="portadaHabitaciones mb-5 text-center">
     <img className='banner' src="https://images.pexels.com/photos/939715/pexels-photo-939715.jpeg?auto=compress&cs=tinysrgb&w=600" />
-        <div className="titulos tiuloPrincipal">
+        <div className="titulos tituloPrincipal">
           <h1 className="">HABITACIONES</h1>
         </div>
       </div>
