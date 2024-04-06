@@ -145,6 +145,7 @@ input::-webkit-inner-spin-button {
 .btnDetalleHabitacion {
   background: #485c70;
   border:  #485c70 .1em solid;
+  color:#eeeeee
 }
 .descripcionHabitacion{
   color:#485c70;
@@ -159,8 +160,14 @@ input::-webkit-inner-spin-button {
   -o-transform: translateY(-3%);
   transform: translateY(-3%);
 }
-@media screen and (max-width: 767px){
+
+@media screen and (max-width: 653px){
   .tiuloPrincipal h1{
-    font-size: 40px;
+    font-size: 35px;
+  }
+  .cardCategoria:hover {
+    -webkit-transform: none;
+    -o-transform: none;
+    transform: none;
   }
 }

@@ -8,7 +8,7 @@ const Menu = () => {
           <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
               <Navbar.Brand as={Link} to="/">
-                <img src={logo} height={85} alt="logo del hotel mirador del valle" />
+               
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
