@@ -40,7 +40,7 @@ const DetalleHabitacion = () => {
           <Link className=" btn btnDetalleHabitacion textos fw-semibold" >RESERVAR</Link>
         </Col>
         <Col md={12}>
-          <p className="textos my-5 fw-medium">Descripción: {habitacion.descripcionAmplia}</p>
+          <p className="textos my-5 fw-medium descripcionHabitacion">Descripción: {habitacion.descripcionAmplia}</p>
         </Col>
       </Row>
     </Container>

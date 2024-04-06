@@ -5,7 +5,7 @@ const CardHabitacion = ({habitacion}) => {
   return (
     
     <Col md={4} className="mb-3">
-      <Card className="my-3">
+      <Card className="my-3 cardCategoria">
         <Card.Img
           variant="top"
           src={habitacion.imagenHabitacion}
