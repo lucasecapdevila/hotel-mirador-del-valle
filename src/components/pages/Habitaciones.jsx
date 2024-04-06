@@ -1,7 +1,7 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import {Container} from "react-bootstrap";
 import CardHabitacion from "./habitaciones/CardHabitacion";
-import { leerHabitacionesAPI } from "../../helpers/queries"
+import { leerHabitacionesAPI } from "../../helpers/queries";
 const Habitaciones = () => {
     const [listaHabitaciones, setListaHabitaciones] = useState([])
 
@@ -19,7 +19,7 @@ const Habitaciones = () => {
     }
   return (
     <Container>
-        {listaHabitaciones.map((habitacion) => <CardHabitacion key={habitacion.id} habitacion={habitacion} />)}
+        {listaHabitaciones.map((habitacion)=><CardHabitacion key={habitacion.id} habitacion={habitacion}/>)}
     </Container>
   );
 };
