@@ -112,7 +112,7 @@ const FormularioHabitaciones = ({editar, titulo}) => {
                   }
                 })
               }/>
-            <Form.Text className="text-danger">{errors.numHabitacion?.message}</Form.Text>
+            <Form.Text className="text-danger">{errors.numeroHabitacion?.message}</Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formTipoHabitacion">
