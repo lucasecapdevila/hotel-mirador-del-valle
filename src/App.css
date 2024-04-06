@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
-#root{
+#root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.mainPage{
+.mainPage {
   flex-grow: 1;
 }
 
@@ -14,29 +14,29 @@
   font-family: "Rubik", sans-serif;
 }
 
-.textos{
+.textos {
   font-family: "Raleway", sans-serif !important;
 }
 
-.textosAlternativos{
+.textosAlternativos {
   font-family: "Poppins", sans-serif;
 }
 
-.textoJustificado{
+.textoJustificado {
   text-align: justify;
 }
 
-.anchoColumna{
+.anchoColumna {
   width: 15%;
 }
 
-.nav-tabs .nav-link{
+.nav-tabs .nav-link {
   color: black;
   font-size: 18px;
   background-color: #eeeeee;
 }
 
-.nav-tabs .nav-link:hover{
+.nav-tabs .nav-link:hover {
   color: black;
 }
 
@@ -48,29 +48,41 @@ input::-webkit-inner-spin-button {
 }
 
 #formDescripcionBreve,
-#formDescripcionAmplia{
+#formDescripcionAmplia {
   height: 120px;
   resize: none;
 }
-.btnCardHabitacion{
+
+a.btnCardHabitacion {
   background: #aca650;
+  color: white;
   width: 100%;
-  font-family:  "Rubik", sans-serif;
+  font-family: "Rubik", sans-serif;
 }
-.bodyCardHabitacion .card-title, .card-text {
+
+a.btnCardHabitacion:hover {
+  background: #bcb66c;
+  color: white;
+  width: 100%;
+  font-family: "Rubik", sans-serif;
+}
+
+.bodyCardHabitacion .card-title,
+.card-text {
   color: #485c70;
 }
+
 .card-img-top-nueva {
   height: 200px;
   object-fit: cover;
 }
 
 /* Configuraciones de carrousel (página quienes somos) */
-.carousel-inner .carousel-item{
+.carousel-inner .carousel-item {
   background-color: black;
 }
 
-.carousel-inner .carousel-item img{
+.carousel-inner .carousel-item img {
   object-fit: cover;
   object-position: center;
   height: 40vh;
@@ -79,17 +91,17 @@ input::-webkit-inner-spin-button {
   opacity: 45%;
 }
 
-.verde{
+.verde {
   color: #aca650;
 }
 
-.contenedor{
+.contenedor {
   position: relative;
   text-align: center;
   color: white;
 }
 
-.textoEnImagen{
+.textoEnImagen {
   position: absolute;
   bottom: 5%;
 }
@@ -105,23 +117,29 @@ input::-webkit-inner-spin-button {
   -webkit-transition-property: box-shadow, transform;
   transition-property: box-shadow, transform;
 }
-.hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
+
+.hvr-grow-shadow:hover,
+.hvr-grow-shadow:focus,
+.hvr-grow-shadow:active {
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+
 /*Catalogo Habitaciones*/
-.portadaHabitaciones{
+.portadaHabitaciones {
   position: relative;
   top: 0px;
 }
+
 .banner {
   object-fit: cover;
   height: 395px;
   width: 100%;
   filter: grayscale(60%);
 }
-.tiuloPrincipal{
+
+.tituloPrincipal {
   color: #eeeeee;
   position: absolute;
   top: 150px;
@@ -130,27 +148,42 @@ input::-webkit-inner-spin-button {
   bottom: 0;
   margin: auto;
 }
-.tiuloPrincipal h1{
+
+.tituloPrincipal h1 {
   font-size: 100px;
 }
-.contenedorDetalleHabitacion{
+
+.contenedorDetalleHabitacion {
   background: #b0b696;
-  color:  #485c70;
+  color: #485c70;
 }
-.imagenDetalleHabitacion{
+
+.imagenDetalleHabitacion {
   height: 500px;
   width: 100%;
   object-fit: cover;
 }
-.btnDetalleHabitacion {
+
+a.btnDetalleHabitacion {
   background: #485c70;
-  border:  #485c70 .1em solid;
-  color:#eeeeee
+  border: #485c70 0.1em solid;
+  color: #eeeeee;
+  width: 50%;
 }
-.descripcionHabitacion{
-  color:#485c70;
+
+a.btnDetalleHabitacion:hover {
+  background: #526980;
+  border: #485c70 0.1em solid;
+  color: #eeeeee;
+  width: 50%;
 }
+
+.descripcionHabitacion {
+  color: #485c70;
+}
+
 .cardCategoria {
+  min-height: 450px;
   transition: all 400ms ease;
 }
 
@@ -161,8 +194,8 @@ input::-webkit-inner-spin-button {
   transform: translateY(-3%);
 }
 
-@media screen and (max-width: 653px){
-  .tiuloPrincipal h1{
+@media screen and (max-width: 653px) {
+  .tituloPrincipal h1 {
     font-size: 35px;
   }
   .cardCategoria:hover {
