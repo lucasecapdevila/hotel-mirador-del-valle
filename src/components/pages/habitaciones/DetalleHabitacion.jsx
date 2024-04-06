@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container, Row, Col, Image, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { obtenerHabitacionAPI } from "../../../helpers/queries";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 const DetalleHabitacion = () => {
   const { id } = useParams();
   const [habitacion, setHabitacion] = useState({});
@@ -25,19 +26,21 @@ const DetalleHabitacion = () => {
     }
   };
   return (
-    <Container className="mainPage my-3">
+    <Container className="my-lg-5">
       <Row>
         <Col md={6} className="p-0">
-          <Image src={habitacion.imagenHabitacion}></Image>
-          <h5 className="mt-4"></h5>
-          <p>{habitacion.descripcionAmplia}</p>
+          <Image src={habitacion.imagenHabitacion} className="imagenDetalleHabitacion"></Image>
         </Col>
         <Col md={6} className="contenedorDetalleHabitacion text-center ">
-          <h1 className="display-4 fw-semibold my-5 titulos">
+          <h1 className="display-4 fw-semibold my-4 my-lg-5 titulos">
             {habitacion.tipoHabitacion}
           </h1>
-          <p className="my-5 fs-5">{habitacion.precioHabitacion}</p>
-          <p className="fs-5">{habitacion.disponibilidad}</p>
+          <p className=" fs-5 textos fw-medium">Precio: ${habitacion.precioHabitacion}</p>
+          <p className="fs-5 textos fw-medium">Disponibilidad: {habitacion.disponibilidad}</p>
+          <Link className=" btn btnDetalleHabitacion w-100 fw-semibold" >RESERVAR</Link>
+        </Col>
+        <Col md={12}>
+          <p className="textos my-5 fw-medium">Descripción: {habitacion.descripcionAmplia}</p>
         </Col>
       </Row>
     </Container>

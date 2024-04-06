@@ -114,3 +114,12 @@ input::-webkit-inner-spin-button {
   background: #b0b696;
   color:  #485c70;
 }
+.imagenDetalleHabitacion{
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+.btnDetalleHabitacion{
+  background: #485c70;
+  width: auto;
+}
