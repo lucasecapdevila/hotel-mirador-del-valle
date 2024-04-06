@@ -1,5 +1,4 @@
 import { Card, Col } from "react-bootstrap";
-import imagenCard from "../../../assets/habitacion_doble.jpg";
 import { Link } from "react-router-dom";
 
 const CardHabitacion = ({habitacion}) => {
@@ -8,7 +7,7 @@ const CardHabitacion = ({habitacion}) => {
       <Card>
         <Card.Img
           variant="top"
-          src={imagenCard}
+          src={habitacion.imagenHabitacion}
           className="card-img-top-nueva"
         />
         <Card.Body className="bodyCardHabitacion">

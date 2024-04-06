@@ -1,14 +1,26 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {Container} from "react-bootstrap";
+import CardHabitacion from "./habitaciones/CardHabitacion";
+import { leerHabitacionesAPI } from "../../helpers/queries"
 const Habitaciones = () => {
+    const [listaHabitaciones, setListaHabitaciones] = useState([])
+
+    useEffect(() => {
+      traerHabitaciones()
+    }, [])
+  
+    const traerHabitaciones = async() => {
+      try {
+        const listaHabitacionesAPI = await leerHabitacionesAPI()
+        setListaHabitaciones(listaHabitacionesAPI)
+      } catch (error) {
+        console.log(error);
+      }
+    }
   return (
-    <BrowserRouter>
-      <Route
-        exact
-        path="/detalleHabitacion/:id"
-        element={<DetalleHabitacion></DetalleHabitacion>}
-      ></Route>
-    </BrowserRouter>
+    <Container>
+        {listaHabitaciones.map((habitacion) => <CardHabitacion key={habitacion.id} habitacion={habitacion} />)}
+    </Container>
   );
 };
 
