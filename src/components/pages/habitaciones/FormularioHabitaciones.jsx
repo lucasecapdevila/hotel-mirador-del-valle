@@ -104,22 +104,21 @@ const FormularioHabitaciones = ({ editar, titulo }) => {
             <Form.Control
               type="number"
               placeholder="1, 2, 3..."
-              {...register("numeroHabitacion", {
-                required: "El número de la habitación es obligatorio.",
-                valueAsNumber: true,
-                min: {
-                  value: 1,
-                  message: "El número mínimo de habitación es 1.",
-                },
-                max: {
-                  value: 100,
-                  message: "El número máximo de habitación es 100.",
-                },
-              })}
-            />
-            <Form.Text className="text-danger">
-              {errors.numHabitacion?.message}
-            </Form.Text>
+              {
+                ...register("numeroHabitacion",{
+                  required: 'El número de la habitación es obligatorio.',
+                  valueAsNumber: true,
+                  min: {
+                    value: 1,
+                    message: 'El número mínimo de habitación es 1.'
+                  },
+                  max: {
+                    value: 100,
+                    message: 'El número máximo de habitación es 100.'
+                  }
+                })
+              }/>
+            <Form.Text className="text-danger">{errors.numeroHabitacion?.message}</Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formTipoHabitacion">
