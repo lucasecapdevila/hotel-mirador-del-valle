@@ -1,30 +1,24 @@
 import { Container } from 'react-bootstrap'
-
+import logo from "../../assets/iconWhite.png"
 
 const Footer = () => {
     return (
         <>
-        <footer className="text-center bg-dark text-light py-3">
-        <Container className='d-flex justify-content-center footerdiv'>
-        <div className="bg-primary col-sm-12 col-md-3 col-lg-3">
-        <p>Parrafo </p>
-        <p>Parrafo</p>
-        <p>Parrafo </p>
+        <footer className="bg-dark text-light py-3 d-flex justify-content-center">
+        <Container className='footerdiv row'>
+        <div className="col-lg-3 col-md-3">
+        <img src={logo} alt="logo mirador del valle hotel" className='mt-lg-4 footerimg'/>
         </div>
-        <div className="bg-primary col-sm-12 col-md-3 col-lg-3 mx-lg-3">
-        <p>Info footer</p>
-        <p>Info footer</p>
-        <a href="mailto:hotelmiradordelvalle.25.07@gmail.com" className='text-light'>hotelmiradordelvalle.25.07@gmail.com</a>
+        <div className="col-lg-4 mx-lg-auto col-md-4 mx-md-auto">
+        <h4 className="footerTitulo mt-2">CONTÁCTANOS</h4>
+        <p className='footerTexto'>Info footer</p>
+        <p className='footerTexto'>Info footer</p>
+        <p className='footerTexto'>Info footer</p>
         </div>
-        <div className="bg-primary col-sm-12 col-md-3 col-lg-3">
-        <p>Info footer</p>
-        <p>Info footer</p>
-        <p>Info footer</p>
-        </div>
-        <div className="bg-primary col-sm-12 col-md-3 col-lg-3 ms-lg-3">
-        <p>Info footer </p>
-        <p>Info footer </p>
-        <p>Info footer </p>
+        <div className="col-lg-4 col-md-4">
+        <p className='footerTexto'>Info footer</p>
+        <p className='footerTexto'>Info footer</p>
+        <p className='footerTexto'>Info footer</p>
         </div>
         </Container>
         </footer>
