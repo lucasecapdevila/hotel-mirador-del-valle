@@ -37,7 +37,7 @@ const DetalleHabitacion = () => {
           </h1>
           <p className=" fs-5 textos fw-medium">Precio: ${habitacion.precioHabitacion}</p>
           <p className="fs-5 textos fw-medium">Disponibilidad: {habitacion.disponibilidad}</p>
-          <Link className=" btn btnDetalleHabitacion w-100 fw-semibold" >RESERVAR</Link>
+          <Link className=" btn btnDetalleHabitacion textos fw-semibold" >RESERVAR</Link>
         </Col>
         <Col md={12}>
           <p className="textos my-5 fw-medium">Descripción: {habitacion.descripcionAmplia}</p>

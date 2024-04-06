@@ -110,6 +110,29 @@ input::-webkit-inner-spin-button {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+/*Catalogo Habitaciones*/
+.portadaHabitaciones{
+  position: relative;
+  top: 0px;
+}
+.banner {
+  object-fit: cover;
+  height: 395px;
+  width: 100%;
+  filter: grayscale(60%);
+}
+.tiuloPrincipal{
+  color: #eeeeee;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.tiuloPrincipal h1{
+  font-size: 100px;
+}
 .contenedorDetalleHabitacion{
   background: #b0b696;
   color:  #485c70;
@@ -119,7 +142,12 @@ input::-webkit-inner-spin-button {
   width: 100%;
   object-fit: cover;
 }
-.btnDetalleHabitacion{
+.btnDetalleHabitacion {
   background: #485c70;
-  width: auto;
+  border:  #485c70 .1em solid;
+}
+@media screen and (max-width: 767px){
+  .tiuloPrincipal h1{
+    font-size: 40px;
+  }
 }

@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 const CardHabitacion = ({habitacion}) => {
   return (
+    
     <Col md={4} className="mb-3">
-      <Card>
+      <Card className="my-3">
         <Card.Img
           variant="top"
           src={habitacion.imagenHabitacion}
@@ -17,6 +18,7 @@ const CardHabitacion = ({habitacion}) => {
         </Card.Body>
       </Card>
     </Col>
+    
   );
 };
 
