@@ -74,7 +74,7 @@ const DetalleHabitacion = () => {
         </Col>
         <Col md={12}>
           <p className="textos my-5 fw-bold descripcionHabitacion">
-            Descripción: {habitacion.descripcionAmplia}
+            <span className="fs-5">Descripción:</span> {habitacion.descripcionAmplia}
           </p>
         </Col>
       </Row>
