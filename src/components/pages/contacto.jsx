@@ -1,3 +1,6 @@
+import { faPlus } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Button, Container, Tab, Table, Tabs ,} from "react-bootstrap"
 
 
 
@@ -5,11 +8,12 @@
 
 return (
     <main>
+     <div>   
         <Container>
         <div class="box-info">
             <h1>CONTÁCTATE CON NOSOTROS</h1>
             <class="data">
-                
+
                 <p><i class="fa-solid fa-phone"></i> +54 3815457232</p>
                 <p><i class="fa-solid fa-envelope"></i> hotelmiradordelvalle@gmail.com</p>
                 <p><i class="fa-solid fa-location-dot"></i> av independencia 245 Tafi del Valle</p>
