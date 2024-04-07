@@ -1,3 +1,4 @@
+
 import { Container } from 'react-bootstrap'
 import logo from "../../assets/iconWhite.png"
 import { FaFacebook, FaInstagram } from 'react-icons/fa'
@@ -37,6 +38,7 @@ const Footer = () => {
         </footer>
         </>
     );
+
 };
 
 export default Footer;

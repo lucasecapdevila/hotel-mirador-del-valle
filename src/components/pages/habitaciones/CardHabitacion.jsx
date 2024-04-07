@@ -1,22 +1,28 @@
-import { Button, Card, Col } from "react-bootstrap";
-import imagenCard from "../../../assets/habitacion_doble.jpg";
+import { Card, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const CardHabitacion = () => {
+const CardHabitacion = ({ habitacion }) => {
   return (
     <Col md={4} className="mb-3">
-      <Card>
+      <Card className="my-3 cardCategoria">
         <Card.Img
           variant="top"
-          src={imagenCard}
+          src={habitacion.imagenHabitacion}
           className="card-img-top-nueva"
         />
-        <Card.Body className="bodyCardHabitacion">
-          <Card.Title>HABITACION DOBLE</Card.Title>
-          <Card.Text>
-            Las habitaciones dobles poseen todo lo necesario para compartir unos
-            días de descanso en pareja,
+        <Card.Body className="bodyCardHabitacion d-flex flex-column">
+          <Card.Title className="titulos">
+            {habitacion.tipoHabitacion}
+          </Card.Title>
+          <Card.Text className="textos">
+            {habitacion.descripcionBreve}
           </Card.Text>
-          <Button className="btnCardHabitacion">DETALLES</Button>
+          <Link
+            className="btn w-100 fw-semibold mt-auto btnCardHabitacion"
+            to={"/detalleHabitacion/" + habitacion.id}
+          >
+            DETALLES
+          </Link>
         </Card.Body>
       </Card>
     </Col>

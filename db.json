@@ -7,8 +7,8 @@
       "precioHabitacion": 7500,
       "disponibilidad": "Si",
       "imagenHabitacion": "https://images.pexels.com/photos/210265/pexels-photo-210265.jpeg",
-      "descripcionBreve": "asdadsasdasdasdasdasdads",
-      "descripcionAmplia": "asdadsasdasdasdasdasdadsasdadsasdasdasdasdasdads"
+      "descripcionBreve": "Las habitaciones dobles poseen todo lo necesario para compartir unos días de descanso en pareja",
+      "descripcionAmplia": "Las habitaciones dobles poseen todo lo necesario para compartir unos días de descanso en pareja, se encuentran equipadas con cama Queen Size, acolchado, toallas línea superior de 550g, alfombra de baño,amenities, caja de seguridad, servicio de wi fi libre, Tv por cable, piso parqué, calefacción centralizada, cortinas black out, servicio de limpieza a diario. Algunas habitaciones poseen bañadera y otras pie de ducha."
     },
     {
       "id": "6bdb",
@@ -17,8 +17,8 @@
       "precioHabitacion": 9000,
       "disponibilidad": "Si",
       "imagenHabitacion": "https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg",
-      "descripcionBreve": "fghfghfghfghfghfghfghfghfghfgh",
-      "descripcionAmplia": "fghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfghfgh"
+      "descripcionBreve": "Las habitaciones deluxe están pensadas para una estadía de amigos o familia",
+      "descripcionAmplia": "Las habitaciones deluxe twin están pensadas para una estadía de amigos o familia, decoradas con colores claros que invitan al descanso, se encuentran equipadas con dos camas singles, acolchados, toallas línea superior de 550g, amenities, alfombra de baño, caja de seguridad, servicio de wi fi libre, Tv por cable, piso parqué, calefacción centralizada, cortinas black out, servicio de limpieza a diario. Algunas habitaciones poseen bañadera y otras pie de ducha."
     },
     {
       "id": "62cd",
@@ -27,8 +27,8 @@
       "precioHabitacion": 25000,
       "disponibilidad": "No",
       "imagenHabitacion": "https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg",
-      "descripcionBreve": "jkljkljkljkljkljkljkljkljkljkljkljkl",
-      "descripcionAmplia": "jkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkljkl"
+      "descripcionBreve": "Habitación triple superior con baño privado 24 m2",
+      "descripcionAmplia": "Cómodas y acogedoras cuenta con una cama Queen size y una cama single, acolchados, toallas línea superior de 550g,amenities, bañadera, alfombra de baño, caja de seguridad, servicio de wi fi libre, Tv por cable, piso parqué, calefacción centralizada, cortinas black out, servicio de limpieza a diario."
     }
   ],
   "usuarios": [
@@ -36,13 +36,15 @@
       "userEmail": "admin@admin.com",
       "userPassword": "admin12345",
       "userName": "Administrador",
-      "rol": "Administrador"
+      "rol": "Administrador",
+      "id": "9d9e"
     },
     {
       "userEmail": "user@mail.com",
       "userPassword": "user12345",
       "userName": "lucas",
-      "rol": "Usuario"
+      "rol": "Usuario",
+      "id": "59ff"
     }
   ]
 }
