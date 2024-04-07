@@ -98,26 +98,6 @@ a.btnCardHabitacion:hover {
   background-color: black;
 }
 
-@media only screen and (max-width: 767px) {
-  .footerdiv{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  .footerdiv div{
-    width: 100%;
-    margin-top: 15px;
-  }
-  .footerimg{
-    width: 65%;
-  }
-}
-@media (min-width: 768px) and (max-width: 1200px){
-.gmailText{
-  font-size: 12px;
-}}
-=======
-
 /* Configuraciones de carrousel (página quienes somos) */
 .carousel-inner .carousel-item {
   background-color: black;
@@ -134,6 +114,10 @@ a.btnCardHabitacion:hover {
 
 .verde {
   color: #aca650;
+}
+
+.rojo{
+  color: #8F6A74;
 }
 
 .contenedor {
@@ -234,8 +218,26 @@ a.btnDetalleHabitacion:hover {
   -o-transform: translateY(-3%);
   transform: translateY(-3%);
 }
+.contenedorError{
+  background: #b0b696;
+  color: #485c70;
+  height: 400px;
+}
+.imagenError{
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+.tituloError{
+  font-family: "Playfair Display", serif;
+  font-size: 35px;
+  text-align: center;
+}
+#iconerror{
+  width: 90px;
+}
 
-@media screen and (max-width: 653px) {
+@media only screen and (max-width: 767px) {
   .tituloPrincipal h1 {
     font-size: 35px;
   }
@@ -244,5 +246,20 @@ a.btnDetalleHabitacion:hover {
     -o-transform: none;
     transform: none;
   }
+  .footerdiv{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .footerdiv div{
+    width: 100%;
+    margin-top: 15px;
+  }
+  .footerimg{
+    width: 65%;
+  }
 }
-
+@media (min-width: 768px) and (max-width: 1200px){
+.gmailText{
+  font-size: 12px;
+}}
