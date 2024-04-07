@@ -3,6 +3,7 @@ import logo from "../../assets/iconNav.png";
 import { Link, NavLink } from "react-router-dom";
 
 const Menu = () => {
+
   return (
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -44,6 +45,7 @@ const Menu = () => {
       </Navbar>
     </>
   );
+
 };
 
 export default Menu;
