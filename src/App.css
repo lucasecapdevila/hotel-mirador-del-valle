@@ -55,3 +55,216 @@ input::-webkit-inner-spin-button {
   height: 120px;
   resize: none;
 }
+
+a.btnCardHabitacion {
+  background: #aca650;
+  color: white;
+  width: 100%;
+  font-family: "Rubik", sans-serif;
+}
+
+a.btnCardHabitacion:hover {
+  background: #bcb66c;
+  color: white;
+  width: 100%;
+  font-family: "Rubik", sans-serif;
+}
+
+.bodyCardHabitacion .card-title,
+.card-text {
+  color: #485c70;
+}
+
+.card-img-top-nueva {
+  height: 200px;
+  object-fit: cover;
+}
+
+.footerTitulo{
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+}
+.footerTitulo2{
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+}
+.footerTexto{
+  font-family: "Poppins", sans-serif;
+}
+.footerimg{
+  width: 100%;
+}
+.button .footerIcon{
+  background-color: black;
+}
+
+/* Configuraciones de carrousel (página quienes somos) */
+.carousel-inner .carousel-item {
+  background-color: black;
+}
+
+.carousel-inner .carousel-item img {
+  object-fit: cover;
+  object-position: center;
+  height: 40vh;
+  width: 100%;
+  overflow: hidden;
+  opacity: 45%;
+}
+
+.verde {
+  color: #aca650;
+}
+
+.rojo{
+  color: #8F6A74;
+}
+
+.contenedor {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.textoEnImagen {
+  position: absolute;
+  bottom: 5%;
+}
+
+.hvr-grow-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+
+.hvr-grow-shadow:hover,
+.hvr-grow-shadow:focus,
+.hvr-grow-shadow:active {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/*Catalogo Habitaciones*/
+.portadaHabitaciones {
+  position: relative;
+  top: 0px;
+}
+
+.banner {
+  object-fit: cover;
+  height: 395px;
+  width: 100%;
+  filter: grayscale(60%);
+}
+
+.tituloPrincipal {
+  color: #eeeeee;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.tituloPrincipal h1 {
+  font-size: 100px;
+}
+
+.contenedorDetalleHabitacion {
+  background: #b0b696;
+  color: #485c70;
+}
+
+.imagenDetalleHabitacion {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+
+a.btnDetalleHabitacion {
+  background: #485c70;
+  border: #485c70 0.1em solid;
+  color: #eeeeee;
+  width: 50%;
+}
+
+a.btnDetalleHabitacion:hover {
+  background: #526980;
+  border: #485c70 0.1em solid;
+  color: #eeeeee;
+  width: 50%;
+}
+
+.descripcionHabitacion {
+  color: #485c70;
+}
+
+.cardCategoria {
+  min-height: 450px;
+  transition: all 400ms ease;
+}
+
+.cardCategoria:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateY(-3%);
+  -o-transform: translateY(-3%);
+  transform: translateY(-3%);
+}
+.contenedorError{
+  background: #b0b696;
+  color: #485c70;
+  height: 400px;
+}
+.imagenError{
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+.tituloError{
+  font-family: "Playfair Display", serif;
+  font-size: 35px;
+  text-align: center;
+}
+#iconerror{
+  width: 90px;
+}
+
+@media only screen and (max-width: 767px) {
+  .tituloPrincipal h1 {
+    font-size: 35px;
+  }
+  .cardCategoria:hover {
+    -webkit-transform: none;
+    -o-transform: none;
+    transform: none;
+  }
+  .footerdiv{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .footerdiv div{
+    width: 100%;
+    margin-top: 15px;
+  }
+  .footerimg{
+    width: 65%;
+  }
+  .descripcionerror{
+    margin-bottom: 0px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px){
+  .gmailText{
+    font-size: 12px;
+  }
+}
+
