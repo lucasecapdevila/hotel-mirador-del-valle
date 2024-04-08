@@ -72,7 +72,9 @@ export const borrarHabitacionAPI = async (id) => {
 //  Cuando tengamos backend, se realizará petición POST para el login
 const admin = {
   email: "hotelmiradordelvalle.25.07@gmail.com",
-  password: "hotelMiradorDelValle123"
+  password: "Grupo2Rolling",
+  rol: 'Administrador',
+  userName: 'Administrador'
 }
 
 export const login = (usuario) => {
