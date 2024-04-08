@@ -64,3 +64,22 @@ export const borrarHabitacionAPI = async (id) => {
     console.log(error);
   }
 };
+
+
+
+
+
+//  Cuando tengamos backend, se realizará petición POST para el login
+const admin = {
+  email: "hotelmiradordelvalle.25.07@gmail.com",
+  password: "hotelMiradorDelValle123"
+}
+
+export const login = (usuario) => {
+  if(usuario.email === admin.email && usuario.password === admin.password){
+    sessionStorage.setItem('inicioHotelMiradorDelValle', JSON.stringify(usuario.email))
+    return true
+  } else{
+    return false
+  }
+}
