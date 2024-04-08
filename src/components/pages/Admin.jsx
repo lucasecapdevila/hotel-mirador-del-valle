@@ -1,34 +1,39 @@
-import { faPlus } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Button, Container, Tab, Table, Tabs } from "react-bootstrap"
-import ItemHabitacion from "./habitaciones/ItemHabitacion"
-import { useEffect, useState } from "react"
-import { leerHabitacionesAPI } from "../../helpers/queries"
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Button, Container, Tab, Table, Tabs } from "react-bootstrap";
+import ItemHabitacion from "./habitaciones/ItemHabitacion";
+import { useEffect, useState } from "react";
+import { leerHabitacionesAPI } from "../../helpers/queries";
+import { Link } from "react-router-dom";
 
 const Admin = () => {
-  const [listaHabitaciones, setListaHabitaciones] = useState([])
+  const [listaHabitaciones, setListaHabitaciones] = useState([]);
 
   useEffect(() => {
-    traerHabitaciones()
-  }, [])
+    traerHabitaciones();
+  }, []);
 
-  const traerHabitaciones = async() => {
+  const traerHabitaciones = async () => {
     try {
-      const listaHabitacionesAPI = await leerHabitacionesAPI()
-      setListaHabitaciones(listaHabitacionesAPI)
+      const listaHabitacionesAPI = await leerHabitacionesAPI();
+      setListaHabitaciones(listaHabitacionesAPI);
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
-    <main className="my-3">
+    <main className="my-3 mainPage">
       <Container>
-        <Tabs fill defaultActiveKey='habitaciones'>
-          <Tab eventKey='habitaciones' title='Habitaciones'>
+        <Tabs fill defaultActiveKey="habitaciones">
+          <Tab eventKey="habitaciones" title="Habitaciones">
             <div className="d-flex align-items-center justify-content-between my-2">
-              <h2 className="fs-1 fw-bold text-center titulos">Administrador de habitaciones</h2>
-              <Button><FontAwesomeIcon icon={faPlus} /></Button>
+              <h2 className="fs-1 fw-bold text-center titulos">
+                Administrador de habitaciones
+              </h2>
+              <Link to="/administrador/crear" className="btn btn-primary">
+                <FontAwesomeIcon icon={faPlus} />
+              </Link>
             </div>
             <hr />
 
@@ -43,17 +48,25 @@ const Admin = () => {
                 </tr>
               </thead>
               <tbody>
-                {
-                  listaHabitaciones.map((habitacion) => <ItemHabitacion key={habitacion.id} habitacion={habitacion} setListaHabitaciones={setListaHabitaciones} />)
-                }
+                {listaHabitaciones.map((habitacion) => (
+                  <ItemHabitacion
+                    key={habitacion.id}
+                    habitacion={habitacion}
+                    setListaHabitaciones={setListaHabitaciones}
+                  />
+                ))}
               </tbody>
             </Table>
           </Tab>
 
-          <Tab eventKey='usuarios' title='Usuarios'>
+          <Tab eventKey="usuarios" title="Usuarios">
             <div className="d-flex align-items-center justify-content-between my-2">
-              <h2 className="fs-1 fw-bold titulos">Administrador de usuarios</h2>
-              <Button><FontAwesomeIcon icon={faPlus} /></Button>
+              <h2 className="fs-1 fw-bold titulos">
+                Administrador de usuarios
+              </h2>
+              <Button>
+                <FontAwesomeIcon icon={faPlus} />
+              </Button>
             </div>
             <hr />
 
@@ -73,11 +86,9 @@ const Admin = () => {
             </Table>
           </Tab>
         </Tabs>
-
-        
       </Container>
     </main>
-  )
-}
+  );
+};
 
-export default Admin
+export default Admin;
