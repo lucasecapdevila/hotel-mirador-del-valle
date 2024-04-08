@@ -44,23 +44,36 @@ const Error404 = () => {
                 ¿Quizás quieras visitar nuestra galería mientras esperas?
               </p>
               <div className="text-center d-flex mt-lg-4 mt-md-1">
-              <Link className=" btn btnDetalleHabitacion textos fw-semibold me-2" to="/galeria">
-                GALERIA
-              </Link>
-              <Link className=" btn btnDetalleHabitacion textos fw-semibold mx-2" to="/">
-                INICIO
-              </Link>
+                <Link
+                  className=" btn btnDetalleHabitacion textos fw-semibold me-2"
+                  to="/galeria"
+                >
+                  GALERIA
+                </Link>
+                <Link
+                  className=" btn btnDetalleHabitacion textos fw-semibold mx-2"
+                  to="/"
+                >
+                  INICIO
+                </Link>
+              </div>
             </div>
-            </div>
-           
           </Col>
           <Col md={12}>
             <p className="textos mt-3 fw-bold descripcionHabitacion">
               <span className="fs-5">
-                Descripción: Bienvenido a la "Habitación de los Sueños", una habitacion especial y misteriosa. Aquí
-                encontrarás almohadas de nubes y mantas de estrellas.
-                Lamentablemente, solo los soñadores más intrépidos pueden reservar aquí. Toca el boton de <Link
-            className="fw-semibol link-underline link-underline-opacity-0 text-secondary-emphasis" to="/inicio"> INICIO</Link> para regresar .
+                Descripción: Bienvenido a la "Habitación de los Sueños", una
+                habitacion especial y misteriosa. Aquí encontrarás almohadas de
+                nubes y mantas de estrellas. Lamentablemente, solo los soñadores
+                más intrépidos pueden reservar aquí. Toca el boton de{" "}
+                <Link
+                  className="fw-semibol link-underline link-underline-opacity-0 text-secondary-emphasis"
+                  to="/inicio"
+                >
+                  {" "}
+                  INICIO
+                </Link>{" "}
+                para regresar .
               </span>
             </p>
           </Col>
