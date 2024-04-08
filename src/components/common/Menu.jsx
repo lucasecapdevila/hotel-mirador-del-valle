@@ -33,6 +33,9 @@ const Menu = () => {
               <NavLink end className="nav-link" to="/contacto">
                 CONTACTO
               </NavLink>
+              <NavLink end className="nav-link" to="/login">
+                LOGIN
+              </NavLink>
               <NavLink end className="nav-link" to="/registro">
                 REGISTRO
               </NavLink>

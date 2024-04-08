@@ -8,7 +8,7 @@ import Habitaciones from "./components/pages/Habitaciones";
 import DetalleHabitacion from "./components/pages/habitaciones/DetalleHabitacion";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
-
+import Login from "./components/pages/Login";
 function App() {
   return (
     <BrowserRouter>
@@ -26,6 +26,7 @@ function App() {
         />
         <Route exact path="/habitaciones/" element={<Habitaciones></Habitaciones>} />
         <Route exact path="/detalleHabitacion/:id" element={<DetalleHabitacion></DetalleHabitacion>} />
+        <Route exact path="/login" element={<Login></Login>}></Route>
         <Route exact path="*" element={<Error404></Error404>} />
       </Routes>
       <Footer />
