@@ -73,7 +73,7 @@ const Login = ({setUsuarioLogueado}) => {
                   required: "El password es obligatorio",
                   minLength: { value: 8, message: "el minimo es de 8 caracteres" },
                   maxLength: {
-                    value: 12,
+                    value: 15,
                     message: "el maximo es de 15 caracteres",
                   },
                   pattern: {
