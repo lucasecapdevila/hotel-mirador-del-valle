@@ -12,7 +12,7 @@ import Login from "./components/pages/Login";
 import { useState } from "react";
 function App() {
   const usuario =
-  JSON.parse(sessionStorage.getItem("inicioRollingCoffe")) || "";
+  JSON.parse(sessionStorage.getItem("inicioHotelMiradorDelValle")) || "";
 const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
   return (
     <BrowserRouter>
