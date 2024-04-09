@@ -2,7 +2,7 @@ import { Form, Button, Card } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { login } from "../../helpers/queries";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Login = ({ setUsuarioLogueado }) => {
   const {
@@ -43,7 +43,7 @@ const Login = ({ setUsuarioLogueado }) => {
                 <Form.Label className="textos fw-bold">Email</Form.Label>
                 <Form.Control
                   type="email"
-                  placeholder="Ingrese un email"
+                  placeholder="Ej: juan_perez@gmail.com"
                   {...register("email", {
                     required: "El email es obligatorio",
                     minLength: {
@@ -68,10 +68,10 @@ const Login = ({ setUsuarioLogueado }) => {
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label className="textos fw-bold">Password</Form.Label>
+                <Form.Label className="textos fw-bold">Contraseña</Form.Label>
                 <Form.Control
                   type="password"
-                  placeholder="Password"
+                  placeholder=""
                   {...register("password", {
                     required: "El password es obligatorio",
                     minLength: {
@@ -99,7 +99,16 @@ const Login = ({ setUsuarioLogueado }) => {
               </Button>
             </Form>
           </Card.Body>
+          <div className="text-center textos azul mt-3">
+          <p>
+            ¿No tenes cuenta?
+            <Link className=" fw-semibold linkRegistro" to={"/error404/"}>
+              REGISTRATE
+            </Link>
+          </p>
+        </div>
         </Card>
+        
       </div>
     </div>
   );

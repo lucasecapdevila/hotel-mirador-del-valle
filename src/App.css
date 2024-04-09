@@ -119,7 +119,9 @@ a.btnCardHabitacion:hover {
 .rojo{
   color: #8F6A74;
 }
-
+.azul{
+  color:#485c70;
+}
 .contenedor {
   position: relative;
   text-align: center;
@@ -266,6 +268,10 @@ button.btnLogin:hover{
   background-image: url("../src/assets/fondo-login.png");
   background-size:cover;
   background-repeat: no-repeat;
+}
+a.linkRegistro{
+  color: #485c70;
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 767px) {
