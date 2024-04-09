@@ -119,7 +119,9 @@ a.btnCardHabitacion:hover {
 .rojo{
   color: #8F6A74;
 }
-
+.azul{
+  color:#485c70;
+}
 .contenedor {
   position: relative;
   text-align: center;
@@ -236,6 +238,41 @@ a.btnDetalleHabitacion:hover {
 #iconerror{
   width: 90px;
 }
+/*login*/
+.card.cardLogin {
+  width: 50% !important;
+  margin-top: 10%;
+}
+.cardLogin .card-header{
+  background: #b0b696;
+  color:#485c70;
+}
+.cardLogin .card-body{
+  background: #b0b696;
+  color:#485c70;
+}
+button.btnLogin {
+  background: #485c70;
+  border: #485c70 0.1em solid;
+  color: #eeeeee;
+  width: 50%;
+}
+button.btnLogin:hover{
+  background: #526980;
+  border: #485c70 0.1em solid;
+  color: #eeeeee;
+  width: 50%;
+}
+.fondoLogin{
+  height: 900px;
+  background-image: url("../src/assets/fondo-login.png");
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+a.linkRegistro{
+  color: #485c70;
+  text-decoration: none;
+}
 
 @media only screen and (max-width: 767px) {
   .tituloPrincipal h1 {
@@ -261,10 +298,18 @@ a.btnDetalleHabitacion:hover {
   .descripcionerror{
     margin-bottom: 0px;
   }
+  .card.cardLogin {
+    width: 100% !important;
+    
+  }
+  .fondoLogin{
+    height: 500px;
+  }
 }
 @media (min-width: 768px) and (max-width: 1200px){
   .gmailText{
     font-size: 12px;
   }
+  
 }
 

@@ -1,9 +1,14 @@
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import logo from "../../assets/iconNav.png";
-import { Link, NavLink } from "react-router-dom";
-
-const Menu = () => {
-
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
+  const navegacion = useNavigate();
+  const logout = ()=>{
+    sessionStorage.removeItem('inicioHotelMiradorDelValle')
+    setUsuarioLogueado("");
+    navegacion('/');
+  }
+  
   return (
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -33,12 +38,22 @@ const Menu = () => {
               <NavLink end className="nav-link" to="/contacto">
                 CONTACTO
               </NavLink>
+              {usuarioLogueado.length > 0 ? (
+              <>
+                <NavLink end className="nav-link" to="/administrador">
+                  ADMINISTRADOR
+                </NavLink>
+                <Button className="nav-link" variant="link" onClick={logout}>CERRAR SESION</Button>
+              </>
+            ) : (
+              <NavLink end className="nav-link" to="/login">
+                LOGIN
+              </NavLink>
+            )}
               <NavLink end className="nav-link" to="/registro">
                 REGISTRO
               </NavLink>
-              <NavLink end className="nav-link" to="/administrador">
-                ADMINISTRADOR
-              </NavLink>
+            
             </Nav>
           </Navbar.Collapse>
         </Container>
