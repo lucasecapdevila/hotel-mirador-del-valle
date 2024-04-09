@@ -10,6 +10,7 @@ import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
 import Login from "./components/pages/Login";
 function App() {
+  
   return (
     <BrowserRouter>
       <Menu />

@@ -32,14 +32,15 @@ const Login = ({setUsuarioLogueado}) => {
   };
 
   return (
-    <Container className="mainSection">
-      <Card className="my-5">
-        <Card.Header as="h5">Login</Card.Header>
+    <div className="mainPage fondoLogin">
+        <div className="d-flex justify-content-center">
+      <Card className="cardLogin p-md-1">
+        <Card.Header className="titulos fs-2" as="h5">Iniciar Sesión</Card.Header>
         <Card.Body>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
+              <Form.Label className="textos fw-bold">Email</Form.Label>
+              <Form.Control 
                 type="email"
                 placeholder="Ingrese un email"
                 {...register("email", {
@@ -64,7 +65,7 @@ const Login = ({setUsuarioLogueado}) => {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
+              <Form.Label className="textos fw-bold">Password</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Password"
@@ -86,13 +87,14 @@ const Login = ({setUsuarioLogueado}) => {
               </Form.Text>
             </Form.Group>
 
-            <Button variant="primary" type="submit">
-              Ingresar
+            <Button className="btnLogin w-100 fw-bold textos" type="submit">
+              INGRESAR
             </Button>
           </Form>
         </Card.Body>
       </Card>
-    </Container>
+    </div>
+    </div>
   );
 };
 
