@@ -1,4 +1,5 @@
 const URI_HABITACIONES = import.meta.env.VITE_API_HABITACIONES;
+const URI_USUARIOS = import.meta.env.VITE_API_USUARIOS;
 
 //  Solicitud tipo GET (o Request) para el array de habitaciones
 export const leerHabitacionesAPI = async () => {
@@ -66,6 +67,64 @@ export const borrarHabitacionAPI = async (id) => {
 };
 
 
+export const leerUsuarioAPI = async () => {
+  try {
+    const response = await fetch(URI_USUARIOS);
+    const listaUsuarios = await response.json();
+    return listaUsuarios;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+export const obtenerUsuarioAPI = async (id) => {
+  try {
+    const response = await fetch(`${URI_USUARIOS}/${id}`);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const crearUsuarioAPI = async (nuevoUsuario) => {
+  try {
+    const response = await fetch(URI_USUARIOS, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(nuevoUsuario),
+    });
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const editarUsuarioAPI = async (id, usuario) => {
+  try {
+    const response = await fetch(`${URI_USUARIOS}/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const borrarUsuarioAPI = async (id) => {
+  try {
+    const response = await fetch(`${URI_USUARIOS}/${id}`, {
+      method: "DELETE",
+    });
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 
 
