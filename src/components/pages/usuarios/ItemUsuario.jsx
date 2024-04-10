@@ -3,13 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 import {
-  borrarHabitacionAPI,
-  leerHabitacionesAPI,
+  borrarUsuarioAPI,
+  leerUsuarioAPI,
 } from "../../../helpers/queries";
 import { Link } from "react-router-dom";
 
-const ItemHabitacion = ({ usuario, setListaUsuarios }) => {
-  const borrarUsuarios = () => {
+const ItemUsuario = ({ usuario, setListaUsuarios }) => {
+  const borrarUsuario = () => {
     Swal.fire({
       title: "¿Estás seguro de eliminar el usuario?",
       text: "No podrás revertir este proceso.",
@@ -24,7 +24,7 @@ const ItemHabitacion = ({ usuario, setListaUsuarios }) => {
         const response = await borrarUsuarioAPI(usuario.id);
         if (response.status === 200) {
           const listaUsuariosActualizada = await leerUsuarioAPI();
-          setListaHabitaciones(listaUsuariosActualizada);
+          setListaUsuarios(listaUsuariosActualizada);
 
           Swal.fire({
             title: "Eliminado!",
@@ -44,19 +44,19 @@ const ItemHabitacion = ({ usuario, setListaUsuarios }) => {
 
   return (
     <tr>
-      <td>{habitacion.numeroHabitacion}</td>
-      <td>{habitacion.tipoHabitacion}</td>
-      <td className="text-center">${habitacion.precioHabitacion}</td>
-      <td className="text-center">{habitacion.disponibilidad}</td>
+      <td>{usuario.userName}</td>
+      <td>{usuario.rol}</td>
+      <td className="text-center">${usuario.userEmail}</td>
+      <td className="text-center">${usuario.userPassword}</td>
       <td className="anchoColumna">
         <div className="d-flex align-items-center justify-content-center">
           <Link
-            to={`/administrador/editar/${habitacion.id}`}
+            to={`/administrador/editar/${usuario.id}`}
             className="btn btn-warning ms-0 me-2"
           >
             <FontAwesomeIcon icon={faFilePen} />
           </Link>
-          <Button variant="danger" onClick={borrarHabitacion}>
+          <Button variant="danger" onClick={borrarUsuario}>
             <FontAwesomeIcon icon={faTrashCan} />
           </Button>
         </div>
@@ -65,4 +65,4 @@ const ItemHabitacion = ({ usuario, setListaUsuarios }) => {
   );
 };
 
-export default ItemHabitacion;
+export default ItemUsuario;
