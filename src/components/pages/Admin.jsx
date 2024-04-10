@@ -21,7 +21,20 @@ const Admin = () => {
       console.log(error);
     }
   };
+  const [listaUsuarios, setListaUsuarios] = useState([]);
 
+  useEffect(() => {
+    traerUsuarios();
+  }, []);
+
+  const traerUsuarios = async () => {
+    try {
+      const listaUsuariosAPI = await leerUsuariosAPI();
+      setListaUsuarios(listaUsuariosAPI);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <main className="my-3 mainPage">
       <Container>
@@ -73,15 +86,20 @@ const Admin = () => {
             <Table striped bordered responsive>
               <thead>
                 <tr className="text-center">
-                  <th>Algo de usuario</th>
-                  <th>Algo de usuario</th>
-                  <th>Algo de usuario</th>
-                  <th>Algo de usuario</th>
-                  <th>Algo de usuario</th>
+                  <th>Usuario</th>
+                  <th>Email</th>
+                  <th>Contraseña</th>
+                 
                 </tr>
               </thead>
               <tbody>
-                {/* <ItemHabitacion /> (Debe ser <ItemUsuario></ItemUsuario>*/}
+              {listaUsuarios.map((usuario) => (
+                  <ItemUsuario
+                    key={usuario.id}
+                    usuario={usuario}
+                    setListaUsuarios={setListaUsuarios}
+                  />
+                ))}
               </tbody>
             </Table>
           </Tab>
