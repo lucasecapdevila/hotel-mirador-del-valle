@@ -4,8 +4,9 @@ import { Button, Container, Tab, Table, Tabs } from "react-bootstrap";
 import ItemHabitacion from "./habitaciones/ItemHabitacion";
 import { useEffect, useState } from "react";
 import { leerHabitacionesAPI } from "../../helpers/queries";
+import { leerUsuarioAPI } from "../../helpers/queries";
 import { Link } from "react-router-dom";
-
+import ItemUsuario from "./usuarios/ItemUsuario";
 const Admin = () => {
   const [listaHabitaciones, setListaHabitaciones] = useState([]);
 
@@ -21,7 +22,20 @@ const Admin = () => {
       console.log(error);
     }
   };
+  const [listaUsuarios, setListaUsuarios] = useState([]);
 
+  useEffect(() => {
+    traerUsuarios();
+  }, []);
+
+  const traerUsuarios = async () => {
+    try {
+      const listaUsuariosAPI = await leerUsuarioAPI();
+      setListaUsuarios(listaUsuariosAPI);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <main className="my-3 mainPage">
       <Container>
@@ -73,15 +87,21 @@ const Admin = () => {
             <Table striped bordered responsive>
               <thead>
                 <tr className="text-center">
-                  <th>Algo de usuario</th>
-                  <th>Algo de usuario</th>
-                  <th>Algo de usuario</th>
-                  <th>Algo de usuario</th>
-                  <th>Algo de usuario</th>
+                  <th>Tipo de Usuario</th>
+                  <th>Usuario</th>
+                  <th>Email</th>
+                  <th>Contraseña</th>
+                 
                 </tr>
               </thead>
               <tbody>
-                {/* <ItemHabitacion /> (Debe ser <ItemUsuario></ItemUsuario>*/}
+              {listaUsuarios.map((usuario) => (
+                  <ItemUsuario
+                    key={usuario.id}
+                    usuario={usuario}
+                    setListaUsuarios={setListaUsuarios}
+                  />
+                ))}
               </tbody>
             </Table>
           </Tab>
