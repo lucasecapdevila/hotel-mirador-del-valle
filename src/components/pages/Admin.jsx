@@ -4,8 +4,9 @@ import { Button, Container, Tab, Table, Tabs } from "react-bootstrap";
 import ItemHabitacion from "./habitaciones/ItemHabitacion";
 import { useEffect, useState } from "react";
 import { leerHabitacionesAPI } from "../../helpers/queries";
+import { leerUsuarioAPI } from "../../helpers/queries";
 import { Link } from "react-router-dom";
-
+import ItemUsuario from "./usuarios/ItemUsuario";
 const Admin = () => {
   const [listaHabitaciones, setListaHabitaciones] = useState([]);
 
@@ -29,7 +30,7 @@ const Admin = () => {
 
   const traerUsuarios = async () => {
     try {
-      const listaUsuariosAPI = await leerUsuariosAPI();
+      const listaUsuariosAPI = await leerUsuarioAPI();
       setListaUsuarios(listaUsuariosAPI);
     } catch (error) {
       console.log(error);
