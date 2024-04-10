@@ -87,6 +87,7 @@ const Admin = () => {
             <Table striped bordered responsive>
               <thead>
                 <tr className="text-center">
+                  <th>Tipo de Usuario</th>
                   <th>Usuario</th>
                   <th>Email</th>
                   <th>Contraseña</th>

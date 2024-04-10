@@ -44,8 +44,8 @@ const ItemUsuario = ({ usuario, setListaUsuarios }) => {
 
   return (
     <tr>
-      <td>{usuario.userName}</td>
       <td>{usuario.rol}</td>
+      <td>{usuario.userName}</td>
       <td className="text-center">${usuario.userEmail}</td>
       <td className="text-center">${usuario.userPassword}</td>
       <td className="anchoColumna">
