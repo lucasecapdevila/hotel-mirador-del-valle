@@ -273,7 +273,19 @@ a.linkRegistro{
   color: #485c70;
   text-decoration: none;
 }
-
+#imgRegistro{
+  height: 350px;
+  margin-left: 10px;
+  width: 100%;
+}
+.card.cardRegistro {
+  width: 80% !important;
+  margin-top: 20px;
+}
+#formNombreUsuario{
+  height: 10px;
+  resize: none;
+}
 @media only screen and (max-width: 767px) {
   .tituloPrincipal h1 {
     font-size: 35px;

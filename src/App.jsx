@@ -10,6 +10,7 @@ import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
 import Login from "./components/pages/Login";
 import { useState } from "react";
+import Registro from "./components/pages/Registro";
 function App() {
   const usuario =
   JSON.parse(sessionStorage.getItem("inicioHotelMiradorDelValle")) || "";
@@ -31,6 +32,7 @@ const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
         />
         <Route exact path="/habitaciones/" element={<Habitaciones></Habitaciones>} />
         <Route exact path="/detalleHabitacion/:id" element={<DetalleHabitacion></DetalleHabitacion>} />
+        <Route exact path="/registro" element={<Registro></Registro>} />
         <Route exact path="*" element={<Error404></Error404>} />
       </Routes>
       <Footer />
