@@ -274,17 +274,24 @@ a.linkRegistro{
   text-decoration: none;
 }
 #imgRegistro{
-  height: 350px;
   margin-left: 10px;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .card.cardRegistro {
-  width: 80% !important;
+  width: 80% ;
   margin-top: 20px;
+  margin-bottom: 25px;
+  background: #EFF1EA;
+  color: #485c70;
 }
-#formNombreUsuario{
+#apellidoUser, #nombreUser, #userName{
   height: 10px;
   resize: none;
+}
+.registroBg{
+  background: #485c70;
 }
 @media only screen and (max-width: 767px) {
   .tituloPrincipal h1 {
@@ -317,11 +324,23 @@ a.linkRegistro{
   .fondoLogin{
     height: 500px;
   }
+  .cardRegistrosm{
+    flex-direction: column;
+  }
+  #imgRegistro{
+   text-align: center;
+  }
 }
 @media (min-width: 768px) and (max-width: 1200px){
   .gmailText{
     font-size: 12px;
   }
-  
+  .cardRegistrosm{
+    flex-direction: column;
+    text-align: center;
+  }
+  #imgRegistro{
+   text-align: center;
+  }
 }
 

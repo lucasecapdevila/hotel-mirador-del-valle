@@ -45,6 +45,16 @@
       "userName": "lucas",
       "rol": "Usuario",
       "id": "59ff"
+    },
+    {
+      "imgUser": "https://img.freepik.com/free-photo/portrait-beautiful-young-woman-standing-grey-wall_231208-10760.jpg?t=st=1713039298~exp=1713042898~hmac=013ed5fe49d6fbf67430db13c605bf2504432ec85b5bfce6d0dd195a4f69128d&w=740",
+      "userEmail": "ana@mail.com",
+      "userPassword": "user12345",
+      "userName": "Anita",
+      "nombreUser": "Ana",
+      "apellidoUser": "Diaz",
+      "rol": "Usuario",
+      "id": "3"
     }
   ]
 }
