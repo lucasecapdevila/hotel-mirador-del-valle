@@ -286,8 +286,9 @@ a.linkRegistro{
   background: #EFF1EA;
   color: #485c70;
 }
-#apellidoUser, #nombreUser, #userName{
-  height: 10px;
+.textareaForm{
+  height: 30px;
+  width: 100%;
   resize: none;
 }
 .registroBg{

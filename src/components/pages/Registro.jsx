@@ -16,7 +16,7 @@ const Registro = () => {
                 <Form className="d-flex cardRegistrosm">
                 <div className="d-flex flex-column col-lg-7">
 
-            <Form.Group className="mb-3" controlId="imgUser">
+            <Form.Group className="mb-3" controlId="formBasicImg">
             <Form.Label className="textos fw-bold">
                         Imagen para el Perfil:
             </Form.Label>
@@ -29,28 +29,28 @@ const Registro = () => {
             </Form.Text>
            </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="nombreUser">
+                    <Form.Group className="mb-3" controlId="formBasicName">
             <Form.Label className="textos fw-bold">
               Nombre:<span className="text-danger">*</span>
             </Form.Label>
             <Form.Control
               type="text"
               placeholder="Ej: Una habitación reconfortante."
-              as="textarea"
+              as="textarea" className="textareaForm"
             />
             <Form.Text className="text-danger">
               error
             </Form.Text>
 
           </Form.Group>
-                    <Form.Group className="mb-3" controlId="apellidoUser">
+                    <Form.Group className="mb-3" controlId="formBasicUserName">
             <Form.Label className="textos fw-bold">
               Apellido:<span className="text-danger">*</span>
             </Form.Label>
             <Form.Control
               type="text"
-              placeholder="Ej: Una habitación reconfortante."
-              as="textarea"
+              placeholder="Perez"
+              as="textarea" className="textareaForm"
             />
             <Form.Text className="text-danger">
               error
@@ -63,8 +63,8 @@ const Registro = () => {
             </Form.Label>
             <Form.Control
               type="text"
-              placeholder="Ej: Una habitación reconfortante."
-              as="textarea"
+              placeholder="Juan"
+              as="textarea" className="textareaForm"
             />
             <Form.Text className="text-danger">
               error
@@ -84,7 +84,7 @@ const Registro = () => {
           <Form.Label className="textos fw-bold">
           Contraseña
           </Form.Label>
-          <Form.Control type="password" placeholder="" />
+          <Form.Control type="password" placeholder="Password"/>
           <Form.Text className="text-danger">error</Form.Text>
           </Form.Group>
 
@@ -92,7 +92,7 @@ const Registro = () => {
                   <div className="d-flex justify-content-center">
                     <img
                       src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/78/c0/68/vista-del-ingreso-al.jpg?w=900&h=-1&s=1"
-                      alt=""
+                      alt="imagen de el usuario "
                       id="imgRegistro"
                     />
                   </div>
