@@ -313,3 +313,19 @@ a.linkRegistro{
   
 }
 
+.imagenReserva{
+  height: 25%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 990px) {
+  .imagenReserva{
+    width: 50% !important;
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  .imagenReserva{
+    width: 33% !important;
+  }
+}
