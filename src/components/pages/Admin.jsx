@@ -89,9 +89,10 @@ const Admin = () => {
                 <tr className="text-center">
                   <th>Tipo de Usuario</th>
                   <th>Usuario</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
                   <th>Email</th>
-                  <th>Contraseña</th>
-                 
+                  <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>

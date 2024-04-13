@@ -36,6 +36,8 @@
       "userEmail": "admin@admin.com",
       "userPassword": "admin12345",
       "userName": "Administrador",
+      "nombreUser": "Juan",
+      "apellidoUser": "Perez",
       "rol": "Administrador",
       "id": "9d9e"
     },
@@ -43,6 +45,8 @@
       "userEmail": "user@mail.com",
       "userPassword": "user12345",
       "userName": "lucas",
+      "nombreUser": "Lucas",
+      "apellidoUser": "Capdevilla",
       "rol": "Usuario",
       "id": "59ff"
     },
