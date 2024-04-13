@@ -102,7 +102,7 @@ const Login = ({ setUsuarioLogueado }) => {
           <div className="text-center textos azul mt-3">
           <p>
             ¿No tenes cuenta?
-            <Link className=" fw-semibold linkRegistro" to={"/error404/"}>
+            <Link className=" fw-semibold linkRegistro" to={"/registro"}>
               REGISTRATE
             </Link>
           </p>

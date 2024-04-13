@@ -35,9 +35,6 @@ const Registro = () => {
             type="file"
             placeholder="Ej: https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg"
             />
-            <Form.Text className="text-danger">
-            error
-            </Form.Text>
            </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicName">

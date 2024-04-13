@@ -78,9 +78,9 @@ const Admin = () => {
               <h2 className="fs-1 fw-bold titulos">
                 Administrador de usuarios
               </h2>
-              <Button>
+              <Link to="/registro" className="btn btn-primary">
                 <FontAwesomeIcon icon={faPlus} />
-              </Button>
+              </Link>
             </div>
             <hr />
 
