@@ -7,10 +7,8 @@ import { Container, Row } from "react-bootstrap";
 import CardHabitacion from "./habitaciones/CardHabitacion";
 import { leerHabitacionesAPI } from "../../helpers/queries";
 
-const Habitaciones = () => {
+const Habitaciones = ({fechaEntrada, setFechaEntrada, fechaSalida, setFechaSalida}) => {
   const [listaHabitaciones, setListaHabitaciones] = useState([]);
-  const [fechaEntrada, setFechaEntrada] = useState()
-  const [fechaSalida, setFechaSalida] = useState()
 
   useEffect(() => {
     traerHabitaciones();
