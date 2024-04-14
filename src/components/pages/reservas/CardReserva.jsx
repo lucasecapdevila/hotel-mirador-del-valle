@@ -1,13 +1,19 @@
 import { useEffect, useState } from "react";
 import { Button, Card, CardHeader, Col } from "react-bootstrap"
 import { obtenerHabitacionAPI } from "../../../helpers/queries";
+import dayjs from "dayjs";
 
-const CardReserva = ({id, fechaEntrada ,fechaSalida}) => {
+const CardReserva = ({id, fechaEntrada, fechaSalida}) => {
   const [habitacion, setHabitacion] = useState({});
 
   useEffect(() => {
     cargarDetalle();
   }, []);
+
+  const fecha1 = dayjs(fechaEntrada, "DD-MM-YYYY")
+  const fecha2 = dayjs(fechaSalida, "DD-MM-YYYY")
+  const diasTotales = fecha2.diff(fecha1, 'day') + 1
+  
 
   const cargarDetalle = async () => {
     const respuesta = await obtenerHabitacionAPI(id);
@@ -54,7 +60,7 @@ const CardReserva = ({id, fechaEntrada ,fechaSalida}) => {
                   <h2>Cantidades</h2>
                 </Card.Title>
                 <ul className="list-unstyled">
-                  <li className="fs-5 textos mb-2">Total de días: <span className="textosAlternativos">Veremos</span></li>
+                  <li className="fs-5 textos mb-2">Total de días: <span className="textosAlternativos">{diasTotales}</span></li>
                   <li className="fs-5 textos mb-2">Precio por día: <span className="textosAlternativos">${habitacion.precioHabitacion}</span></li>
                   <li className="fs-5 textos mb-2">Precio total: <span className="textosAlternativos">Precio * cantidad de días</span></li>
                 </ul>

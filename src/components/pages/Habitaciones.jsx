@@ -43,7 +43,7 @@ const Habitaciones = ({fechaEntrada, setFechaEntrada, fechaSalida, setFechaSalid
         </div>
       </div>
       <Container className="mainPage">
-        <Space direction="vertical" size={12}>
+        <Space className="mb-5" direction="vertical" size={12}>
           <RangePicker format="DD-MM-YYYY" onChange={filtrarPorFecha} />
         </Space>
         <Row>

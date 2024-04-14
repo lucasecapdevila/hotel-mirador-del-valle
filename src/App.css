@@ -66,8 +66,6 @@ a.btnCardHabitacion {
 a.btnCardHabitacion:hover {
   background: #bcb66c;
   color: white;
-  width: 100%;
-  font-family: "Rubik", sans-serif;
 }
 
 .bodyCardHabitacion .card-title,

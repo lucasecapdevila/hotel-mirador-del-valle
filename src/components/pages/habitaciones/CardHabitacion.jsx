@@ -11,25 +11,27 @@ const CardHabitacion = ({ habitacion, fechaEntrada, fechaSalida }) => {
           src={habitacion.imagenHabitacion}
           className="card-img-top-nueva"
         />
-        <Card.Body className="bodyCardHabitacion d-flex flex-column">
+        <Card.Body className="d-flex flex-column justify-content-between bodyCardHabitacion">
           <Card.Title className="titulos">
             {habitacion.tipoHabitacion}
           </Card.Title>
           <Card.Text className="textos">
             {habitacion.descripcionBreve}
           </Card.Text>
-          <Link
-            className="btn w-100 fw-semibold mt-auto btnCardHabitacion"
-            to={`/reservas/${habitacion.id}/${fechaEntrada}/${fechaSalida}`}
-          >
-            RESERVAR AHORA
-          </Link>
-          <Link
-            className="btn w-100 fw-semibold mt-auto btnCardHabitacion"
-            to={"/detalleHabitacion/" + habitacion.id}
-          >
-            VER DETALLES
-          </Link>
+          <div className="d-flex flex-column justify-content-end">
+            <Link
+              className="btn mb-3 w-100 fw-semibold mt-auto btnCardHabitacion"
+              to={`/reservas/${habitacion.id}/${fechaEntrada}/${fechaSalida}`}
+            >
+              RESERVAR AHORA
+            </Link>
+            <Link
+              className="btn w-100 fw-semibold mt-auto btnCardHabitacion"
+              to={"/detalleHabitacion/" + habitacion.id}
+            >
+              VER DETALLES
+            </Link>
+          </div>
         </Card.Body>
       </Card>
     </Col>
