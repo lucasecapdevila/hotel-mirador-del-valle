@@ -182,6 +182,17 @@ export const editarReservaAPI = async (id, reserva) => {
   }
 };
 
+export const borrarReservaAPI = async (id) => {
+  try {
+    const response = await fetch(`${URI_RESERVAS}/${id}`, {
+      method: "DELETE",
+    });
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 
 //  Cuando tengamos backend, se realizará petición POST para el login
 const admin = {
