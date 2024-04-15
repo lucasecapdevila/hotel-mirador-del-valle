@@ -167,6 +167,21 @@ export const crearReservaAPI = async (nuevaReserva) => {
   }
 };
 
+export const editarReservaAPI = async (id, reserva) => {
+  try {
+    const response = await fetch(`${URI_RESERVAS}/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(reserva),
+    });
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 
 //  Cuando tengamos backend, se realizará petición POST para el login
 const admin = {
