@@ -19,12 +19,15 @@ const CardHabitacion = ({ habitacion, fechaEntrada, fechaSalida }) => {
             {habitacion.descripcionBreve}
           </Card.Text>
           <div className="d-flex flex-column justify-content-end">
-            <Link
-              className="btn mb-3 w-100 fw-semibold mt-auto btnCardHabitacion"
-              to={`/reservas/${habitacion.id}/${fechaEntrada}/${fechaSalida}`}
-            >
-              RESERVAR AHORA
-            </Link>
+
+            {(fechaEntrada && fechaSalida) && (
+              <Link
+                className="btn mb-3 w-100 fw-semibold mt-auto btnCardHabitacion"
+                to={`/reservas/${habitacion.id}/${fechaEntrada}/${fechaSalida}`}
+              >
+                RESERVAR AHORA
+              </Link>
+            )}
             <Link
               className="btn w-100 fw-semibold mt-auto btnCardHabitacion"
               to={"/detalleHabitacion/" + habitacion.id}
