@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Card, CardHeader, Col } from "react-bootstrap"
-import { obtenerHabitacionAPI } from "../../../helpers/queries";
+import { crearReservaAPI, obtenerHabitacionAPI } from "../../../helpers/queries";
 import dayjs from "dayjs";
 
 const CardReserva = ({id, fechaEntrada, fechaSalida}) => {
@@ -28,6 +28,28 @@ const CardReserva = ({id, fechaEntrada, fechaSalida}) => {
       });
     }
   };
+
+  const reservarHabitacion = async () => {
+    const detallesReserva = {
+      habitacion,
+      idUsuario: "1234",
+      fechaEntrada,
+      fechaSalida,
+      precioTotal,
+      diasTotales
+    }
+
+    try {
+      const response = await crearReservaAPI(detallesReserva)
+      if(response.status === 201) {
+        console.log('Se reservó la habitación exitosamente');
+      } else{
+        console.log('Ocurrió un error');
+      }
+    } catch (error) {
+      
+    }
+  }
 
   return (
     <Col className="mb-3 mx-2 mx-md-0">
@@ -65,7 +87,7 @@ const CardReserva = ({id, fechaEntrada, fechaSalida}) => {
                   <li className="fs-5 textos mb-2">Precio total: <span className="textosAlternativos">${precioTotal}</span></li>
                 </ul>
               </div>
-              <Button className="w-100 m-auto ms-1 mb-0">Pagar ahora</Button>
+              <Button className="w-100 m-auto ms-1 mb-0" onClick={reservarHabitacion}>Pagar ahora</Button>
             </div>
           </div>
         </Card.Body>
