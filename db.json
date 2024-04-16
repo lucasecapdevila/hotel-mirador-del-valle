@@ -5,7 +5,7 @@
       "numeroHabitacion": 10,
       "tipoHabitacion": "Doble",
       "precioHabitacion": 7500,
-      "reservas": [],
+      "reservasActuales": [],
       "imagenHabitacion": "https://images.pexels.com/photos/210265/pexels-photo-210265.jpeg",
       "descripcionBreve": "Las habitaciones dobles poseen todo lo necesario para compartir unos días de descanso en pareja",
       "descripcionAmplia": "Las habitaciones dobles poseen todo lo necesario para compartir unos días de descanso en pareja, se encuentran equipadas con cama Queen Size, acolchado, toallas línea superior de 550g, alfombra de baño,amenities, caja de seguridad, servicio de wi fi libre, Tv por cable, piso parqué, calefacción centralizada, cortinas black out, servicio de limpieza a diario. Algunas habitaciones poseen bañadera y otras pie de ducha."
@@ -15,7 +15,7 @@
       "numeroHabitacion": 11,
       "tipoHabitacion": "Deluxe",
       "precioHabitacion": 9000,
-      "reservas": [],
+      "reservasActuales": [],
       "imagenHabitacion": "https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg",
       "descripcionBreve": "Las habitaciones deluxe están pensadas para una estadía de amigos o familia",
       "descripcionAmplia": "Las habitaciones deluxe twin están pensadas para una estadía de amigos o familia, decoradas con colores claros que invitan al descanso, se encuentran equipadas con dos camas singles, acolchados, toallas línea superior de 550g, amenities, alfombra de baño, caja de seguridad, servicio de wi fi libre, Tv por cable, piso parqué, calefacción centralizada, cortinas black out, servicio de limpieza a diario. Algunas habitaciones poseen bañadera y otras pie de ducha."
@@ -25,7 +25,7 @@
       "numeroHabitacion": 12,
       "tipoHabitacion": "Suite",
       "precioHabitacion": 25000,
-      "reservas": [],
+      "reservasActuales": [],
       "imagenHabitacion": "https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg",
       "descripcionBreve": "Habitación triple superior con baño privado 24 m2",
       "descripcionAmplia": "Cómodas y acogedoras cuenta con una cama Queen size y una cama single, acolchados, toallas línea superior de 550g,amenities, bañadera, alfombra de baño, caja de seguridad, servicio de wi fi libre, Tv por cable, piso parqué, calefacción centralizada, cortinas black out, servicio de limpieza a diario."
@@ -35,7 +35,18 @@
       "numeroHabitacion": 86,
       "tipoHabitacion": "Twin",
       "precioHabitacion": 10000,
-      "reservas": [],
+      "reservasActuales": [
+        {
+          "id": "c14b",
+          "habitacion": 86,
+          "idHabitacion": "7e6c",
+          "idUsuario": "1234",
+          "fechaEntrada": "17-04-2024",
+          "fechaSalida": "20-04-2024",
+          "precioTotal": 40000,
+          "diasTotales": 4
+        }
+      ],
       "imagenHabitacion": "https://images.pexels.com/photos/3659683/pexels-photo-3659683.jpeg",
       "descripcionBreve": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias pariatur,",
       "descripcionAmplia": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias itaque possimus cumque illum error animi saepe accusamus officia porro libero delectus nulla quas, ducimus explicabo inventore quo soluta doloremque sunt.\n    Enim exercitationem tempore adipisci iusto, placeat labore veritatis sit consequatur temporibus eveniet quisquam maiores laudantium deleniti! Aut fugiat veritatis facere. Provident ab totam minus magni, magnam ratione dolor ex voluptate."
@@ -58,15 +69,6 @@
     }
   ],
   "reservas": [
-    {
-      "id": "c14b",
-      "habitacion": 86,
-      "idHabitacion": "7e6c",
-      "idUsuario": "1234",
-      "fechaEntrada": "17-04-2024",
-      "fechaSalida": "20-04-2024",
-      "precioTotal": 40000,
-      "diasTotales": 4
-    }
+    
   ]
 }

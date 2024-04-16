@@ -8,7 +8,6 @@ import dayjs from "dayjs";
 
 const CardReserva = ({ id, fechaEntrada, fechaSalida }) => {
   const [habitacion, setHabitacion] = useState({});
-  console.log(habitacion);
 
   useEffect(() => {
     cargarDetalle();
@@ -44,14 +43,14 @@ const CardReserva = ({ id, fechaEntrada, fechaSalida }) => {
       diasTotales,
     };
 
-    habitacion.reservas.push({
+    habitacion.reservasActuales.push({
       idReserva: "1234",
       fechaEntrada,
       fechaSalida,
       idUsuario: "1234",
       estado: "Confirmado",
     });
-    console.log(habitacion.reservas);
+    console.log(habitacion.reservasActuales);
 
     try {
       const response = await crearReservaAPI(detallesReserva);
