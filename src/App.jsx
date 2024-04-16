@@ -34,6 +34,7 @@ function App() {
         />
         <Route exact path="/habitaciones/" element={<Habitaciones fechaEntrada={fechaEntrada} setFechaEntrada={setFechaEntrada} fechaSalida={fechaSalida} setFechaSalida={setFechaSalida}></Habitaciones>} />
         <Route exact path="/detalleHabitacion/:id/" element={<DetalleHabitacion fechaEntrada={fechaEntrada} fechaSalida={fechaSalida}></DetalleHabitacion>} />
+        <Route exact path="/reservas/" element={<Reservas></Reservas>} />
         <Route exact path="/reservas/:id/:fechaEntrada/:fechaSalida" element={<Reservas></Reservas>} />
         <Route exact path="*" element={<Error404></Error404>} />
       </Routes>

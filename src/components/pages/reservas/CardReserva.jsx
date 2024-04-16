@@ -1,19 +1,23 @@
 import { useEffect, useState } from "react";
-import { Button, Card, CardHeader, Col } from "react-bootstrap"
-import { crearReservaAPI, obtenerHabitacionAPI } from "../../../helpers/queries";
+import { Button, Card, CardHeader, Col } from "react-bootstrap";
+import {
+  crearReservaAPI,
+  obtenerHabitacionAPI,
+} from "../../../helpers/queries";
 import dayjs from "dayjs";
 
-const CardReserva = ({id, fechaEntrada, fechaSalida}) => {
+const CardReserva = ({ id, fechaEntrada, fechaSalida }) => {
   const [habitacion, setHabitacion] = useState({});
+  console.log(habitacion);
 
   useEffect(() => {
     cargarDetalle();
   }, []);
 
-  const fecha1 = dayjs(fechaEntrada, "DD-MM-YYYY")
-  const fecha2 = dayjs(fechaSalida, "DD-MM-YYYY")
-  const diasTotales = fecha2.diff(fecha1, 'day') + 1
-  const precioTotal = diasTotales * habitacion.precioHabitacion
+  const fechaE = dayjs(fechaEntrada, "DD-MM-YYYY");
+  const fechaS = dayjs(fechaSalida, "DD-MM-YYYY");
+  const diasTotales = fechaS.diff(fechaE, "day") + 1;
+  const precioTotal = diasTotales * habitacion.precioHabitacion;
 
   const cargarDetalle = async () => {
     const respuesta = await obtenerHabitacionAPI(id);
@@ -31,25 +35,33 @@ const CardReserva = ({id, fechaEntrada, fechaSalida}) => {
 
   const reservarHabitacion = async () => {
     const detallesReserva = {
-      habitacion,
+      habitacion: habitacion.numeroHabitacion,
+      idHabitacion: habitacion.id,
       idUsuario: "1234",
       fechaEntrada,
       fechaSalida,
       precioTotal,
-      diasTotales
-    }
+      diasTotales,
+    };
+
+    habitacion.reservas.push({
+      idReserva: "1234",
+      fechaEntrada,
+      fechaSalida,
+      idUsuario: "1234",
+      estado: "Confirmado",
+    });
+    console.log(habitacion.reservas);
 
     try {
-      const response = await crearReservaAPI(detallesReserva)
-      if(response.status === 201) {
-        console.log('Se reservó la habitación exitosamente');
-      } else{
-        console.log('Ocurrió un error');
+      const response = await crearReservaAPI(detallesReserva);
+      if (response.status === 201) {
+        console.log("Se reservó la habitación exitosamente");
+      } else {
+        console.log("Ocurrió un error");
       }
-    } catch (error) {
-      
-    }
-  }
+    } catch (error) {}
+  };
 
   return (
     <Col className="mb-3 mx-2 mx-md-0">
@@ -71,10 +83,26 @@ const CardReserva = ({id, fechaEntrada, fechaSalida}) => {
                   <h2>Detalles de la Reserva</h2>
                 </Card.Title>
                 <ul className="list-unstyled">
-                  <li className="fs-5 textos mb-2">Nombre: <span className="textosAlternativos">{id}</span></li>
-                  <li className="fs-5 textos mb-2">Fecha de Entrada: <span className="textosAlternativos">{fechaEntrada}</span></li>
-                  <li className="fs-5 textos mb-2">Fecha de Salida: <span className="textosAlternativos">{fechaSalida}</span></li>
-                  <li className="fs-5 textos mb-2">Cantidad máxima de personas: <span className="textosAlternativos">3</span></li>
+                  <li className="fs-5 textos mb-2">
+                    Nombre:{" "}
+                    <span className="textosAlternativos">
+                      {JSON.parse(
+                        sessionStorage.getItem("inicioHotelMiradorDelValle")
+                      )}
+                    </span>
+                  </li>
+                  <li className="fs-5 textos mb-2">
+                    Fecha de Entrada:{" "}
+                    <span className="textosAlternativos">{fechaEntrada}</span>
+                  </li>
+                  <li className="fs-5 textos mb-2">
+                    Fecha de Salida:{" "}
+                    <span className="textosAlternativos">{fechaSalida}</span>
+                  </li>
+                  <li className="fs-5 textos mb-2">
+                    Cantidad máxima de personas:{" "}
+                    <span className="textosAlternativos">3</span>
+                  </li>
                 </ul>
               </div>
               <div>
@@ -82,18 +110,34 @@ const CardReserva = ({id, fechaEntrada, fechaSalida}) => {
                   <h2>Cantidades</h2>
                 </Card.Title>
                 <ul className="list-unstyled">
-                  <li className="fs-5 textos mb-2">Total de días: <span className="textosAlternativos">{diasTotales}</span></li>
-                  <li className="fs-5 textos mb-2">Precio por día: <span className="textosAlternativos">${habitacion.precioHabitacion}</span></li>
-                  <li className="fs-5 textos mb-2">Precio total: <span className="textosAlternativos">${precioTotal}</span></li>
+                  <li className="fs-5 textos mb-2">
+                    Total de días:{" "}
+                    <span className="textosAlternativos">{diasTotales}</span>
+                  </li>
+                  <li className="fs-5 textos mb-2">
+                    Precio por día:{" "}
+                    <span className="textosAlternativos">
+                      ${habitacion.precioHabitacion}
+                    </span>
+                  </li>
+                  <li className="fs-5 textos mb-2">
+                    Precio total:{" "}
+                    <span className="textosAlternativos">${precioTotal}</span>
+                  </li>
                 </ul>
               </div>
-              <Button className="w-100 m-auto ms-1 mb-0" onClick={reservarHabitacion}>Pagar ahora</Button>
+              <Button
+                className="w-100 m-auto ms-1 mb-0"
+                onClick={reservarHabitacion}
+              >
+                Pagar ahora
+              </Button>
             </div>
           </div>
         </Card.Body>
       </Card>
     </Col>
-  )
-}
+  );
+};
 
-export default CardReserva
+export default CardReserva;
