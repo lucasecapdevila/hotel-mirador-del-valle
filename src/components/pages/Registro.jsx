@@ -29,14 +29,26 @@ const Registro = () => {
 
             <Form.Group className="mb-3" controlId="formBasicImg">
             <Form.Label className="textos fw-bold">
-                        Imagen para el Perfil:
+                        Imagen para el Perfil:<span className="text-danger">*</span>
             </Form.Label>
             <Form.Control
             type="file"
             placeholder="Ej: https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg"
+            {...register("imgUser", {
+              required:
+                "Ingresar una imagen es obligatorio",
+              pattern: {
+                value: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/,
+                message:
+                  "La imagen ingresada debe ser una imagen de formato .jpg, .jpeg, .png o .gif.",
+              },
+            })}
             />
+             <Form.Text className="text-danger">
+            {errors.imgUser?.message}
+            </Form.Text>
            </Form.Group>
-
+           
                     <Form.Group className="mb-3" controlId="formBasicName">
             <Form.Label className="textos fw-bold">
               Nombre:<span className="text-danger">*</span>
@@ -55,9 +67,9 @@ const Registro = () => {
                     "Debe ingresar como mínimo 3 carácteres para el nombre de usuario.",
                 },
                 maxLength: {
-                  value: 15,
+                  value: 30,
                   message:
-                    "Puede ingresar como máximo 15 carácteres para el nombre de usuario.",
+                    "Puede ingresar como máximo 30 carácteres para el nombre de usuario.",
                 },
               })}
 
@@ -85,9 +97,9 @@ const Registro = () => {
                     "Debe ingresar como mínimo 3 carácteres para el apellido de usuario.",
                 },
                 maxLength: {
-                  value: 20,
+                  value: 30,
                   message:
-                    "Puede ingresar como máximo 20 carácteres para el apellido de usuario.",
+                    "Puede ingresar como máximo 30 carácteres para el apellido de usuario.",
                 },
               })}
 
