@@ -31,6 +31,7 @@ const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
         />
         <Route exact path="/habitaciones/" element={<Habitaciones></Habitaciones>} />
         <Route exact path="/detalleHabitacion/:id" element={<DetalleHabitacion></DetalleHabitacion>} />
+        <Route exact path="/contacto/id" element={<Contacto></Contacto>} />
         <Route exact path="*" element={<Error404></Error404>} />
       </Routes>
       <Footer />
