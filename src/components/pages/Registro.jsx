@@ -25,7 +25,7 @@ const Registro = () => {
               </Card.Header>
               <Card.Body>
                 <Form className="d-flex cardRegistrosm" onSubmit={handleSubmit(usuarioLogueado)}>
-                <div className="d-flex flex-column col-lg-7">
+                <div className="d-flex flex-column col-lg-7 cardText">
 
             <Form.Group className="mb-3" controlId="formBasicImg">
             <Form.Label className="textos fw-bold">

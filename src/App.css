@@ -333,7 +333,7 @@ a.linkRegistro{
    margin-top: 8px;
   }
 }
-@media (min-width: 768px) and (max-width: 1200px){
+@media (min-width: 768px) and (max-width: 1000px){
   .gmailText{
     font-size: 12px;
   }
@@ -343,6 +343,13 @@ a.linkRegistro{
   }
   #imgRegistro{
    text-align: center;
+  }
+  .cardText{
+    margin: 0 auto;
+    width: 100%;
+  }
+  .btnLogin{
+    margin-bottom: 15px;
   }
 }
 
