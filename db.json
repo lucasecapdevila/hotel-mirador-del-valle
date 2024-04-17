@@ -69,6 +69,25 @@
     }
   ],
   "reservas": [
-    
+    {
+      "id": "c87b",
+      "habitacion": 10,
+      "idHabitacion": "e1e7",
+      "idUsuario": "1234",
+      "fechaEntrada": "17-04-2024",
+      "fechaSalida": "20-04-2024",
+      "precioTotal": 30000,
+      "diasTotales": 4
+    },
+    {
+      "id": "35ad",
+      "habitacion": 11,
+      "idHabitacion": "6bdb",
+      "idUsuario": "1234",
+      "fechaEntrada": "16-05-2024",
+      "fechaSalida": "19-05-2024",
+      "precioTotal": 36000,
+      "diasTotales": 4
+    }
   ]
 }

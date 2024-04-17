@@ -8,6 +8,8 @@ import { Container, Row } from "react-bootstrap";
 import CardHabitacion from "./habitaciones/CardHabitacion";
 import { leerHabitacionesAPI } from "../../helpers/queries";
 
+dayjs.extend(isBetween);
+
 const Habitaciones = ({
   fechaEntrada,
   setFechaEntrada,
@@ -68,9 +70,9 @@ const Habitaciones = ({
       if(disponible === true || habitacionTemporal.reservasActuales.length == 0){
         habitacionesTemporales.push(habitacionTemporal)
       }
+      setListaHabitaciones(habitacionesTemporales)
     });
     
-    setListaHabitaciones(habitacionesTemporales)
   };
 
   return (
