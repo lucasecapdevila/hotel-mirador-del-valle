@@ -52,7 +52,7 @@ const ItemUsuario = ({ usuario, setListaUsuarios }) => {
       <td className="anchoColumna">
         <div className="d-flex align-items-center justify-content-center">
           <Link
-            to={`/administrador/editar/${usuario.id}`}
+            to={`/administrador/editarusuario/${usuario.id}`}
             className="btn btn-warning ms-0 me-2"
           >
             <FontAwesomeIcon icon={faFilePen} />

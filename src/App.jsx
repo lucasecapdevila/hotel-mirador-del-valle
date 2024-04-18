@@ -21,6 +21,7 @@ const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
       <Routes>
         <Route exact path="/quienesSomos" element={<QuienesSomos></QuienesSomos>} />
         <Route exact path="/login" element={<Login setUsuarioLogueado = {setUsuarioLogueado}></Login>}></Route>
+        <Route exact path='/registro' element={<Registro editar={false} titulo='Agrega tu Usuario!!'></Registro>} />
         <Route
           exact
           path="/administrador/*"

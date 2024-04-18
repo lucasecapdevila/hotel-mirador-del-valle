@@ -1,18 +1,95 @@
 import { Form, Button, Card } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import {
+  crearUsuarioAPI,
+  editarUsuarioAPI,
+  obtenerUsuarioAPI,
+} from "../../helpers/queries";
+import { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-const Registro = () => {
 
-  const{
+const Registro = ({ editar, titulo, rol }) => {
+  const { id } = useParams();
+  const navegacion = useNavigate();
+
+  useEffect(() => {
+    if (editar) {
+      cargarDatosEnFormulario();
+    }
+  }, []);
+
+  const {
     register,
     handleSubmit,
+    reset,
+    setValue,
     formState: { errors },
-  } = useForm ()
+  } = useForm();
 
- const usuarioLogueado = (usuarioform) => {
- console.log(usuarioform)
- }
+  const cargarDatosEnFormulario = async () => {
+
+    const response = await obtenerUsuarioAPI(id);
+    if (response.status === 200) {
+      const usuarioBuscado = await response.json();
+      //  Mostrar datos en el formulario:
+      setValue("imgUser", usuarioBuscado.imgUser);
+      setValue("nombreUser", usuarioBuscado.nombreUser);
+      setValue("apellidoUser", usuarioBuscado.apellidoUser);
+      setValue("userName", usuarioBuscado.userName);
+      setValue("userEmail", usuarioBuscado.userEmail);
+      setValue("userPassword", usuarioBuscado.userPassword);
+    } else {
+      Swal.fire({
+        title: "Ocurrió un error",
+        text: "Intente realizar esta operación en unos minutos.",
+        icon: "error",
+      });
+    }
+  };
+
+  const usuarioValidado = async (usuario) => {
+    try {
+      if (editar) {
+        const response = await editarUsuarioAPI(id, usuario);
+        if (response.status === 200) {
+          Swal.fire({
+            title: "Usuario editado",
+            text: `El usuario ${usuario.userName} fue modificado exitosamente.`,
+            icon: "success",
+          });
+          //  Redireccionar a tabla de Admin una vez termine la edición
+          navegacion("/administrador");
+        } else {
+          Swal.fire({
+            title: "Ocurrió un error",
+            text: "Intente modificar los datos en unos minutos.",
+            icon: "error",
+          });
+        }
+      } else {
+        const response = await crearUsuarioAPI(usuario);
+        if (response.status === 201) {
+          Swal.fire({
+            title: "Usuario creado",
+            text: `El usuario ${usuario.userName} fue creado exitosamente.`,
+            icon: "success",
+          });
+          reset();
+        } else {
+          Swal.fire({
+            title: "Ocurrió un error",
+            text: "Intente modificar los datos en unos minutos.",
+            icon: "error",
+          });
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -21,10 +98,10 @@ const Registro = () => {
           <div className="d-flex justify-content-center">
             <Card className="cardRegistro p-md-1" sm={12} >
               <Card.Header className="titulos fs-2" as="h5">
-                Iniciar Sesión
+              {titulo}
               </Card.Header>
               <Card.Body>
-                <Form className="d-flex cardRegistrosm" onSubmit={handleSubmit(usuarioLogueado)}>
+                <Form className="d-flex cardRegistrosm" onSubmit={handleSubmit(usuarioValidado)}>
                 <div className="d-flex flex-column col-lg-7 cardText">
 
             <Form.Group className="mb-3" controlId="formBasicImg">
@@ -32,7 +109,7 @@ const Registro = () => {
                         Imagen para el Perfil:<span className="text-danger">*</span>
             </Form.Label>
             <Form.Control
-            type="file"
+            type="text"
             placeholder="Ej: https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg"
             {...register("imgUser", {
               required:

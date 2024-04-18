@@ -59,6 +59,35 @@
       "apellidoUser": "Diaz",
       "rol": "Usuario",
       "id": "3"
+    },
+    {
+      "imgUser": "https://img.freepik.com/free-photo/smiling-portrait-blonde-young-woman-against-green-backdrop_23-2148178148.jpg?t=st=1713399314~exp=1713402914~hmac=1249d044cbf65daf3180792f066ba4052e77bb1291086134a848bd44df7e0345&w=360",
+      "nombreUser": "Guadalupe",
+      "apellidoUser": "Suarez",
+      "userName": "Guadydy_23",
+      "userEmail": "triplettt127@gmail.com",
+      "userPassword": "Cony1905",
+      "id": "92f7"
+    },
+    {
+      "id": "f230",
+      "imgUser": "https://img.freepik.com/free-photo/confident-stylish-guy-with-tattoos-posing-apartment-balcony_74855-2711.jpg?t=st=1713400453~exp=1713404053~hmac=f3066dd39d9cb3140494aa111cca11d0d66c55c420646ad470413d2f88b4ce56&w=740",
+      "nombreUser": "Prueba",
+      "apellidoUser": "Persona",
+      "userName": "Random",
+      "userEmail": "ramdon1@gmail.com",
+      "userPassword": "Random123",
+      "rol": "Usuario"
+    },
+    {
+      "id": "58f9",
+      "imgUser": "https://free4kwallpapers.com/uploads/originals/2016/04/28/leo-messi-wallpaper.jpg",
+      "nombreUser": "Lionel Andrés",
+      "apellidoUser": "Messi",
+      "userName": "Messi",
+      "userEmail": "messi10@gmail.com",
+      "userPassword": "Mundial2023",
+      "rol": "Usuario"
     }
   ]
 }
