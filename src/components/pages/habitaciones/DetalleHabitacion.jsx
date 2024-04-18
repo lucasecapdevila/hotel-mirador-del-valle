@@ -10,7 +10,9 @@ import { useParams } from "react-router-dom";
 import { obtenerHabitacionAPI } from "../../../helpers/queries";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
-const DetalleHabitacion = () => {
+
+const DetalleHabitacion = (fechaEntrada, fechaSalida) => {
+
   const { id } = useParams();
   const [habitacion, setHabitacion] = useState({});
 
@@ -66,7 +68,7 @@ const DetalleHabitacion = () => {
               </span>
             </div>
           </div>
-          <Link className=" btn btnDetalleHabitacion textos fw-semibold m-5 ms-0 ms-lg-5">
+          <Link to={`/reservas/${id}/${fechaEntrada}/${fechaSalida}`} className="btn btnDetalleHabitacion textos fw-semibold m-5 ms-0 ms-lg-5">
             RESERVAR
           </Link>
         </Col>
