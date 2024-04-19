@@ -56,16 +56,18 @@ input::-webkit-inner-spin-button {
   resize: none;
 }
 
-a.btnCardHabitacion {
+.card-body .btnCardHabitacion {
   background: #aca650;
   color: white;
+  border: #bcb66c 0.1em solid;
   width: 100%;
   font-family: "Rubik", sans-serif;
 }
 
-a.btnCardHabitacion:hover {
+.card-body .btnCardHabitacion:hover {
   background: #bcb66c;
   color: white;
+  border: #bcb66c 0.1em solid;
 }
 
 .bodyCardHabitacion .card-title,
