@@ -173,7 +173,7 @@ const FormularioHabitaciones = ({ editar, titulo }) => {
             </Form.Text>
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formDisponibilidad">
+          {/* <Form.Group className="mb-3" controlId="formDisponibilidad">
             <Form.Label>
               Disponibilidad de habitación<span className="text-danger">*</span>
             </Form.Label>
@@ -189,7 +189,7 @@ const FormularioHabitaciones = ({ editar, titulo }) => {
             <Form.Text className="text-danger">
               {errors.disponibilidad?.message}
             </Form.Text>
-          </Form.Group>
+          </Form.Group> */}
 
           <Form.Group className="mb-3" controlId="formImagen">
             <Form.Label>
