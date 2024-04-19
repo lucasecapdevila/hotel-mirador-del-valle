@@ -77,7 +77,7 @@ const Footer = () => {
           >
             <img
               src={grupo2}
-              width={260}
+              width={250}
               alt="logo rolling code grupo 2 - c76i"
             />
           </a>

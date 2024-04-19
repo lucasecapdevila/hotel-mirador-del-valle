@@ -9,7 +9,9 @@ import Habitaciones from "./components/pages/Habitaciones";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
 import Login from "./components/pages/Login";
-import Reservas from "./components/pages/reservas/Reservas";
+import { useState } from "react";
+import Registro from "./components/pages/Registro";
+
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("inicioHotelMiradorDelValle")) || "";
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
@@ -23,6 +25,7 @@ function App() {
       <Routes>
         <Route exact path="/quienesSomos" element={<QuienesSomos></QuienesSomos>} />
         <Route exact path="/login" element={<Login setUsuarioLogueado = {setUsuarioLogueado}></Login>}></Route>
+        <Route exact path='/registro' element={<Registro editar={false} titulo='Agrega tu Usuario!!'></Registro>} />
         <Route
           exact
           path="/administrador/*"
@@ -31,9 +34,10 @@ function App() {
               <RutasAdmin />
             </RutasProtegidas>
           }
-        />
+        
+        
+        <Route exact path="/registro" element={<Registro></Registro>} />
         <Route exact path="/habitaciones/" element={<Habitaciones fechaEntrada={fechaEntrada} setFechaEntrada={setFechaEntrada} fechaSalida={fechaSalida} setFechaSalida={setFechaSalida}></Habitaciones>} />
-        <Route exact path="/reservas/" element={<Reservas></Reservas>} />
         <Route exact path="/reservas/:id/:fechaEntrada/:fechaSalida" element={<Reservas></Reservas>} />
         <Route exact path="*" element={<Error404></Error404>} />
       </Routes>

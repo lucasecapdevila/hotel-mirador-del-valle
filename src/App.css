@@ -269,7 +269,27 @@ a.linkRegistro{
   color: #485c70;
   text-decoration: none;
 }
-
+#imgRegistro{
+  margin-left: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card.cardRegistro {
+  width: 80% ;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  background: #EFF1EA;
+  color: #485c70;
+}
+.textareaForm{
+  height: 30px;
+  width: 100%;
+  resize: none;
+}
+.registroBg{
+  background: #485c70;
+}
 @media only screen and (max-width: 767px) {
   .tituloPrincipal h1 {
     font-size: 35px;
@@ -301,12 +321,32 @@ a.linkRegistro{
   .fondoLogin{
     height: 500px;
   }
+  .cardRegistrosm{
+    flex-direction: column;
+  }
+  #imgRegistro{
+   text-align: center;
+   margin-top: 8px;
+  }
 }
-@media (min-width: 768px) and (max-width: 1200px){
+@media (min-width: 768px) and (max-width: 1000px){
   .gmailText{
     font-size: 12px;
   }
-  
+  .cardRegistrosm{
+    flex-direction: column;
+    text-align: center;
+  }
+  #imgRegistro{
+   text-align: center;
+  }
+  .cardText{
+    margin: 0 auto;
+    width: 100%;
+  }
+  .btnLogin{
+    margin-bottom: 15px;
+  }
 }
 
 .imagenReserva{

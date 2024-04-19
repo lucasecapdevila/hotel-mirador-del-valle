@@ -46,12 +46,13 @@ const ItemUsuario = ({ usuario, setListaUsuarios }) => {
     <tr>
       <td>{usuario.rol}</td>
       <td>{usuario.userName}</td>
-      <td className="text-center">${usuario.userEmail}</td>
-      <td className="text-center">${usuario.userPassword}</td>
+      <td className="text-center">{usuario.nombreUser}</td>
+      <td className="text-center">{usuario.apellidoUser}</td>
+      <td className="text-center">{usuario.userEmail}</td>
       <td className="anchoColumna">
         <div className="d-flex align-items-center justify-content-center">
           <Link
-            to={`/administrador/editar/${usuario.id}`}
+            to={`/administrador/editarusuario/${usuario.id}`}
             className="btn btn-warning ms-0 me-2"
           >
             <FontAwesomeIcon icon={faFilePen} />

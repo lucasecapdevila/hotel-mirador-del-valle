@@ -57,6 +57,8 @@
       "userEmail": "admin@admin.com",
       "userPassword": "admin12345",
       "userName": "Administrador",
+      "nombreUser": "Juan",
+      "apellidoUser": "Perez",
       "rol": "Administrador",
       "id": "9d9e"
     },
@@ -64,8 +66,38 @@
       "userEmail": "user@mail.com",
       "userPassword": "user12345",
       "userName": "lucas",
+      "nombreUser": "Lucas",
+      "apellidoUser": "Capdevilla",
       "rol": "Usuario",
       "id": "59ff"
+    },
+    {
+      "imgUser": "https://img.freepik.com/free-photo/portrait-beautiful-young-woman-standing-grey-wall_231208-10760.jpg?t=st=1713039298~exp=1713042898~hmac=013ed5fe49d6fbf67430db13c605bf2504432ec85b5bfce6d0dd195a4f69128d&w=740",
+      "userEmail": "ana@mail.com",
+      "userPassword": "user12345",
+      "userName": "Anita",
+      "nombreUser": "Ana",
+      "apellidoUser": "Diaz",
+      "rol": "Usuario",
+      "id": "3"
+    },
+    {
+      "imgUser": "https://th.bing.com/th/id/R.472e36a1a1fb3bbcd41d8b686208a151?rik=YIcq6L%2fzhOq5vA&pid=ImgRaw&r=0",
+      "nombreUser": "Lionel Andrés",
+      "apellidoUser": "Messi",
+      "userName": "Messi",
+      "userEmail": "messi10@gmail.com",
+      "userPassword": "Mundial2023",
+      "id": "58f9"
+    },
+    {
+      "imgUser": "https://www.freepik.com/free-photo/portrait-attractive-young-man-dressed-casually-using-tablet-computer-smiling-white-background_29453563.htm#fromView=search&page=1&position=24&uuid=09ebcd54-e4ba-4692-b53c-f5c34edde2d4",
+      "nombreUser": "Juan",
+      "apellidoUser": "Perez",
+      "userName": "Juancito Perez",
+      "userEmail": "juan_perez@gmail.com",
+      "userPassword": "Contra2024",
+      "id": "999a"
     }
   ],
   "reservas": [
