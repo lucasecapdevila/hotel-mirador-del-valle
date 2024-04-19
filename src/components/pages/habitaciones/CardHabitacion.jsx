@@ -51,12 +51,15 @@ const CardHabitacion = ({ habitacion, fechaEntrada, fechaSalida }) => {
             </Button>
 
             <Modal show={show} onHide={handleClose} animation={false}>
-              <Modal.Header closeButton className="descripcionHabitacion">
-                <Modal.Title className="titulos">
+              <Modal.Header
+                closeButton
+                className="modalHabitacionTexto fondoModal"
+              >
+                <Modal.Title className="titulos fs-2">
                   {habitacion.tipoHabitacion}
                 </Modal.Title>
               </Modal.Header>
-              <Modal.Body className="descripcionHabitacion">
+              <Modal.Body className="modalHabitacionTexto fondoModal">
                 <Container>
                   <Row>
                     <Col xs={12}>
@@ -88,7 +91,7 @@ const CardHabitacion = ({ habitacion, fechaEntrada, fechaSalida }) => {
                       </div>
                     </Col>
                     <Col xs={12}>
-                      <p className="textos my-5 fw-bold descripcionHabitacion">
+                      <p className="textos my-3 fw-bold modalHabitacionTexto">
                         <span className="fs-5">Descripción: </span>
                         {habitacion.descripcionAmplia}
                       </p>
@@ -97,8 +100,8 @@ const CardHabitacion = ({ habitacion, fechaEntrada, fechaSalida }) => {
                 </Container>
               </Modal.Body>
               <Modal.Footer>
-                <Button onClick={handleClose} className="btnCardHabitacion">
-                  Close
+                <Button onClick={handleClose} className="btnCerrarModal">
+                  CERRAR
                 </Button>
               </Modal.Footer>
             </Modal>

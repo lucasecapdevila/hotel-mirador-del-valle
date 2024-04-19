@@ -180,35 +180,31 @@ input::-webkit-inner-spin-button {
   font-size: 100px;
 }
 
-.contenedorDetalleHabitacion {
-  background: #b0b696;
-  color: #485c70;
-}
-
 .imagenDetalleHabitacion {
   height: 500px;
   width: 100%;
   object-fit: cover;
 }
-
-a.btnDetalleHabitacion {
+.fondoModal {
+  background: #c4c8b0;
+}
+.modalHabitacionTexto{
+  color:#485c70;
+}
+.modal-footer{
+  background: #c4c8b0;
+}
+.modal-footer .btnCerrarModal{
   background: #485c70;
+  color: white;
   border: #485c70 0.1em solid;
-  color: #eeeeee;
-  width: 50%;
+  font-family: "Rubik", sans-serif;
 }
-
-a.btnDetalleHabitacion:hover {
-  background: #526980;
-  border: #485c70 0.1em solid;
-  color: #eeeeee;
-  width: 50%;
+.modal-footer .btnCerrarModal:hover{
+background: #485c70;
+color: white;
+border: #485c70 0.1em solid;
 }
-
-.descripcionHabitacion {
-  color: #485c70;
-}
-
 .cardCategoria {
   min-height: 450px;
   transition: all 400ms ease;
