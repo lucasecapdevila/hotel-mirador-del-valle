@@ -46,7 +46,7 @@ const CardHabitacion = ({ habitacion, fechaEntrada, fechaSalida }) => {
               </Link>
             )}
 
-            <Button className="btnCardHabitacion textos" onClick={handleShow}>
+            <Button className="btnCardHabitacion fw-semibold" onClick={handleShow}>
               VER DETALLES
             </Button>
 
