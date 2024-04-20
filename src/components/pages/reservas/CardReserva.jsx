@@ -64,13 +64,13 @@ const CardReserva = ({ id, fechaEntrada, fechaSalida }) => {
 
   return (
     <Col className="mb-3 mx-2 mx-md-0">
-      <Card className="my-3">
-        <CardHeader>
-          <Card.Title className="text-center text-md-start my-2 titulos">
-            <h4>{habitacion.tipoHabitacion}</h4>
+      <Card className="my-3 bgReserva">
+        <CardHeader className="cabeceraReserva">
+          <Card.Title className="text-center text-md-start my-2 titulos ">
+            <h4 className="azul fs-1">{habitacion.tipoHabitacion}</h4>
           </Card.Title>
         </CardHeader>
-        <Card.Body className="bodyCardHabitacion">
+        <Card.Body className="bodyCardReserva">
           <div className="d-md-flex justify-content-between">
             <Card.Img
               src={habitacion.imagenHabitacion}
@@ -126,10 +126,10 @@ const CardReserva = ({ id, fechaEntrada, fechaSalida }) => {
                 </ul>
               </div>
               <Button
-                className="w-100 m-auto ms-1 mb-0"
+                className="w-100 m-auto ms-1 mb-0 btnCardReserva"
                 onClick={reservarHabitacion}
               >
-                Pagar ahora
+                PAGAR AHORA
               </Button>
             </div>
           </div>
