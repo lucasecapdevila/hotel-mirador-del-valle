@@ -6,7 +6,7 @@ import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-light py-3 d-flex justify-content-center">
+    <footer className="bgFooter text-light py-3 d-flex justify-content-center">
       <Container className="footerdiv row">
         <div className="col-lg-3 col-md-3">
           <img

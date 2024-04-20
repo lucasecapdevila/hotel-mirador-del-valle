@@ -80,6 +80,9 @@ input::-webkit-inner-spin-button {
   object-fit: cover;
 }
 
+.bgFooter{
+  background: #485c70;
+}
 .footerTitulo{
   font-family: "Playfair Display", serif;
   font-size: 25px;
@@ -163,7 +166,7 @@ input::-webkit-inner-spin-button {
   object-fit: cover;
   height: 395px;
   width: 100%;
-  filter: grayscale(60%);
+  filter: grayscale(30%);
 }
 
 .tituloPrincipal {
@@ -186,13 +189,10 @@ input::-webkit-inner-spin-button {
   object-fit: cover;
 }
 .fondoModal {
-  background: #c4c8b0;
+  background: #c8cbb9;
 }
 .modalHabitacionTexto{
   color:#485c70;
-}
-.modal-footer{
-  background: #c4c8b0;
 }
 .modal-footer .btnCerrarModal{
   background: #485c70;
@@ -234,7 +234,8 @@ border: #485c70 0.1em solid;
 #iconerror{
   width: 90px;
 }
-/*login*/
+
+/************* Login ******************/
 .card.cardLogin {
   width: 50% !important;
   margin-top: 10%;
@@ -265,6 +266,8 @@ button.btnLogin:hover{
   background-size:cover;
   background-repeat: no-repeat;
 }
+
+/*********** Registro *****************/
 a.linkRegistro{
   color: #485c70;
   text-decoration: none;
@@ -288,7 +291,57 @@ a.linkRegistro{
   resize: none;
 }
 .registroBg{
+  background: #798a99;
+}
+/*********** Crear Habitaciones *****************/
+
+.fondoCrearHab{
+  background: #798a99;
+}
+form .btnCrearHabitacion{
+  background: #526980;
+  color: white;
+  width: 25%;
+  border: #526980 0.1em solid;
+  font-family: "Rubik", sans-serif;
+  margin-right: 0;
+}
+form .btnCrearHabitacion:hover{
+  background: #5b7188;
+  color: white;
+  border: #526980 0.1em solid;
+  font-family: "Rubik", sans-serif;
+}
+/*********** Tabla Admin *****************/
+
+.table-responsive .table>:not(caption)>*>* {
+ color: #485c70;
+ font-family: "Poppins", sans-serif;
+}
+
+/*********** Reservas *****************/
+.card .bodyCardReserva{
+  color: #485c70;
+}
+.card .cabeceraReserva{
+  background: #c8cbb9;
+}
+.bgReserva .card-body{
+  background: #c8cbb9;
+}
+.card-body .btnCardReserva {
   background: #485c70;
+  color: white;
+  width: 25%;
+  border: #485c70 0.1em solid;
+  font-family: "Rubik", sans-serif;
+  margin-right: 0;
+}
+.card-body .btnCardReserva:hover {
+  background: #526980;
+  color: white;
+  border: #526980 0.1em solid;
+  font-family: "Rubik", sans-serif;
 }
 @media only screen and (max-width: 767px) {
   .tituloPrincipal h1 {

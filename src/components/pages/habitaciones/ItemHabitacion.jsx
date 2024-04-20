@@ -47,7 +47,7 @@ const ItemHabitacion = ({ habitacion, setListaHabitaciones }) => {
     <tr>
       <td>{habitacion.numeroHabitacion}</td>
       <td>{habitacion.tipoHabitacion}</td>
-      <td className="text-center">${habitacion.precioHabitacion}</td>
+      <td className="text-center">$ {habitacion.precioHabitacion}</td>
       <td className="text-center">{habitacion.disponibilidad}</td>
       <td className="anchoColumna">
         <div className="d-flex align-items-center justify-content-center">

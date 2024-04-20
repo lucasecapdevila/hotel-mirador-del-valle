@@ -80,7 +80,7 @@ const Habitaciones = ({
       <div className="portadaHabitaciones mb-5 text-center">
         <img
           className="banner"
-          src="https://images.pexels.com/photos/939715/pexels-photo-939715.jpeg?auto=compress&cs=tinysrgb&w=600"
+          src="https://media.istockphoto.com/id/2033857554/es/foto/four-peaks-and-saguaro.jpg?s=612x612&w=0&k=20&c=IwHRzp7ruGNgvDrlOPkLW_n8lEx6-fRTladysFQwFas="
         />
         <div className="titulos tituloPrincipal">
           <h1 className="">HABITACIONES</h1>

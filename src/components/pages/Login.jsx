@@ -99,16 +99,13 @@ const Login = ({ setUsuarioLogueado }) => {
               </Button>
             </Form>
           </Card.Body>
-          <div className="text-center textos azul mt-3">
-          <p>
-            ¿No tenes cuenta?
-            <Link className=" fw-semibold linkRegistro" to={"/registro"}>
+          <div className="d-flex justify-content-center text-center textos azul mt-3">
+            <p>¿No tenes cuenta? </p>
+            <Link className=" fw-semibold linkRegistro ms-2" to={"/registro"}>
               REGISTRATE
             </Link>
-          </p>
-        </div>
+          </div>
         </Card>
-        
       </div>
     </div>
   );
