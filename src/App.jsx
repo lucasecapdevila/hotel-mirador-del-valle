@@ -5,6 +5,7 @@ import Footer from "./components/common/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import QuienesSomos from "./components/pages/QuienesSomos";
 import Habitaciones from "./components/pages/Habitaciones";
+import Contacto from "./components/pages/Contacto";
 import DetalleHabitacion from "./components/pages/habitaciones/DetalleHabitacion";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
