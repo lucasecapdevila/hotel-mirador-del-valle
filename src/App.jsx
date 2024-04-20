@@ -9,8 +9,8 @@ import Habitaciones from "./components/pages/Habitaciones";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
 import Login from "./components/pages/Login";
-import { useState } from "react";
 import Registro from "./components/pages/Registro";
+import Reservas from "./components/pages/reservas/Reservas";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("inicioHotelMiradorDelValle")) || "";
@@ -34,7 +34,7 @@ function App() {
               <RutasAdmin />
             </RutasProtegidas>
           }
-        
+        />
         
         <Route exact path="/registro" element={<Registro></Registro>} />
         <Route exact path="/habitaciones/" element={<Habitaciones fechaEntrada={fechaEntrada} setFechaEntrada={setFechaEntrada} fechaSalida={fechaSalida} setFechaSalida={setFechaSalida}></Habitaciones>} />
