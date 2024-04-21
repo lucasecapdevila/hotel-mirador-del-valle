@@ -4,8 +4,9 @@ import { Button, Container, Tab, Table, Tabs } from "react-bootstrap";
 import ItemHabitacion from "./habitaciones/ItemHabitacion";
 import { useEffect, useState } from "react";
 import { leerHabitacionesAPI } from "../../helpers/queries";
+import { leerUsuarioAPI } from "../../helpers/queries";
 import { Link } from "react-router-dom";
-
+import ItemUsuario from "./usuarios/ItemUsuario";
 const Admin = () => {
   const [listaHabitaciones, setListaHabitaciones] = useState([]);
 
@@ -21,15 +22,28 @@ const Admin = () => {
       console.log(error);
     }
   };
+  const [listaUsuarios, setListaUsuarios] = useState([]);
 
+  useEffect(() => {
+    traerUsuarios();
+  }, []);
+
+  const traerUsuarios = async () => {
+    try {
+      const listaUsuariosAPI = await leerUsuarioAPI();
+      setListaUsuarios(listaUsuariosAPI);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
-    <main className="my-3 mainPage">
+    <main className="my-3 mainPage ">
       <Container>
         <Tabs fill defaultActiveKey="habitaciones">
           <Tab eventKey="habitaciones" title="Habitaciones">
             <div className="d-flex align-items-center justify-content-between my-2">
-              <h2 className="fs-1 fw-bold text-center titulos">
-                Administrador de habitaciones
+              <h2 className="fs-1 fw-bold text-center titulos azul">
+                Administrador de Habitaciones
               </h2>
               <Link to="/administrador/crear" className="btn btn-primary">
                 <FontAwesomeIcon icon={faPlus} />
@@ -37,8 +51,8 @@ const Admin = () => {
             </div>
             <hr />
 
-            <Table striped bordered responsive>
-              <thead>
+            <Table striped bordered responsive >
+              <thead className="fs-5">
                 <tr className="text-center">
                   <th>N° de Habitación</th>
                   <th>Tipo</th>
@@ -47,7 +61,7 @@ const Admin = () => {
                   <th>Acciones</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="fs-5">
                 {listaHabitaciones.map((habitacion) => (
                   <ItemHabitacion
                     key={habitacion.id}
@@ -61,27 +75,34 @@ const Admin = () => {
 
           <Tab eventKey="usuarios" title="Usuarios">
             <div className="d-flex align-items-center justify-content-between my-2">
-              <h2 className="fs-1 fw-bold titulos">
-                Administrador de usuarios
+              <h2 className="fs-1 fw-bold titulos azul">
+                Administrador de Usuarios
               </h2>
-              <Button>
+              <Link to="/registro" className="btn btn-primary">
                 <FontAwesomeIcon icon={faPlus} />
-              </Button>
+              </Link>
             </div>
             <hr />
 
             <Table striped bordered responsive>
-              <thead>
+              <thead className="fs-5">
                 <tr className="text-center">
-                  <th>Algo de usuario</th>
-                  <th>Algo de usuario</th>
-                  <th>Algo de usuario</th>
-                  <th>Algo de usuario</th>
-                  <th>Algo de usuario</th>
+                  <th>Tipo de Usuario</th>
+                  <th>Usuario</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Email</th>
+                  <th>Acciones</th>
                 </tr>
               </thead>
-              <tbody>
-                {/* <ItemHabitacion /> (Debe ser <ItemUsuario></ItemUsuario>*/}
+              <tbody className=" fs-5">
+              {listaUsuarios.map((usuario) => (
+                  <ItemUsuario
+                    key={usuario.id}
+                    usuario={usuario}
+                    setListaUsuarios={setListaUsuarios}
+                  />
+                ))}
               </tbody>
             </Table>
           </Tab>

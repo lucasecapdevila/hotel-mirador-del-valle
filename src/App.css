@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 #root {
   display: flex;
@@ -53,18 +56,18 @@ input::-webkit-inner-spin-button {
   resize: none;
 }
 
-a.btnCardHabitacion {
+.card-body .btnCardHabitacion {
   background: #aca650;
   color: white;
+  border: #bcb66c 0.1em solid;
   width: 100%;
   font-family: "Rubik", sans-serif;
 }
 
-a.btnCardHabitacion:hover {
+.card-body .btnCardHabitacion:hover {
   background: #bcb66c;
   color: white;
-  width: 100%;
-  font-family: "Rubik", sans-serif;
+  border: #bcb66c 0.1em solid;
 }
 
 .bodyCardHabitacion .card-title,
@@ -75,6 +78,27 @@ a.btnCardHabitacion:hover {
 .card-img-top-nueva {
   height: 200px;
   object-fit: cover;
+}
+
+.bgFooter{
+  background: #485c70;
+}
+.footerTitulo{
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+}
+.footerTitulo2{
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+}
+.footerTexto{
+  font-family: "Poppins", sans-serif;
+}
+.footerimg{
+  width: 100%;
+}
+.button .footerIcon{
+  background-color: black;
 }
 
 /* Configuraciones de carrousel (página quienes somos) */
@@ -95,6 +119,12 @@ a.btnCardHabitacion:hover {
   color: #aca650;
 }
 
+.rojo{
+  color: #8F6A74;
+}
+.azul{
+  color:#485c70;
+}
 .contenedor {
   position: relative;
   text-align: center;
@@ -136,7 +166,7 @@ a.btnCardHabitacion:hover {
   object-fit: cover;
   height: 395px;
   width: 100%;
-  filter: grayscale(60%);
+  filter: grayscale(30%);
 }
 
 .tituloPrincipal {
@@ -153,35 +183,28 @@ a.btnCardHabitacion:hover {
   font-size: 100px;
 }
 
-.contenedorDetalleHabitacion {
-  background: #b0b696;
-  color: #485c70;
-}
-
 .imagenDetalleHabitacion {
   height: 500px;
   width: 100%;
   object-fit: cover;
 }
-
-a.btnDetalleHabitacion {
+.fondoModal {
+  background: #c8cbb9;
+}
+.modalHabitacionTexto{
+  color:#485c70;
+}
+.modal-footer .btnCerrarModal{
   background: #485c70;
+  color: white;
   border: #485c70 0.1em solid;
-  color: #eeeeee;
-  width: 50%;
+  font-family: "Rubik", sans-serif;
 }
-
-a.btnDetalleHabitacion:hover {
-  background: #526980;
-  border: #485c70 0.1em solid;
-  color: #eeeeee;
-  width: 50%;
+.modal-footer .btnCerrarModal:hover{
+background: #485c70;
+color: white;
+border: #485c70 0.1em solid;
 }
-
-.descripcionHabitacion {
-  color: #485c70;
-}
-
 .cardCategoria {
   min-height: 450px;
   transition: all 400ms ease;
@@ -193,8 +216,134 @@ a.btnDetalleHabitacion:hover {
   -o-transform: translateY(-3%);
   transform: translateY(-3%);
 }
+.contenedorError{
+  background: #b0b696;
+  color: #485c70;
+  height: 400px;
+}
+.imagenError{
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+.tituloError{
+  font-family: "Playfair Display", serif;
+  font-size: 35px;
+  text-align: center;
+}
+#iconerror{
+  width: 90px;
+}
 
-@media screen and (max-width: 653px) {
+/************* Login ******************/
+.card.cardLogin {
+  width: 50% !important;
+  margin-top: 10%;
+}
+.cardLogin .card-header{
+  background: #b0b696;
+  color:#485c70;
+}
+.cardLogin .card-body{
+  background: #b0b696;
+  color:#485c70;
+}
+button.btnLogin {
+  background: #485c70;
+  border: #485c70 0.1em solid;
+  color: #eeeeee;
+  width: 50%;
+}
+button.btnLogin:hover{
+  background: #526980;
+  border: #485c70 0.1em solid;
+  color: #eeeeee;
+  width: 50%;
+}
+.fondoLogin{
+  height: 900px;
+  background-image: url("../src/assets/fondo-login.png");
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+/*********** Registro *****************/
+a.linkRegistro{
+  color: #485c70;
+  text-decoration: none;
+}
+#imgRegistro{
+  margin-left: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card.cardRegistro {
+  width: 80% ;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  background: #EFF1EA;
+  color: #485c70;
+}
+.textareaForm{
+  height: 30px;
+  width: 100%;
+  resize: none;
+}
+.registroBg{
+  background: #798a99;
+}
+/*********** Crear Habitaciones *****************/
+
+.fondoCrearHab{
+  background: #798a99;
+}
+form .btnCrearHabitacion{
+  background: #526980;
+  color: white;
+  width: 25%;
+  border: #526980 0.1em solid;
+  font-family: "Rubik", sans-serif;
+  margin-right: 0;
+}
+form .btnCrearHabitacion:hover{
+  background: #5b7188;
+  color: white;
+  border: #526980 0.1em solid;
+  font-family: "Rubik", sans-serif;
+}
+/*********** Tabla Admin *****************/
+
+.table-responsive .table>:not(caption)>*>* {
+ color: #485c70;
+ font-family: "Poppins", sans-serif;
+}
+
+/*********** Reservas *****************/
+.card .bodyCardReserva{
+  color: #485c70;
+}
+.card .cabeceraReserva{
+  background: #c8cbb9;
+}
+.bgReserva .card-body{
+  background: #c8cbb9;
+}
+.card-body .btnCardReserva {
+  background: #485c70;
+  color: white;
+  width: 25%;
+  border: #485c70 0.1em solid;
+  font-family: "Rubik", sans-serif;
+  margin-right: 0;
+}
+.card-body .btnCardReserva:hover {
+  background: #526980;
+  color: white;
+  border: #526980 0.1em solid;
+  font-family: "Rubik", sans-serif;
+}
+@media only screen and (max-width: 767px) {
   .tituloPrincipal h1 {
     font-size: 35px;
   }
@@ -202,5 +351,70 @@ a.btnDetalleHabitacion:hover {
     -webkit-transform: none;
     -o-transform: none;
     transform: none;
+  }
+  .footerdiv{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .footerdiv div{
+    width: 100%;
+    margin-top: 15px;
+  }
+  .footerimg{
+    width: 65%;
+  }
+  .descripcionerror{
+    margin-bottom: 0px;
+  }
+  .card.cardLogin {
+    width: 100% !important;
+    
+  }
+  .fondoLogin{
+    height: 500px;
+  }
+  .cardRegistrosm{
+    flex-direction: column;
+  }
+  #imgRegistro{
+   text-align: center;
+   margin-top: 8px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px){
+  .gmailText{
+    font-size: 12px;
+  }
+  .cardRegistrosm{
+    flex-direction: column;
+    text-align: center;
+  }
+  #imgRegistro{
+   text-align: center;
+  }
+  .cardText{
+    margin: 0 auto;
+    width: 100%;
+  }
+  .btnLogin{
+    margin-bottom: 15px;
+  }
+}
+
+.imagenReserva{
+  height: 25%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 990px) {
+  .imagenReserva{
+    width: 50% !important;
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  .imagenReserva{
+    width: 33% !important;
   }
 }

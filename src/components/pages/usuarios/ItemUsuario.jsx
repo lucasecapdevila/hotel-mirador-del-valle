@@ -3,15 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 import {
-  borrarHabitacionAPI,
-  leerHabitacionesAPI,
+  borrarUsuarioAPI,
+  leerUsuarioAPI,
 } from "../../../helpers/queries";
 import { Link } from "react-router-dom";
 
-const ItemHabitacion = ({ habitacion, setListaHabitaciones }) => {
-  const borrarHabitacion = () => {
+const ItemUsuario = ({ usuario, setListaUsuarios }) => {
+  const borrarUsuario = () => {
     Swal.fire({
-      title: "¿Estás seguro de eliminar la habitación?",
+      title: "¿Estás seguro de eliminar el usuario?",
       text: "No podrás revertir este proceso.",
       icon: "warning",
       showCancelButton: true,
@@ -21,21 +21,20 @@ const ItemHabitacion = ({ habitacion, setListaHabitaciones }) => {
       cancelButtonText: "Cancelar",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const response = await borrarHabitacionAPI(habitacion.id);
+        const response = await borrarUsuarioAPI(usuario.id);
         if (response.status === 200) {
-          //  Actualizo la tabla
-          const listaHabitacionesActualizada = await leerHabitacionesAPI();
-          setListaHabitaciones(listaHabitacionesActualizada);
+          const listaUsuariosActualizada = await leerUsuarioAPI();
+          setListaUsuarios(listaUsuariosActualizada);
 
           Swal.fire({
             title: "Eliminado!",
-            text: `La habitación número ${habitacion.numeroHabitacion} se eliminó exitosamente.`,
+            text: `El usuario ${usuario.userName} se eliminó exitosamente.`,
             icon: "success",
           });
         } else {
           Swal.fire({
             title: "Ocurrió un error",
-            text: `No se pudo eliminar la habitación número ${habitacion.numeroHabitacion}. Vuelva a intentarlo en unos momentos.`,
+            text: `No se pudo eliminar el usuario ${usuario.userName}. Vuelva a intentarlo en unos momentos.`,
             icon: "error",
           });
         }
@@ -45,19 +44,20 @@ const ItemHabitacion = ({ habitacion, setListaHabitaciones }) => {
 
   return (
     <tr>
-      <td>{habitacion.numeroHabitacion}</td>
-      <td>{habitacion.tipoHabitacion}</td>
-      <td className="text-center">$ {habitacion.precioHabitacion}</td>
-      <td className="text-center">{habitacion.disponibilidad}</td>
+      <td>{usuario.rol}</td>
+      <td>{usuario.userName}</td>
+      <td className="text-center">{usuario.nombreUser}</td>
+      <td className="text-center">{usuario.apellidoUser}</td>
+      <td className="text-center">{usuario.userEmail}</td>
       <td className="anchoColumna">
         <div className="d-flex align-items-center justify-content-center">
           <Link
-            to={`/administrador/editar/${habitacion.id}`}
+            to={`/administrador/editarusuario/${usuario.id}`}
             className="btn btn-warning ms-0 me-2"
           >
             <FontAwesomeIcon icon={faFilePen} />
           </Link>
-          <Button variant="danger" onClick={borrarHabitacion}>
+          <Button variant="danger" onClick={borrarUsuario}>
             <FontAwesomeIcon icon={faTrashCan} />
           </Button>
         </div>
@@ -66,4 +66,4 @@ const ItemHabitacion = ({ habitacion, setListaHabitaciones }) => {
   );
 };
 
-export default ItemHabitacion;
+export default ItemUsuario;
