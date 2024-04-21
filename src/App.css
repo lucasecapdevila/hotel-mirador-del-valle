@@ -313,3 +313,35 @@ a.linkRegistro{
   
 }
 
+.fondoContacto{
+  height: 900px;
+  background-color: #485c70;
+  background-image: url("../src/assets/hotel.jpg") ;
+  background-size: cover;
+  background-repeat:no-repeat ;
+  text-align: center;
+  width: 450px;
+  margin: auto;
+  }
+h1 {
+
+  text-align: center;
+  
+}
+
+div {
+  margin: 0%;
+  padding: 0%;
+
+
+}
+form{
+  width: 600px;
+  justify-content: center;
+  text-justify: auto;
+  margin: 40px;
+  background-color: #e4ecf8;
+  font-family: sans-serif;
+  
+
+}
