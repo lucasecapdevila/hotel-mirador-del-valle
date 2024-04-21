@@ -115,6 +115,21 @@ input::-webkit-inner-spin-button {
   opacity: 45%;
 }
 
+/* Configuraciónes de imagen (página quienes somos) */
+/* @media only screen and (min-width: 991px) and (max-width: 1199px) {
+  .imgEntradaHotel{
+    width: 45%;
+  }
+} */
+
+@media only screen and (min-width: 1200px) {
+  .imgEntradaHotel{
+    width: 50%;
+  }
+}
+
+
+
 .verde {
   color: #aca650;
 }
