@@ -1,4 +1,4 @@
-import { Carousel, Container } from "react-bootstrap";
+import { Carousel, Col, Container, Row } from "react-bootstrap";
 
 const QuienesSomos = () => {
   return (
@@ -38,7 +38,9 @@ const QuienesSomos = () => {
 
       <Container>
         <section className="my-4">
-          <h1 className="text-center fs-1 titulos">Hotel Mirador del Valle</h1>
+          <h1 className="text-center fs-1 titulos rojo">
+            Hotel Mirador del Valle
+          </h1>
           <article className="fs-5 textoJustificado textos">
             <p className="mb-4">
               Bienvenido al Hotel Mirador del Valle, un refugio de tranquilidad
@@ -73,7 +75,7 @@ const QuienesSomos = () => {
         </section>
 
         <section className="my-5">
-          <h2 className="text-center fs-1 titulos">Nuestra historia</h2>
+          <h2 className="text-center fs-1 titulos rojo">Nuestra historia</h2>
           <article className="fs-5 my-4 textoJustificado textos">
             <div className="d-flex flex-column flex-xl-row justify-content-center align-items-start">
               <img
@@ -107,30 +109,121 @@ const QuienesSomos = () => {
                 src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/6836911.jpg?k=da8b3433a2b7e003fb4640c44688eae91c890900c3ad3dec440bce5bfeb23468&o=&hp=1"
                 alt="Nuestro hotel"
               />
-              <div>
-                <p className="mb-4">
-                  En la segunda etapa, concretada en 1986, se agregaron 20
-                  habitaciones, entre las cuales destacan las dos Suites y un
-                  amplio sector de esparcimiento con Sala de TV, Mesa de Juegos
-                  y un Living para reuniones íntimas, todo esto con ingreso
-                  directo desde el Estacionamiento semicubierto y el sector de
-                  Solárium, Quincho y Juegos Infantiles. En el año 2022 se
-                  realizó una nueva expansión que no solo se limitó a sus
-                  instalaciones físicas, sino que también se reflejó en su
-                  reputación y prestigio en la industria hotelera. Se convirtió
-                  en un punto de referencia para viajeros exigentes que buscaban
-                  una experiencia única y auténtica en el corazón de Tafí. Desde
-                  entonces, el Hotel ha seguido evolucionando y adaptándose a
-                  las cambiantes necesidades de sus huéspedes, pero su
-                  compromiso con la excelencia en servicio y hospitalidad ha
-                  permanecido inquebrantable a lo largo de los años. Hoy en día,
-                  sigue siendo un destino de ensueño para aquellos que buscan
-                  una escapada tranquila y lujosa en medio de la belleza natural
-                  del Valle de Tafí.
-                </p>
-              </div>
+              <p className="mb-4">
+                En la segunda etapa, concretada en 1986, se agregaron 20
+                habitaciones, entre las cuales destacan las dos Suites y un
+                amplio sector de esparcimiento con Sala de TV, Mesa de Juegos y
+                un Living para reuniones íntimas, todo esto con ingreso directo
+                desde el Estacionamiento semicubierto y el sector de Solárium,
+                Quincho y Juegos Infantiles. En el año 2022 se realizó una nueva
+                expansión que no solo se limitó a sus instalaciones físicas,
+                sino que también se reflejó en su reputación y prestigio en la
+                industria hotelera. Se convirtió en un punto de referencia para
+                viajeros exigentes que buscaban una experiencia única y
+                auténtica en el corazón de Tafí. Desde entonces, el Hotel ha
+                seguido evolucionando y adaptándose a las cambiantes necesidades
+                de sus huéspedes, pero su compromiso con la excelencia en
+                servicio y hospitalidad ha permanecido inquebrantable a lo largo
+                de los años. Hoy en día, sigue siendo un destino de ensueño para
+                aquellos que buscan una escapada tranquila y lujosa en medio de
+                la belleza natural del Valle de Tafí.
+              </p>
             </div>
           </article>
+        </section>
+
+        <section className="my-5">
+          <h2 className="text-center fs-1 titulos rojo">
+            Privilegios en el Paraíso
+          </h2>
+          <article className="fs-5 my-4 textoJustificado textos">
+            <div className="d-flex flex-column flex-xl-row justify-content-center align-items-start">
+              <img
+                className="img-fluid mb-4 me-xl-4 imgEntradaHotel"
+                src="https://tafidelvalle.net/wp-content/uploads/2023/09/Tafi_del_Valle_-_postal-1280x720-1.jpg"
+                alt="Nuestro hotel"
+              />
+              <p className="mb-4">
+                Todos sabemos que Tafí del Valle está a sólo un paso del Paraíso
+                Terrenal, sus paisajes y su clima lo convierten en un destino
+                turístico único e inolvidable, lo que no todos saben es que sólo
+                algunos privilegiados disfrutan a pleno de todos sus encantos… A
+                un paso del centro de la Villa y con el sello inconfundible de
+                un ambiente a la vez cálido y refinado, el Hotel Mirador del
+                Valle es Tafí en su más pura esencia, un clásico que se renueva
+                permanentemente, en su cuidada ambientación que no descuida la
+                promoción de artistas y artesanos tucumanos, en su excelente
+                cocina que fusiona los sabores de la tierra con platos gourmet
+                de prolija elaboración, en la reconocida calidad de su atención,
+                y en la calidez de su gente, heredera de la tradicional
+                hospitalidad de los Valles. Cuando el destino de sus vacaciones
+                está cerca del Paraíso Terrenal, le recomendamos que disfrute de
+                todos sus privilegios en Hotel Mirador del Valle, un lugar
+                pensado para Usted.
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <section className="my-5">
+          <h2 className="text-center fs-1 titulos rojo">Conócenos</h2>
+          <p className="fs-5 my-4 textoJustificado textos">
+            En Hotel Mirador del Valle, nos enorgullece presentar a nuestro
+            equipo apasionado y dedicado que trabaja incansablemente para
+            ofrecer experiencias inolvidables a nuestros huéspedes. Con una
+            combinación de talento, experiencia y compromiso, nuestro equipo
+            está aquí para hacer que tu estadía sea excepcional en todos los
+            sentidos. Desde nuestro equipo directivo hasta nuestro personal de
+            servicio, cada miembro aporta su habilidad única y su atención al
+            detalle para garantizar que cada momento sea perfecto. Nos
+            esforzamos por crear un ambiente acogedor y familiar donde nuestros
+            huéspedes se sientan bienvenidos y atendidos en todo momento.
+          </p>
+          <Row>
+            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4">
+              <div className="contenedorImgUsuario">
+                <img className="img-fluid imgUsuario" src="https://ssteev.gob.mx/miprestamo/assets/images/users/avatar-1.jpg" alt="" />
+              </div>
+              <h4 className="text-center fs-3 my-3 titulos rojo">Lucas Capdevila</h4>
+              <p className="text-center fs-5">Encargado de recepción</p>
+            </Col>
+            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4">
+              <div className="contenedorImgUsuario">
+                <img className="img-fluid imgUsuario" src="https://ssteev.gob.mx/miprestamo/assets/images/users/avatar-1.jpg" alt="" />
+              </div>
+              <h4 className="text-center fs-3 my-3 titulos rojo">Lucas Capdevila</h4>
+              <p className="text-center fs-5">Encargado de recepción</p>
+            </Col>
+            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4">
+              <div className="contenedorImgUsuario">
+                <img className="img-fluid imgUsuario" src="https://ssteev.gob.mx/miprestamo/assets/images/users/avatar-1.jpg" alt="" />
+              </div>
+              <h4 className="text-center fs-3 my-3 titulos rojo">Lucas Capdevila</h4>
+              <p className="text-center fs-5">Encargado de recepción</p>
+            </Col>
+            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4">
+              <div className="contenedorImgUsuario">
+                <img className="img-fluid imgUsuario" src="https://ssteev.gob.mx/miprestamo/assets/images/users/avatar-1.jpg" alt="" />
+              </div>
+              <h4 className="text-center fs-3 my-3 titulos rojo">Lucas Capdevila</h4>
+              <p className="text-center fs-5">Encargado de recepción</p>
+            </Col>
+            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4">
+              <div className="contenedorImgUsuario">
+                <img className="img-fluid imgUsuario" src="https://ssteev.gob.mx/miprestamo/assets/images/users/avatar-1.jpg" alt="" />
+              </div>
+              <h4 className="text-center fs-3 my-3 titulos rojo">Lucas Capdevila</h4>
+              <p className="text-center fs-5">Encargado de recepción</p>
+            </Col>
+            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4">
+              <div className="contenedorImgUsuario">
+                <img className="img-fluid imgUsuario" src="https://ssteev.gob.mx/miprestamo/assets/images/users/avatar-1.jpg" alt="" />
+              </div>
+              <h4 className="text-center fs-3 my-3 titulos rojo">Lucas Capdevila</h4>
+              <p className="text-center fs-5">Encargado de recepción</p>
+            </Col>
+            
+          </Row>
         </section>
       </Container>
     </main>

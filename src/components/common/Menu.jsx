@@ -27,7 +27,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 INICIO
               </NavLink>
               <NavLink end className="nav-link" to="/quienesSomos">
-                EL HOTEL
+                HOTEL
               </NavLink>
               <NavLink end className="nav-link" to="/galeriadeimagenes">
                 GALERIA
@@ -50,9 +50,6 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 LOGIN
               </NavLink>
             )}
-              <NavLink end className="nav-link" to="/registro">
-                REGISTRO
-              </NavLink>
             
             </Nav>
           </Navbar.Collapse>
