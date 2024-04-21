@@ -23,7 +23,8 @@ const QuienesSomos = () => {
         <Carousel.Item>
           <img
             className="img-fluid"
-            src="https://images.pexels.com/photos/7821349/pexels-photo-7821349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+            src="https://images.pexels.com/photos/7821349/pexels-photo-7821349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          />
           <Carousel.Caption>
             <h2 className="fs-1 text-uppercase titulos">El hotel</h2>
             <p className="textosAlternativos">
@@ -53,13 +54,15 @@ const QuienesSomos = () => {
 
       <Container>
         <section className="my-4">
-          <h2 className="text-center fs-1 titulos">Hotel Mirador del Valle</h2>
+          <h1 className="text-center fs-1 titulos">Hotel Mirador del Valle</h1>
           <article className="fs-5 textoJustificado textos">
             <p className="mb-4">
-              Bienvenido al Hotel Mirador del Valle, donde la elegancia se
-              encuentra con la naturaleza para ofrecerte una experiencia
-              inolvidable. Ubicado en el pintoresco valle de Tafí, nuestro hotel
-              es un refugio de tranquilidad y comodidad.
+              Bienvenido al Hotel Mirador del Valle, un refugio de tranquilidad
+              y comodidad donde la elegancia se encuentra con la naturaleza para
+              ofrecerte una experiencia inolvidable. Somos un hotel de 3
+              estrellas ubicado en el pintoresco valle de Tafí, provincia de
+              Tucumán. Nos encontramos a tan solo 107 kms de San Miguel de
+              Tucumán.
             </p>
             <p className="mb-4">
               En Mirador del Valle, nos enorgullece brindar un servicio
