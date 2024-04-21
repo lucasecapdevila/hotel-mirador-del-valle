@@ -6,7 +6,7 @@ import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-light py-3 d-flex justify-content-center">
+    <footer className="bgFooter text-light py-3 d-flex justify-content-center">
       <Container className="footerdiv row">
         <div className="col-lg-3 col-md-3">
           <img
@@ -77,7 +77,7 @@ const Footer = () => {
           >
             <img
               src={grupo2}
-              width={260}
+              width={250}
               alt="logo rolling code grupo 2 - c76i"
             />
           </a>

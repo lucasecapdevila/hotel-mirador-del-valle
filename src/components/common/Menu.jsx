@@ -53,6 +53,9 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
               <NavLink end className="nav-link" to="/registro">
                 REGISTRO
               </NavLink>
+              <NavLink end className="nav-link" to="/reservas">
+                RESERVAS
+              </NavLink>
             
             </Nav>
           </Navbar.Collapse>
