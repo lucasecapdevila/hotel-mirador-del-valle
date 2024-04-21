@@ -108,6 +108,16 @@
       "userEmail": "lautaro@gmail.com",
       "userPassword": "Contraseña1",
       "userConfirmPassword": "Contraseña1"
+    },
+    {
+      "id": "21ff",
+      "imgUser": "https://laseleccionargentina.com/wp-content/uploads/2023/11/Enzo-Fernandez-1.jpg",
+      "nombreUser": "Enzo",
+      "apellidoUser": "Fernandez",
+      "userName": "enzofernandez22",
+      "userEmail": "enzo@gmail.com",
+      "userPassword": "Enzo1234",
+      "userConfirmPassword": "Enzo1234"
     }
   ],
   "reservas": [

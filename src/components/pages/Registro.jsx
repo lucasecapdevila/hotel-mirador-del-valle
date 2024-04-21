@@ -200,9 +200,15 @@ const Registro = ({ editar, titulo }) => {
                               "Debe ingresar como mínimo 3 carácteres para un nombre de usuario.",
                           },
                           maxLength: {
-                            value: 15,
+                            value: 20,
                             message:
-                              "Puede ingresar como máximo 15 carácteres para un nombre de usuario.",
+                              "Puede ingresar como máximo 20 carácteres para un nombre de usuario.",
+                          },
+                          pattern: {
+                            value:
+                            /^[a-z0-9]{3,20}/,
+                            message:
+                              "El nombre de usuario debe contener solo letras minúsculas y puedes colocar números",
                           },
                         })}
                       />
