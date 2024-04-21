@@ -63,12 +63,12 @@
       "id": "9d9e"
     },
     {
-      "userEmail": "user@mail.com",
-      "userPassword": "user12345",
-      "userName": "lucas",
+      "imgUser": "https://media.lmneuquen.com/p/f44778a325f2889302d6bf003b08da05/adjuntos/195/imagenes/007/698/0007698813/770x0/smart/dibu-martinez-1jpg.jpg",
       "nombreUser": "Lucas",
       "apellidoUser": "Capdevilla",
-      "rol": "Usuario",
+      "userName": "lucasecapdevila",
+      "userEmail": "lcapdevila60@gmail.com",
+      "userPassword": "user12345",
       "id": "59ff"
     },
     {
@@ -118,6 +118,16 @@
       "userEmail": "enzo@gmail.com",
       "userPassword": "Enzo1234",
       "userConfirmPassword": "Enzo1234"
+    },
+    {
+      "id": "06a7",
+      "imgUser": "https://tntsports.com.ar/__export/1702567328972/sites/tntsports/img/2023/11/24/scaloni.jpg",
+      "nombreUser": "Lionel",
+      "apellidoUser": "Scaloni",
+      "userName": "lionelsc22",
+      "userEmail": "scaloni@gmail.com",
+      "userPassword": "Qatar2022",
+      "userConfirmPassword": "Qatar2022"
     }
   ],
   "reservas": [
