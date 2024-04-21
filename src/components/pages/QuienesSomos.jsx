@@ -38,7 +38,7 @@ const QuienesSomos = () => {
 
       <Container>
         <section className="my-4">
-          <h1 className="text-center fs-1 titulos rojo">
+          <h1 className="text-center fs-1 titulos azul">
             Hotel Mirador del Valle
           </h1>
           <article className="fs-5 textoJustificado textos">
@@ -75,7 +75,7 @@ const QuienesSomos = () => {
         </section>
 
         <section className="my-5">
-          <h2 className="text-center fs-1 titulos rojo">Nuestra historia</h2>
+          <h2 className="text-center fs-1 titulos azul">Nuestra historia</h2>
           <article className="fs-5 my-4 textoJustificado textos">
             <div className="d-flex flex-column flex-xl-row justify-content-center align-items-start">
               <img
@@ -133,7 +133,7 @@ const QuienesSomos = () => {
         </section>
 
         <section className="my-5">
-          <h2 className="text-center fs-1 titulos rojo">
+          <h2 className="text-center fs-1 titulos azul">
             Privilegios en el Paraíso
           </h2>
           <article className="fs-5 my-4 textoJustificado textos">
@@ -166,7 +166,7 @@ const QuienesSomos = () => {
         </section>
 
         <section className="my-5">
-          <h2 className="text-center fs-1 titulos rojo">Conócenos</h2>
+          <h2 className="text-center fs-1 titulos azul">Conócenos</h2>
           <p className="fs-5 my-4 textoJustificado textos">
             En Hotel Mirador del Valle, nos enorgullece presentar a nuestro
             equipo apasionado y dedicado que trabaja incansablemente para
@@ -184,42 +184,42 @@ const QuienesSomos = () => {
               <div className="contenedorImgUsuario">
                 <img className="img-fluid imgUsuario" src="https://ssteev.gob.mx/miprestamo/assets/images/users/avatar-1.jpg" alt="" />
               </div>
-              <h4 className="text-center fs-3 my-3 titulos rojo">Lucas Capdevila</h4>
+              <h4 className="text-center fs-3 my-3 titulos azul">Lucas Capdevila</h4>
               <p className="text-center fs-5">Encargado de recepción</p>
             </Col>
             <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4">
               <div className="contenedorImgUsuario">
                 <img className="img-fluid imgUsuario" src="https://ssteev.gob.mx/miprestamo/assets/images/users/avatar-1.jpg" alt="" />
               </div>
-              <h4 className="text-center fs-3 my-3 titulos rojo">Lucas Capdevila</h4>
+              <h4 className="text-center fs-3 my-3 titulos azul">Lucas Capdevila</h4>
               <p className="text-center fs-5">Encargado de recepción</p>
             </Col>
             <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4">
               <div className="contenedorImgUsuario">
                 <img className="img-fluid imgUsuario" src="https://ssteev.gob.mx/miprestamo/assets/images/users/avatar-1.jpg" alt="" />
               </div>
-              <h4 className="text-center fs-3 my-3 titulos rojo">Lucas Capdevila</h4>
+              <h4 className="text-center fs-3 my-3 titulos azul">Lucas Capdevila</h4>
               <p className="text-center fs-5">Encargado de recepción</p>
             </Col>
             <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4">
               <div className="contenedorImgUsuario">
                 <img className="img-fluid imgUsuario" src="https://ssteev.gob.mx/miprestamo/assets/images/users/avatar-1.jpg" alt="" />
               </div>
-              <h4 className="text-center fs-3 my-3 titulos rojo">Lucas Capdevila</h4>
+              <h4 className="text-center fs-3 my-3 titulos azul">Lucas Capdevila</h4>
               <p className="text-center fs-5">Encargado de recepción</p>
             </Col>
             <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4">
               <div className="contenedorImgUsuario">
                 <img className="img-fluid imgUsuario" src="https://ssteev.gob.mx/miprestamo/assets/images/users/avatar-1.jpg" alt="" />
               </div>
-              <h4 className="text-center fs-3 my-3 titulos rojo">Lucas Capdevila</h4>
+              <h4 className="text-center fs-3 my-3 titulos azul">Lucas Capdevila</h4>
               <p className="text-center fs-5">Encargado de recepción</p>
             </Col>
             <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4">
               <div className="contenedorImgUsuario">
                 <img className="img-fluid imgUsuario" src="https://ssteev.gob.mx/miprestamo/assets/images/users/avatar-1.jpg" alt="" />
               </div>
-              <h4 className="text-center fs-3 my-3 titulos rojo">Lucas Capdevila</h4>
+              <h4 className="text-center fs-3 my-3 titulos azul">Lucas Capdevila</h4>
               <p className="text-center fs-5">Encargado de recepción</p>
             </Col>
             
