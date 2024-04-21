@@ -23,8 +23,7 @@ const QuienesSomos = () => {
         <Carousel.Item>
           <img
             className="img-fluid"
-            src="https://images.pexels.com/photos/5118088/pexels-photo-5118088.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          />
+            src="https://images.pexels.com/photos/7821349/pexels-photo-7821349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
           <Carousel.Caption>
             <h2 className="fs-1 text-uppercase titulos">El hotel</h2>
             <p className="textosAlternativos">
@@ -33,7 +32,7 @@ const QuienesSomos = () => {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src="https://images.pexels.com/photos/1537577/pexels-photo-1537577.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+          <img src="https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
           <Carousel.Caption>
             <h2 className="fs-1 text-uppercase titulos">Quienes somos</h2>
             <p className="textosAlternativos">
@@ -42,7 +41,7 @@ const QuienesSomos = () => {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src="https://images.pexels.com/photos/9290787/pexels-photo-9290787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+          <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
           <Carousel.Caption>
             <h2 className="fs-1 text-uppercase titulos">Nuestra misión</h2>
             <p className="textosAlternativos">
