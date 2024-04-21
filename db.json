@@ -98,6 +98,16 @@
       "userEmail": "juan_perez@gmail.com",
       "userPassword": "Contra2024",
       "id": "999a"
+    },
+    {
+      "id": "4f01",
+      "imgUser": "https://media.ambito.com/p/4e1f12ceeff7fcfc05a27103d9c6b22c/adjuntos/239/imagenes/040/305/0040305351/lautaro-martinez-seleccionjpg.jpg",
+      "nombreUser": "Lautaro",
+      "apellidoUser": "Martinez",
+      "userName": "toritomartinez",
+      "userEmail": "lautaro@gmail.com",
+      "userPassword": "Contraseña1",
+      "userConfirmPassword": "Contraseña1"
     }
   ],
   "reservas": [

@@ -25,6 +25,7 @@ const Registro = ({ editar, titulo }) => {
     handleSubmit,
     reset,
     setValue,
+    watch,
     formState: { errors },
   } = useForm();
 
@@ -246,7 +247,7 @@ const Registro = ({ editar, titulo }) => {
                       </Form.Label>
                       <Form.Control
                         type="password"
-                        placeholder="Password"
+                        placeholder="********"
                         {...register("userPassword", {
                           required: "El password es obligatorio",
                           minLength: {
@@ -254,11 +255,11 @@ const Registro = ({ editar, titulo }) => {
                             message: "el minimo es de 8 caracteres",
                           },
                           maxLength: {
-                            value: 15,
-                            message: "el maximo es de 15 caracteres",
+                            value: 20,
+                            message: "el maximo es de 20 caracteres",
                           },
                           pattern: {
-                            value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
+                            value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/,
                             message:
                               "El password debe contener al menos una letra mayúscula, una letra minúscula y un número",
                           },
@@ -266,6 +267,36 @@ const Registro = ({ editar, titulo }) => {
                       />
                       <Form.Text className="text-danger">
                         {errors.userPassword?.message}
+                      </Form.Text>
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="userConfirmPassword">
+                      <Form.Label className="textos fw-bold">
+                        Ingrese nuevamente su contraseña
+                      </Form.Label>
+                      <Form.Control
+                        type="password"
+                        placeholder="********"
+                        {...register("userConfirmPassword", {
+                          required: "Es obligatorio ingresar nuevamente el password",
+                          minLength: {
+                            value: 8,
+                            message: "el minimo es de 8 caracteres",
+                          },
+                          maxLength: {
+                            value: 20,
+                            message: "el maximo es de 20 caracteres",
+                          },
+                          pattern: {
+                            value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/,
+                            message:
+                              "El password debe contener al menos una letra mayúscula, una letra minúscula y un número",
+                          },
+                          validate: (value) => value === watch("userPassword") || 'Las contraseñas no coinciden'
+                        })}
+                      />
+                      <Form.Text className="text-danger">
+                        {errors.userConfirmPassword?.message}
                       </Form.Text>
                     </Form.Group>
                     <Button
