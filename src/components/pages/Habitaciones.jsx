@@ -14,20 +14,17 @@ const Habitaciones = ({
   setFechaEntrada,
   fechaSalida,
   setFechaSalida,
+  setUsuarioLogueado,
 }) => {
   const [listaHabitaciones, setListaHabitaciones] = useState([]);
   const [listaHabitacionesPorFiltrar, setListaHabitacionesPorFiltrar] =
     useState([]);
-    const [usuario, setUsuario] = useState(null);
+    
 
   useEffect(() => {
     traerHabitaciones();
-    cargarUsuario();
   }, []);
-  const cargarUsuario = () => {
-    const usuarioStorage = JSON.parse(sessionStorage.getItem("inicioHotelMiradorDelValle"));
-    setUsuario(usuarioStorage);
-  };
+ 
   const { RangePicker } = DatePicker;
   dayjs.locale("es");
 
@@ -93,7 +90,7 @@ const Habitaciones = ({
         </div>
       </div>
       <Container className="mainPage">
-        {usuario && usuario.length > 0 && (
+        {setUsuarioLogueado && setUsuarioLogueado.length > 0 && (
           <Space className="mb-5" direction="vertical" size={12}>
             <RangePicker format="DD-MM-YYYY" onChange={filtrarPorFecha} />
           </Space>
