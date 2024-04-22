@@ -27,7 +27,7 @@ const Footer = () => {
           <p className="footerTexto ">
             Celular para consultas:{" "}
             <a
-              href="https://wa.link/9ahf0t"
+              href="https://wa.me/543813048258?text=%C2%A1Hola,%20amigos%20de%20Hotel%20Mirador%20del%20Valle!%0ANecesito%20asesoramiento.%20"
               title="Numero de Celular/WhatsApp"
               className="text-white link-underline link-underline-opacity-0"
             >
