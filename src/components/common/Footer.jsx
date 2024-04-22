@@ -54,7 +54,7 @@ const Footer = () => {
           >
             <FontAwesomeIcon
               icon={faInstagram}
-              style={{ color: "white", fontSize: "45px" }}
+              className="p-1 iconoRedes"
             />
           </a>
           <a
@@ -63,7 +63,7 @@ const Footer = () => {
           >
             <FontAwesomeIcon
               icon={faFacebook}
-              style={{ color: "white", fontSize: "45px" }}
+              className="p-1 iconoRedes"
             />
           </a>
           <p className="footerTexto">
