@@ -343,6 +343,23 @@ form .btnCrearHabitacion:hover{
   border: #526980 0.1em solid;
   font-family: "Rubik", sans-serif;
 }
+.galeriacolor1{
+  background: #c8cbb9;
+}
+.galeriacolor2{
+  background-color: #798a99;
+}
+.galeriaIMG img{
+  height: 200px;
+  object-fit: cover;
+}
+.modalCard{
+  background-color: #bcb66c;
+}
+.tituloGaleria{
+  font-family: "Playfair Display", serif;
+  font-size: 3.5em;
+}
 @media only screen and (max-width: 767px) {
   .tituloPrincipal h1 {
     font-size: 35px;
@@ -380,6 +397,14 @@ form .btnCrearHabitacion:hover{
   #imgRegistro{
    text-align: center;
    margin-top: 8px;
+  }
+  .galeriaIMG{
+    display: flex;
+    flex-direction: column;
+  }
+  .carruselIMG{
+    display: flex;
+    flex-direction: column;
   }
 }
 @media (min-width: 768px) and (max-width: 1000px){

@@ -11,6 +11,7 @@ import RutasAdmin from "./components/routes/RutasAdmin";
 import Login from "./components/pages/Login";
 import Registro from "./components/pages/Registro";
 import Reservas from "./components/pages/reservas/Reservas";
+import Galeria from "./components/pages/Galeria";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("inicioHotelMiradorDelValle")) || "";
@@ -37,6 +38,7 @@ function App() {
         />
         
         <Route exact path="/registro" element={<Registro></Registro>} />
+        <Route exact path="/galeriadeimagenes" element={<Galeria></Galeria>} />
         <Route exact path="/habitaciones/" element={<Habitaciones fechaEntrada={fechaEntrada} setFechaEntrada={setFechaEntrada} fechaSalida={fechaSalida} setFechaSalida={setFechaSalida}></Habitaciones>} />
         <Route exact path="/reservas/:id/:fechaEntrada/:fechaSalida" element={<Reservas></Reservas>} />
         <Route exact path="*" element={<Error404></Error404>} />
