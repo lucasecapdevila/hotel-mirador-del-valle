@@ -14,7 +14,7 @@ import Reservas from "./components/pages/reservas/Reservas";
 import Galeria from "./components/pages/Galeria";
 
 function App() {
-  const usuario = JSON.parse(sessionStorage.getItem("inicioHotelMiradorDelValle")) || "";
+  const usuario = JSON.parse(sessionStorage.getItem("inicioHotelMiradorDelValle")) || {};
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
   const [fechaEntrada, setFechaEntrada] = useState()
   const [fechaSalida, setFechaSalida] = useState()

@@ -8,6 +8,7 @@ import { leerUsuarioAPI } from "../../helpers/queries";
 import { Link } from "react-router-dom";
 import ItemUsuario from "./usuarios/ItemUsuario";
 const Admin = () => {
+ 
   const [listaHabitaciones, setListaHabitaciones] = useState([]);
 
   useEffect(() => {

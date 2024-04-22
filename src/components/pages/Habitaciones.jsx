@@ -7,7 +7,6 @@ import isBetween from "dayjs/plugin/isBetween";
 import { Container, Row } from "react-bootstrap";
 import CardHabitacion from "./habitaciones/CardHabitacion";
 import { leerHabitacionesAPI } from "../../helpers/queries";
-
 dayjs.extend(isBetween);
 
 const Habitaciones = ({
@@ -19,11 +18,16 @@ const Habitaciones = ({
   const [listaHabitaciones, setListaHabitaciones] = useState([]);
   const [listaHabitacionesPorFiltrar, setListaHabitacionesPorFiltrar] =
     useState([]);
+    const [usuario, setUsuario] = useState(null);
 
   useEffect(() => {
     traerHabitaciones();
+    cargarUsuario();
   }, []);
-
+  const cargarUsuario = () => {
+    const usuarioStorage = JSON.parse(sessionStorage.getItem("inicioHotelMiradorDelValle"));
+    setUsuario(usuarioStorage);
+  };
   const { RangePicker } = DatePicker;
   dayjs.locale("es");
 
@@ -67,12 +71,14 @@ const Habitaciones = ({
           }
         });
       }
-      if(disponible === true || habitacionTemporal.reservasActuales.length == 0){
-        habitacionesTemporales.push(habitacionTemporal)
+      if (
+        disponible === true ||
+        habitacionTemporal.reservasActuales.length == 0
+      ) {
+        habitacionesTemporales.push(habitacionTemporal);
       }
-      setListaHabitaciones(habitacionesTemporales)
+      setListaHabitaciones(habitacionesTemporales);
     });
-    
   };
 
   return (
@@ -87,9 +93,12 @@ const Habitaciones = ({
         </div>
       </div>
       <Container className="mainPage">
-        <Space className="mb-5" direction="vertical" size={12}>
-          <RangePicker format="DD-MM-YYYY" onChange={filtrarPorFecha} />
-        </Space>
+        {usuario && usuario.length > 0 && (
+          <Space className="mb-5" direction="vertical" size={12}>
+            <RangePicker format="DD-MM-YYYY" onChange={filtrarPorFecha} />
+          </Space>
+        )}
+
         <Row>
           {listaHabitaciones.map((habitacion) => (
             <CardHabitacion

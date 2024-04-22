@@ -22,7 +22,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
           icon: "success"
         });
         sessionStorage.removeItem('inicioHotelMiradorDelValle')
-        setUsuarioLogueado("");
+        setUsuarioLogueado({});
         navegacion('/');
       }
     });
@@ -57,18 +57,34 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
               <NavLink end className="nav-link" to="/contacto">
                 CONTACTO
               </NavLink>
-              {usuarioLogueado.length > 0 ? (
-              <>
-                <NavLink end className="nav-link" to="/administrador">
-                  ADMINISTRADOR
-                </NavLink>
-                <Button className="nav-link" variant="link" onClick={logout}>CERRAR SESION</Button>
-              </>
-            ) : (
-              <NavLink end className="nav-link" to="/login">
-                LOGIN
-              </NavLink>
-            )}
+              {usuarioLogueado.email ? (
+                 usuarioLogueado.rol === "Administrador" ? (
+                   <>
+                   <NavLink
+                     end
+                     className="nav-link "
+                     to="/administrador"
+                   >
+                     ADMINISTRADOR
+                   </NavLink>
+                   <Button className="nav-link" variant="link" onClick={logout}>CERRAR SESION</Button>
+                 </>
+                ):( 
+                    <Button className="nav-link" variant="link" onClick={logout}>CERRAR SESION</Button> 
+                  )
+                ):(
+                
+                  <>
+
+                    <NavLink
+                      end
+                      className="nav-link "
+                      to="/Login"
+                    >
+                      LOGIN
+                    </NavLink>
+                  </>
+                )}
             </Nav>
           </Navbar.Collapse>
         </Container>
