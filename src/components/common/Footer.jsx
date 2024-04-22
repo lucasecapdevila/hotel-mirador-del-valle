@@ -27,11 +27,11 @@ const Footer = () => {
           <p className="footerTexto ">
             Celular para consultas:{" "}
             <a
-              href="tel:+543816076542"
+              href="https://wa.link/9ahf0t"
               title="Numero de Celular/WhatsApp"
               className="text-white link-underline link-underline-opacity-0"
             >
-              3816076542
+              +5493813048258
             </a>
           </p>
           <p className="footerTexto">
