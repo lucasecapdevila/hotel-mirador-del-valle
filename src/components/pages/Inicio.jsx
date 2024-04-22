@@ -33,7 +33,7 @@ import {
               src="https://images.pexels.com/photos/5118088/pexels-photo-5118088.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             />
             <Carousel.Caption>
-              <h2 className="fs-1 text-uppercase titulos">El hotel</h2>
+              <h2 className="fs-1 text-uppercase titulos">Naturaleza</h2>
               <p className="textosAlternativos">
                 Estamos situados en el corazón de los Valles Calchaquíes.
               </p>
@@ -42,7 +42,7 @@ import {
           <Carousel.Item>
             <img src="https://images.pexels.com/photos/1537577/pexels-photo-1537577.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
             <Carousel.Caption>
-              <h2 className="fs-1 text-uppercase titulos">Quienes somos</h2>
+              <h2 className="fs-1 text-uppercase titulos">Paz</h2>
               <p className="textosAlternativos">
                 Hotel Mirador del Valle, tu lugar para descansar.
               </p>
@@ -51,7 +51,7 @@ import {
           <Carousel.Item>
             <img src="https://images.pexels.com/photos/9290787/pexels-photo-9290787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
             <Carousel.Caption>
-              <h2 className="fs-1 text-uppercase titulos">Nuestra misión</h2>
+              <h2 className="fs-1 text-uppercase titulos">Disfruta</h2>
               <p className="textosAlternativos">
                 Estamos preparados para brindarte el mejor servicio.
               </p>
@@ -253,7 +253,6 @@ import {
               </div>
             </div>
           </section>
-  
           <section className="my-4">
             <h3 className="text-center titulos">Nuestras políticas</h3>
             <Accordion className="textosAlternativos">
@@ -318,6 +317,43 @@ import {
             </Accordion>
           </section>
         </Container>
+        <Carousel indicators={false}>
+      <Carousel.Item>
+        <img
+          style={{objectFit: 'contain', maxHeight: '500px', width: '100%', backgroundColor: 'transparent'}}
+          src="https://i.ibb.co/YWDrwwr/rese-a-5.png"
+          alt="First slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          style={{objectFit: 'contain', maxHeight: '500px', width: '100%', backgroundColor: 'transparent'}}
+          src="https://i.ibb.co/4Y8K3BX/rese-a-1.png"
+          alt="Second slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          style={{objectFit: 'contain', maxHeight: '500px', width: '100%', backgroundColor: 'transparent'}}
+          src="https://i.ibb.co/JFSxgjN/rese-a-2.png"
+          alt="Third slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          style={{objectFit: 'contain', maxHeight: '500px', width: '100%', backgroundColor: 'transparent'}}
+          src="https://i.ibb.co/SKkxx2n/rese-a-3.png"
+          alt="Fourth slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          style={{objectFit: 'contain', maxHeight: '500px', width: '100%', backgroundColor: 'transparent'}}
+          src="https://i.ibb.co/q5nKYzH/rese-a-4.png"
+          alt="Fifth slide"
+        />
+      </Carousel.Item>
+    </Carousel>
       </main>
     );
   };
