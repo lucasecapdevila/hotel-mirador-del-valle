@@ -16,39 +16,33 @@ const Login = ({ setUsuarioLogueado }) => {
   const onSubmit = async (usuario) => {
     try {
       const respuesta = await iniciarSesion(usuario);
-      console.log(respuesta)
+
       if (respuesta) {
         delete respuesta.password;
         sessionStorage.setItem("inicioHotelMiradorDelValle", JSON.stringify(respuesta));
-        
-        if (respuesta.email === 'hotelmiradordelvalle.25.07@gmail.com') { //se tiene que comparar con el rol no el email
+
+        const esAdministrador = respuesta.rol === "Administrador";
+
+        if (esAdministrador) {
           setUsuarioLogueado(respuesta);
-          Swal.fire(
-            "Bienvenido Administrador!",
-            "success"
-          );
+          Swal.fire("Bienvenido Administrador!", "", "success");
           reset();
           navegacion("/administrador");
         } else {
           setUsuarioLogueado(respuesta);
-          Swal.fire(
-
-            `Sesion iniciada!!! `,
-            `Bienvenido ${respuesta.userName}!`,
-            "success"
-          );
+          Swal.fire(`Sesión iniciada!`, `Bienvenido ${respuesta.userName}!`, "success");
           reset();
           navegacion("/");
         }
       } else {
-        Swal.fire("Error!", "El email o password son incorrectos.", "error");
+        Swal.fire("Error!", "El email o la contraseña son incorrectos.", "error");
       }
     } catch (error) {
       console.error("Error al iniciar sesión:", error);
-      Swal.fire("Error!", "Hubo un problema al iniciar sesión.", "error");
+      Swal.fire("Error!", "Hubo un problema al iniciar sesión. Por favor, inténtalo de nuevo más tarde.", "error");
     }
-  
   };
+
 
   return (
     <div className="mainPage fondoLogin">

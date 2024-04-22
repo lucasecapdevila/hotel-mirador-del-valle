@@ -14,7 +14,7 @@ const Habitaciones = ({
   setFechaEntrada,
   fechaSalida,
   setFechaSalida,
-  setUsuarioLogueado,
+  usuarioLogueado,
 }) => {
   const [listaHabitaciones, setListaHabitaciones] = useState([]);
   const [listaHabitacionesPorFiltrar, setListaHabitacionesPorFiltrar] =
@@ -90,7 +90,7 @@ const Habitaciones = ({
         </div>
       </div>
       <Container className="mainPage">
-        {setUsuarioLogueado && setUsuarioLogueado.length > 0 && (
+        {usuarioLogueado && Object.keys(usuarioLogueado).length > 0 && (
           <Space className="mb-5" direction="vertical" size={12}>
             <RangePicker format="DD-MM-YYYY" onChange={filtrarPorFecha} />
           </Space>
