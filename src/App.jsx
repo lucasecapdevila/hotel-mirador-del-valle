@@ -12,21 +12,23 @@ import Login from "./components/pages/Login";
 import Registro from "./components/pages/Registro";
 import Reservas from "./components/pages/reservas/Reservas";
 import Galeria from "./components/pages/Galeria";
+import Inicio from "./components/pages/Inicio"; // Importa el componente de inicio
 
 function App() {
-  const usuario = JSON.parse(sessionStorage.getItem("inicioHotelMiradorDelValle")) || "";
+  const usuario =
+    JSON.parse(sessionStorage.getItem("inicioHotelMiradorDelValle")) || "";
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
-  const [fechaEntrada, setFechaEntrada] = useState()
-  const [fechaSalida, setFechaSalida] = useState()
-  
+  const [fechaEntrada, setFechaEntrada] = useState();
+  const [fechaSalida, setFechaSalida] = useState();
 
   return (
     <BrowserRouter>
-      <Menu usuarioLogueado = {usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}/>
+      <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} />
       <Routes>
-        <Route exact path="/quienesSomos" element={<QuienesSomos></QuienesSomos>} />
-        <Route exact path="/login" element={<Login setUsuarioLogueado = {setUsuarioLogueado}></Login>}></Route>
-        <Route exact path='/registro' element={<Registro editar={false} titulo='Agrega tu Usuario!!'></Registro>} />
+        <Route exact path="/" element={<Inicio />} /> {/* Ruta para la página de inicio */}
+        <Route exact path="/quienesSomos" element={<QuienesSomos />} />
+        <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado} />} />
+        <Route exact path='/registro' element={<Registro editar={false} titulo='Agrega tu Usuario!!' />} />
         <Route
           exact
           path="/administrador/*"
@@ -36,12 +38,21 @@ function App() {
             </RutasProtegidas>
           }
         />
-        
-        <Route exact path="/registro" element={<Registro></Registro>} />
-        <Route exact path="/galeriadeimagenes" element={<Galeria></Galeria>} />
-        <Route exact path="/habitaciones/" element={<Habitaciones fechaEntrada={fechaEntrada} setFechaEntrada={setFechaEntrada} fechaSalida={fechaSalida} setFechaSalida={setFechaSalida}></Habitaciones>} />
-        <Route exact path="/reservas/:id/:fechaEntrada/:fechaSalida" element={<Reservas></Reservas>} />
-        <Route exact path="*" element={<Error404></Error404>} />
+        <Route exact path="/galeriadeimagenes" element={<Galeria />} />
+        <Route
+          exact
+          path="/habitaciones/"
+          element={
+            <Habitaciones
+              fechaEntrada={fechaEntrada}
+              setFechaEntrada={setFechaEntrada}
+              fechaSalida={fechaSalida}
+              setFechaSalida={setFechaSalida}
+            />
+          }
+        />
+        <Route exact path="/reservas/:id/:fechaEntrada/:fechaSalida" element={<Reservas />} />
+        <Route exact path="*" element={<Error404 />} />
       </Routes>
       <Footer />
     </BrowserRouter>

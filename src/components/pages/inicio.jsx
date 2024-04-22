@@ -16,7 +16,7 @@ import {
     Modal,
   } from "react-bootstrap";
   
-  const QuienesSomos = () => {
+  const Inicio = () => {
     const [show, setShow] = useState(false);
     const [lgShow, setLgShow] = useState(false);
     const [modalShow, setModalShow] = useState(false);
@@ -322,5 +322,5 @@ import {
     );
   };
   
-  export default QuienesSomos;
+  export default Inicio;
   
