@@ -57,21 +57,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
               <NavLink end className="nav-link" to="/contacto">
                 CONTACTO
               </NavLink>
-<<<<<<< HEAD
-              {usuarioLogueado.length > 0 ? (
-              <>
-                <NavLink end className="nav-link" to="/administrador">
-                  ADMINISTRADOR
-                </NavLink>
-                <Button className="nav-link" variant="link" onClick={logout}>CERRAR SESION</Button>
-              </>
-            ) : (
-              <NavLink end className="nav-link" to="/login">
-                LOGIN
-              </NavLink>
-            )}
-            
-=======
+
               {usuarioLogueado.email ? (
                  usuarioLogueado.rol === "Administrador" ? (
                    <>
@@ -100,7 +86,6 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                     </NavLink>
                   </>
                 )}
->>>>>>> dev
             </Nav>
           </Navbar.Collapse>
         </Container>
