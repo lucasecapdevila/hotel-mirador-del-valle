@@ -1,5 +1,4 @@
 import { Container, Form, Button } from "react-bootstrap";
-import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -7,17 +6,32 @@ import {
   faInstagram,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import Swal from "sweetalert2";
 
 const Contacto = () => {
-  const contactoValidacion = (mensajeEnviado) => {
-    console.log(mensajeEnviado);
-  };
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_58pt40w', 'template_wpbthn6', form.current, {
+        publicKey: 'rjGqT4RLJZlCmkRSd',
+      })
+      .then(
+        () => {
+          Swal.fire(`Consulta Enviada!`, `Responderemos a la brevedad!`, "success");
+          form.current.reset()
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+      console.log(mensajeEnviado);
+  };
 
   return (
     <>
@@ -87,89 +101,50 @@ const Contacto = () => {
             <h2 className="titulos">CONTACTANOS</h2>
             <hr className="mt-0 w-50 border-3 azul solid opacity-100" />
 
-            <Form onSubmit={handleSubmit(contactoValidacion)}>
+            <Form ref={form} onSubmit={sendEmail}>
               <Form.Group className="mb-3" controlId="userName">
                 <Form.Label className="textos fw-bold">
                   Nombre Completo:
                 </Form.Label>
                 <Form.Control
+                name="user_name"
                   type="text"
                   placeholder="Ej: Juan Perez"
                   as="textarea"
                   className="textareaForm"
-                  {...register("nombreCompleto", {
-                    required: "Un Nombre Completo de Usuario es obligatorio.",
-                    minLength: {
-                      value: 4,
-                      message:
-                        "Debe ingresar como mínimo 4 carácteres para su nombre completo.",
-                    },
-                    maxLength: {
-                      value: 60,
-                      message:
-                        "Puede ingresar como máximo 60 carácteres para su nombre completo.",
-                    },
-                  })}
+                  required
+                  minLength={5}
+                  maxLength={45}
                 />
-                <Form.Text className="text-danger">
-                  {errors.nombreCompleto?.message}
-                </Form.Text>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label className="textos fw-bold">Email:</Form.Label>
                 <Form.Control
+                 name="user_email"
                   type="email"
                   placeholder="Ej: juan_perez@gmail.com"
-                  {...register("emailContacto", {
-                    required: "El email es obligatorio",
-                    minLength: {
-                      value: 4,
-                      message: "El email debe contener al menos 4 caracteres",
-                    },
-                    maxLength: {
-                      value: 250,
-                      message:
-                        "El email debe contener como máximo 250 caracteres",
-                    },
-                    pattern: {
-                      value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
-                      message:
-                        "Ingrese una dirección de correo electrónico válida",
-                    },
-                  })}
+                  required
+                  minLength={4}
+                  maxLength={200}
                 />
-                <Form.Text className="text-danger">
-                  {errors.emailContacto?.message}
-                </Form.Text>
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formConsulta">
+              <Form.Group className="mb-3" controlId="userName">
                 <Form.Label className="textos fw-bold">Consulta:</Form.Label>
                 <Form.Control
+                 name="message"
                   id="formConsulta"
                   type="text"
                   placeholder="Ej: Quiero consultar sobre si..."
                   as="textarea"
-                  {...register("mensajeConsulta", {
-                    required:
-                      "Escribir una consulta para enviar el formulario es obligatorio.",
-                    minLength: {
-                      value: 5,
-                      message: "La consulta debe tener mas de 5 caracteres.",
-                    },
-                    maxLength: {
-                      value: 400,
-                      message: "La consulta puede tener hasta 400 caracteres.",
-                    },
-                  })}
+                  required
+                  minLength={10}
+                  maxLength={500}
                 />
-                <Form.Text className="text-danger">
-                  {errors.mensajeConsulta?.message}
-                </Form.Text>
               </Form.Group>
 
-              <Button className="btnLogin w-100 fw-bold textos mb-3" type="submit">
+              <Button className="btnLogin w-100 fw-bold textos mb-3" type="submit" value="Send">
                 ENVIAR
               </Button>
             </Form>
