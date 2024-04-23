@@ -417,6 +417,9 @@ form .btnCrearHabitacion:hover{
 .textFormContacto2{
  font-size: 21px;
 }
+.carruselModal{
+  height: 400px;
+}
 @media only screen and (max-width: 767px) {
   .tituloPrincipal h1 {
     font-size: 35px;
