@@ -1,36 +1,24 @@
-import {
-  faBriefcase,
-  faDumbbell,
-  faFaceSmile,
-  faUtensils,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
-import {
-  Accordion,
-  Carousel,
-  Container,
-  Row,
-  Col,
-  Button,
-  Modal,
-} from "react-bootstrap";
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import jose from '../../assets/joseVera.webp'
+import agus from '../../assets/agusSuarez.webp'
+import nati from '../../assets/natiLopez.webp'
+import lucas from '../../assets/lucasCapdevila.webp'
+import { useEffect } from "react";
+import { Carousel, Col, Container, Row } from "react-bootstrap";
 
 const QuienesSomos = () => {
-  const [show, setShow] = useState(false);
-  const [lgShow, setLgShow] = useState(false);
-  const [modalShow, setModalShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  useEffect(() => {
+    Aos.init()
+  })
 
   return (
     <main className="mainPage">
-      <Carousel fade>
+      <Carousel id="carouselPrincipal" fade>
         <Carousel.Item>
           <img
             className="img-fluid"
-            src="https://images.pexels.com/photos/5118088/pexels-photo-5118088.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src="https://images.pexels.com/photos/7821349/pexels-photo-7821349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           />
           <Carousel.Caption>
             <h2 className="fs-1 text-uppercase titulos">El hotel</h2>
@@ -40,7 +28,7 @@ const QuienesSomos = () => {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src="https://images.pexels.com/photos/1537577/pexels-photo-1537577.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+          <img src="https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
           <Carousel.Caption>
             <h2 className="fs-1 text-uppercase titulos">Quienes somos</h2>
             <p className="textosAlternativos">
@@ -49,7 +37,7 @@ const QuienesSomos = () => {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src="https://images.pexels.com/photos/9290787/pexels-photo-9290787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+          <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
           <Carousel.Caption>
             <h2 className="fs-1 text-uppercase titulos">Nuestra misión</h2>
             <p className="textosAlternativos">
@@ -61,13 +49,17 @@ const QuienesSomos = () => {
 
       <Container>
         <section className="my-4">
-          <h2 className="text-center fs-1 titulos">Hotel Mirador del Valle</h2>
+          <h1 className="text-center fs-1 titulos azul">
+            Hotel Mirador del Valle
+          </h1>
           <article className="fs-5 textoJustificado textos">
             <p className="mb-4">
-              Bienvenido al Hotel Mirador del Valle, donde la elegancia se
-              encuentra con la naturaleza para ofrecerte una experiencia
-              inolvidable. Ubicado en el pintoresco valle de Tafí, nuestro hotel
-              es un refugio de tranquilidad y comodidad.
+              Bienvenido al Hotel Mirador del Valle, un refugio de tranquilidad
+              y comodidad donde la elegancia se encuentra con la naturaleza para
+              ofrecerte una experiencia inolvidable. Somos un hotel de 3
+              estrellas ubicado en el pintoresco valle de Tafí, provincia de
+              Tucumán. Nos encontramos a tan solo 107 kms de San Miguel de
+              Tucumán.
             </p>
             <p className="mb-4">
               En Mirador del Valle, nos enorgullece brindar un servicio
@@ -93,261 +85,147 @@ const QuienesSomos = () => {
           </article>
         </section>
 
-        <section className="container d-flex flex-column my-4">
-          <h3 className="text-center titulos">Nuestros servicios</h3>
-          <Row>
-            <Col
-              sm={12}
-              md={6}
-              lg={3}
-              className="d-flex flex-column align-items-center my-2"
-            >
-              <FontAwesomeIcon className="fs-3 verde" icon={faUtensils} />
-              <h5 className="titulos">Restaurantes</h5>
-              <p className="m-0 textosAlternativos">Restaurante en el hotel</p>
-              <p className="m-0 textosAlternativos">Servicio a la habitación</p>
+        <section className="my-5">
+          <h2 className="text-center fs-1 titulos azul">Nuestra historia</h2>
+          <article className="fs-5 my-4 textoJustificado textos">
+            <div className="d-flex flex-column flex-xl-row justify-content-center align-items-start">
+              <img
+                data-aos="fade-right"
+                data-aos-duration="2200"
+                className="img-fluid mb-4 me-xl-4 imgQuienesSomosHotel"
+                src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/243247791.jpg?k=3c07e955c37818f415ca2e8581a04c94744f46df996ae3281ed5bcf7fff45c12&o=&hp=1"
+                alt="Nuestro hotel"
+              />
+              <p className="mb-4">
+                El emblemático edificio del Hotel fue construido en dos etapas.
+                La primera en el año 1978, significó un hito en los servicios
+                hoteleros de Tafí, ya que el proyecto ofrecía características
+                arquitectónicas de singular belleza y calidez, y fue realizado
+                empleando madera y otros elementos naturales. Cada detalle del
+                diseño fue cuidadosamente considerado para integrarse
+                armoniosamente con el paisaje circundante. Las grandes aberturas
+                permitían que la luz natural inundara los espacios interiores,
+                mientras que las vistas panorámicas del Valle de Tafí se
+                convertían en una parte integral de la experiencia de hospedaje.
+                El diseño arquitectónico, con sus líneas limpias y su enfoque en
+                la simplicidad elegante, atrajo tanto a los viajeros locales
+                como a los internacionales en busca de una experiencia única y
+                en sintonía con la naturaleza.
+              </p>
+            </div>
+          </article>
+
+          <article className="fs-5 my-4 textoJustificado textos">
+            <div className="d-flex flex-column flex-xl-row-reverse justify-content-center align-items-start">
+              <img
+                data-aos="fade-left"
+                data-aos-duration="2200"
+                className="img-fluid mb-4 ms-xl-4 imgQuienesSomosHotel"
+                src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/6836911.jpg?k=da8b3433a2b7e003fb4640c44688eae91c890900c3ad3dec440bce5bfeb23468&o=&hp=1"
+                alt="Nuestro hotel"
+              />
+              <p className="mb-4">
+                En la segunda etapa, concretada en 1986, se agregaron 20
+                habitaciones, entre las cuales destacan las dos Suites y un
+                amplio sector de esparcimiento con Sala de TV, Mesa de Juegos y
+                un Living para reuniones íntimas, todo esto con ingreso directo
+                desde el Estacionamiento semicubierto y el sector de Solárium,
+                Quincho y Juegos Infantiles. En el año 2022 se realizó una nueva
+                expansión que no solo se limitó a sus instalaciones físicas,
+                sino que también se reflejó en su reputación y prestigio en la
+                industria hotelera. Se convirtió en un punto de referencia para
+                viajeros exigentes que buscaban una experiencia única y
+                auténtica en el corazón de Tafí. Desde entonces, el Hotel ha
+                seguido evolucionando y adaptándose a las cambiantes necesidades
+                de sus huéspedes, pero su compromiso con la excelencia en
+                servicio y hospitalidad ha permanecido inquebrantable a lo largo
+                de los años. Hoy en día, sigue siendo un destino de ensueño para
+                aquellos que buscan una escapada tranquila y lujosa en medio de
+                la belleza natural del Valle de Tafí.
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <section className="my-5">
+          <h2 className="text-center fs-1 titulos azul">
+            Privilegios en el Paraíso
+          </h2>
+          <article className="fs-5 my-4 textoJustificado textos">
+            <div className="d-flex flex-column flex-xl-row justify-content-center align-items-start">
+              <img
+                data-aos="fade-right"
+                data-aos-duration="2200"
+                className="img-fluid mb-4 me-xl-4 imgQuienesSomosHotel"
+                src="https://tafidelvalle.net/wp-content/uploads/2023/09/Tafi_del_Valle_-_postal-1280x720-1.jpg"
+                alt="Nuestro hotel"
+              />
+              <p className="mb-4">
+                Todos sabemos que Tafí del Valle está a sólo un paso del Paraíso
+                Terrenal, sus paisajes y su clima lo convierten en un destino
+                turístico único e inolvidable, lo que no todos saben es que sólo
+                algunos privilegiados disfrutan a pleno de todos sus encantos… A
+                un paso del centro de la Villa y con el sello inconfundible de
+                un ambiente a la vez cálido y refinado, el Hotel Mirador del
+                Valle es Tafí en su más pura esencia, un clásico que se renueva
+                permanentemente, en su cuidada ambientación que no descuida la
+                promoción de artistas y artesanos tucumanos, en su excelente
+                cocina que fusiona los sabores de la tierra con platos gourmet
+                de prolija elaboración, en la reconocida calidad de su atención,
+                y en la calidez de su gente, heredera de la tradicional
+                hospitalidad de los Valles. Cuando el destino de sus vacaciones
+                está cerca del Paraíso Terrenal, le recomendamos que disfrute de
+                todos sus privilegios en Hotel Mirador del Valle, un lugar
+                pensado para Usted.
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <section className="my-5">
+          <h2 className="text-center fs-1 titulos azul">Conócenos</h2>
+          <p className="fs-5 my-4 textoJustificado textos">
+            En Hotel Mirador del Valle, nos enorgullece presentar a nuestro
+            equipo apasionado y dedicado que trabaja incansablemente para
+            ofrecer experiencias inolvidables a nuestros huéspedes. Con una
+            combinación de talento, experiencia y compromiso, nuestro equipo
+            está aquí para hacer que tu estadía sea excepcional en todos los
+            sentidos. Desde nuestro equipo directivo hasta nuestro personal de
+            servicio, cada miembro aporta su habilidad única y su atención al
+            detalle para garantizar que cada momento sea perfecto. Nos
+            esforzamos por crear un ambiente acogedor y familiar donde nuestros
+            huéspedes se sientan bienvenidos y atendidos en todo momento.
+          </p>
+          <Row className="d-flex justify-content-evenly align-items-start">
+            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4"  data-aos="flip-left" data-aos-duration="2000">
+              <div className="contenedorImgUsuario">
+                <img className="img-fluid imgUsuario" src={jose} alt="José Vera, Gerente General de Sucursal" />
+              </div>
+              <h4 className="text-center fs-3 my-3 titulos azul">José Manuel Vera</h4>
+              <p className="text-center fs-5">Gerente General de Sucursal</p>
             </Col>
-            <Col
-              sm={12}
-              md={6}
-              lg={3}
-              className="d-flex flex-column align-items-center my-2"
-            >
-              <FontAwesomeIcon className="fs-3 verde" icon={faDumbbell} />
-              <h5 className="titulos">Gimnasio y recreación</h5>
-              <p className="m-0 textosAlternativos">Gimnasio</p>
-              <p className="m-0 textosAlternativos">Piscina al aire libre</p>
+            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4"  data-aos="flip-left" data-aos-duration="2000">
+              <div className="contenedorImgUsuario">
+                <img className="img-fluid imgUsuario" src={lucas} alt="Lucas Capdevila, Encargado de Recepción" />
+              </div>
+              <h4 className="text-center fs-3 my-3 titulos azul">Lucas Capdevila</h4>
+              <p className="text-center fs-5">Encargado de Recepción</p>
             </Col>
-            <Col
-              sm={12}
-              md={6}
-              lg={3}
-              className="d-flex flex-column align-items-center my-2"
-            >
-              <FontAwesomeIcon className="fs-3 verde" icon={faBriefcase} />
-              <h5 className="titulos">Negocios y trabajo</h5>
-              <p className="m-0 textosAlternativos">Centro de negocios</p>
-              <p className="m-0 textosAlternativos">Salas de Reuniones</p>
+            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4"  data-aos="flip-left" data-aos-duration="2000">
+              <div className="contenedorImgUsuario">
+                <img className="img-fluid imgUsuario" src={nati} alt="Natalia Lopez, Coordinadora General de Excursiones" />
+              </div>
+              <h4 className="text-center fs-3 my-3 titulos azul">Natalia G. Lopez</h4>
+              <p className="text-center fs-5">Coordinadora General de Excursiones</p>
             </Col>
-            <Col
-              sm={12}
-              md={6}
-              lg={3}
-              className="d-flex flex-column align-items-center my-2"
-            >
-              <FontAwesomeIcon className="fs-3 verde" icon={faFaceSmile} />
-              <h5 className="titulos">Comodidades</h5>
-              <p className="m-0 textosAlternativos">Estacionamiento gratis</p>
-              <p className="m-0 textosAlternativos">Wi-Fi gratis</p>
+            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4"  data-aos="flip-left" data-aos-duration="2000">
+              <div className="contenedorImgUsuario">
+                <img className="img-fluid imgUsuario" src={agus} alt="Agustina Suarez, Directora de Sistemas y IT" />
+              </div>
+              <h4 className="text-center fs-3 my-3 titulos azul">Agustina Suarez</h4>
+              <p className="text-center fs-5">Directora de Sistemas y IT</p>
             </Col>
           </Row>
-
-          <Button
-            className="align-self-center mt-2 textos"
-            onClick={() => setLgShow(true)}
-          >
-            Características accesibles para personas con discapacidades
-          </Button>
-
-          <Modal
-            size="lg"
-            show={lgShow}
-            onHide={() => setLgShow(false)}
-            aria-labelledby="example-modal-sizes-title-lg"
-          >
-            <Modal.Header closeButton>
-              <Modal.Title
-                className="titulos"
-                id="example-modal-sizes-title-lg"
-              >
-                Características accesibles para personas con discapacidades
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body className="textos">
-              <p>
-                Nos esforzamos por brindar una estadía cómoda a todos los
-                huéspedes. Si tiene preguntas adicionales sobre las
-                características de accesibilidad del hotel o una solicitud
-                relacionada con una discapacidad de cualquier tipo, comuníquese
-                directamente con el hotel y seleccione la opción para
-                comunicarse con la recepción.
-              </p>
-              <hr />
-              <h4 className="titulos">
-                Las características disponibles incluyen:
-              </h4>
-              <ul>
-                <li>Rampa de entrada al edificio</li>
-                <li>Accesible para personas con discapacidades</li>
-                <li>Ascensor accesible para personas con discapacidades</li>
-                <li>
-                  Habitaciones accesibles para personas con discapacidades
-                  motrices, con puertas de entrada o paso que ofrecen un ancho
-                  libre de 32 pulgadas
-                </li>
-                <li>
-                  Salas de reuniones accesibles para personas con discapacidades
-                </li>
-                <li>
-                  Lugares de estacionamiento reservados para personas con
-                  discapacidades en el estacionamiento sin servicio de valet
-                </li>
-                <li>
-                  Rampa de acceso desde la entrada hasta el área de recepción
-                </li>
-                <li>
-                  Rampa de acceso desde la entrada del hotel hasta al menos un
-                  restaurante
-                </li>
-                <li>
-                  Rampa de acceso desde la entrada del hotel hasta las
-                  instalaciones de ejercicios
-                </li>
-                <li>
-                  Rampa de acceso desde la entrada del hotel hasta la piscina
-                </li>
-                <li>Piscina accesible para personas con discapacidades</li>
-                <li>Puertas de los baños de un ancho mínimo de 32 pulgadas</li>
-                <li>Ascensor con botones en braille</li>
-                <li>Números de habitación en braille</li>
-                <li>Barras de apoyo en el baño</li>
-                <li>Barra de armario a baja altura o regulable</li>
-                <li>Botones del ascensor a baja altura</li>
-                <li>Interruptores de luz a baja altura</li>
-                <li>Estantes para guardar objetos a baja altura</li>
-                <li>Controles del termostato a baja altura</li>
-                <li>
-                  Instalaciones/áreas públicas accesibles para personas con
-                  discapacidades físicas
-                </li>
-                <li>Se aceptan animales de asistencia</li>
-                <li>
-                  Alarmas visuales para personas con problemas de audición
-                </li>
-              </ul>
-              <hr />
-              <h4 className="titulos">
-                Las siguientes características no están disponibles:
-              </h4>
-              <ul>
-                <li>Conserjería accesible para personas con discapacidades</li>
-                <li>
-                  Transporte accesible para personas con discapacidades
-                  disponible con previo aviso
-                </li>
-                <li>
-                  Dispositivos de audición asistida para reuniones, disponibles
-                  a solicitud
-                </li>
-                <li>
-                  Subtítulos en los televisores o decodificadores de subtítulos
-                </li>
-                <li>Estacionamiento únicamente con servicio de valet</li>
-              </ul>
-            </Modal.Body>
-          </Modal>
-        </section>
-
-        <section className="my-4">
-          <h3 className="text-center titulos">Comodidades destacadas</h3>
-          <div className="d-flex flex-column flex-md-row justify-content-center">
-            <div className="m-3 hvr-grow-shadow contenedor">
-              <img
-                className="img-fluid"
-                src="https://images.pexels.com/photos/6796964/pexels-photo-6796964.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="Gym del hotel"
-              />
-              <div className="textoEnImagen">
-                <h4 className="text-uppercase ms-3 titulos">Gimnasio</h4>
-              </div>
-            </div>
-
-            <div className="m-3 hvr-grow-shadow contenedor">
-              <img
-                className="img-fluid"
-                src="https://images.pexels.com/photos/462129/pexels-photo-462129.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="Piscina del hotel"
-              />
-              <div className="textoEnImagen">
-                <h4 className="text-uppercase ms-3 titulos">Piscina</h4>
-              </div>
-            </div>
-
-            <div className="m-3 hvr-grow-shadow contenedor">
-              <img
-                className="img-fluid"
-                src="https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="Restaurante del hotel"
-              />
-              <div className="textoEnImagen">
-                <h4 className="text-uppercase ms-3 titulos">Restaurante</h4>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="my-4">
-          <h3 className="text-center titulos">Nuestras políticas</h3>
-          <Accordion className="textosAlternativos">
-            <Accordion.Item eventKey="0">
-              <Accordion.Header>Cancelación</Accordion.Header>
-              <Accordion.Body className="textos">
-                Las políticas de cancelación pueden variar según la tarifa y las
-                fechas de su reservación. Consulte su confirmación de
-                reservación para verificar la política de cancelación. Si
-                necesita más ayuda, llame directamente al hotel o comuníquese
-                con el servicio al cliente. Como alternativa, puede cancelar su
-                reservación en línea.
-              </Accordion.Body>
-            </Accordion.Item>
-            <Accordion.Item eventKey="1">
-              <Accordion.Header>Check-in/check-out</Accordion.Header>
-              <Accordion.Body className="textos">
-                <p>Edad mínima para registrarse: 18</p>
-                <p>Tarifa de check-out anticipado: $AR0.00</p>
-                <p>Tarifa de check-out prorrogado: $AR0.00</p>
-              </Accordion.Body>
-            </Accordion.Item>
-            <Accordion.Item eventKey="2">
-              <Accordion.Header>Pago</Accordion.Header>
-              <Accordion.Body className="textos">
-                <p>Moneda: Peso argentino</p>
-                <p>Tarjetas de crédito aceptadas:</p>
-                <div className="d-flex">
-                  <div className="w-25">
-                    <img
-                      className="img-fluid w-50"
-                      src="https://www.logo.wine/a/logo/American_Express/American_Express-Logo.wine.svg"
-                      alt="Logo American Express"
-                    />
-                  </div>
-                  <div className="w-25">
-                    <img
-                      className="img-fluid w-50"
-                      src="https://www.logo.wine/a/logo/Visa_Inc./Visa_Inc.-Logo.wine.svg"
-                      alt="Logo Visa"
-                    />
-                  </div>
-                  <div className="w-25">
-                    <img
-                      className="img-fluid w-50"
-                      src="https://www.logo.wine/a/logo/Mastercard/Mastercard-Logo.wine.svg"
-                      alt="Logo MasterCard"
-                    />
-                  </div>
-                </div>
-              </Accordion.Body>
-            </Accordion.Item>
-            <Accordion.Item eventKey="3">
-              <Accordion.Header>Política sobre mascotas</Accordion.Header>
-              <Accordion.Body className="textos">
-                Las mascotas son bienvenidas. Tenga en cuenta que se aplica un
-                cargo de $50 USD a los cargos de habitación por mascota, con un
-                límite de dos mascotas. También ofrecemos una cama y tazones
-                para mascotas.
-              </Accordion.Body>
-            </Accordion.Item>
-          </Accordion>
         </section>
       </Container>
     </main>

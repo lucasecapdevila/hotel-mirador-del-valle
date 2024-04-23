@@ -46,7 +46,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 INICIO
               </NavLink>
               <NavLink end className="nav-link" to="/quienesSomos">
-                EL HOTEL
+                HOTEL
               </NavLink>
               <NavLink end className="nav-link" to="/galeriadeimagenes">
                 GALERIA
@@ -57,6 +57,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
               <NavLink end className="nav-link" to="/contacto">
                 CONTACTO
               </NavLink>
+
               {usuarioLogueado.email ? (
                  usuarioLogueado.rol === "Administrador" ? (
                    <>
