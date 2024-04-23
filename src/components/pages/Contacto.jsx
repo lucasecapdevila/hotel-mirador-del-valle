@@ -23,11 +23,19 @@ const Contacto = () => {
       })
       .then(
         () => {
-          Swal.fire(`Consulta Enviada!`, `Responderemos a la brevedad!`, "success");
+          Swal.fire({
+            title: "Consulta Enviada!!",
+            text: `Su consulta ya fue enviada, responderemos a la brevedad!!.`,
+            icon: "success",
+          });
           form.current.reset()
         },
-        (error) => {
-          console.log('FAILED...', error.text);
+        () => {
+          Swal.fire({
+            title: "Lo siento, ocurrio un error",
+            text: `Su consulta NO fue enviada, intentalo mas tarde. Gracias y Disculpa!.`,
+            icon: "error",
+          });
         },
       );
       console.log(mensajeEnviado);
