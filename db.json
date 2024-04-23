@@ -1,0 +1,166 @@
+{
+  "habitaciones": [
+    {
+      "id": "e1e7",
+      "numeroHabitacion": 10,
+      "tipoHabitacion": "Doble",
+      "precioHabitacion": 7500,
+      "reservasActuales": [],
+      "imagenHabitacion": "https://images.pexels.com/photos/210265/pexels-photo-210265.jpeg",
+      "descripcionBreve": "Las habitaciones dobles poseen todo lo necesario para compartir unos días de descanso en pareja",
+      "descripcionAmplia": "Las habitaciones dobles poseen todo lo necesario para compartir unos días de descanso en pareja, se encuentran equipadas con cama Queen Size, acolchado, toallas línea superior de 550g, alfombra de baño,amenities, caja de seguridad, servicio de wi fi libre, Tv por cable, piso parqué, calefacción centralizada, cortinas black out, servicio de limpieza a diario. Algunas habitaciones poseen bañadera y otras pie de ducha."
+    },
+    {
+      "id": "6bdb",
+      "numeroHabitacion": 11,
+      "tipoHabitacion": "Deluxe",
+      "precioHabitacion": 9000,
+      "reservasActuales": [],
+      "imagenHabitacion": "https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg",
+      "descripcionBreve": "Las habitaciones deluxe están pensadas para una estadía de amigos o familia",
+      "descripcionAmplia": "Las habitaciones deluxe twin están pensadas para una estadía de amigos o familia, decoradas con colores claros que invitan al descanso, se encuentran equipadas con dos camas singles, acolchados, toallas línea superior de 550g, amenities, alfombra de baño, caja de seguridad, servicio de wi fi libre, Tv por cable, piso parqué, calefacción centralizada, cortinas black out, servicio de limpieza a diario. Algunas habitaciones poseen bañadera y otras pie de ducha."
+    },
+    {
+      "id": "62cd",
+      "numeroHabitacion": 12,
+      "tipoHabitacion": "Suite",
+      "precioHabitacion": 25000,
+      "reservasActuales": [],
+      "imagenHabitacion": "https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg",
+      "descripcionBreve": "Habitación triple superior con baño privado 24 m2",
+      "descripcionAmplia": "Cómodas y acogedoras cuenta con una cama Queen size y una cama single, acolchados, toallas línea superior de 550g,amenities, bañadera, alfombra de baño, caja de seguridad, servicio de wi fi libre, Tv por cable, piso parqué, calefacción centralizada, cortinas black out, servicio de limpieza a diario."
+    },
+    {
+      "id": "7e6c",
+      "numeroHabitacion": 86,
+      "tipoHabitacion": "Twin",
+      "precioHabitacion": 10000,
+      "reservasActuales": [
+        {
+          "id": "c14b",
+          "habitacion": 86,
+          "idHabitacion": "7e6c",
+          "idUsuario": "1234",
+          "fechaEntrada": "17-04-2024",
+          "fechaSalida": "20-04-2024",
+          "precioTotal": 40000,
+          "diasTotales": 4
+        }
+      ],
+      "imagenHabitacion": "https://images.pexels.com/photos/3659683/pexels-photo-3659683.jpeg",
+      "descripcionBreve": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias pariatur,",
+      "descripcionAmplia": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias itaque possimus cumque illum error animi saepe accusamus officia porro libero delectus nulla quas, ducimus explicabo inventore quo soluta doloremque sunt.\n    Enim exercitationem tempore adipisci iusto, placeat labore veritatis sit consequatur temporibus eveniet quisquam maiores laudantium deleniti! Aut fugiat veritatis facere. Provident ab totam minus magni, magnam ratione dolor ex voluptate."
+    }
+  ],
+  "usuarios": [
+    {
+      "userEmail": "admin@admin.com",
+      "userPassword": "admin12345",
+      "userName": "Administrador",
+      "nombreUser": "Juan",
+      "apellidoUser": "Perez",
+      "rol": "Administrador",
+      "id": "9d9e"
+    },
+    {
+      "imgUser": "https://media.lmneuquen.com/p/f44778a325f2889302d6bf003b08da05/adjuntos/195/imagenes/007/698/0007698813/770x0/smart/dibu-martinez-1jpg.jpg",
+      "nombreUser": "Lucas",
+      "apellidoUser": "Capdevilla",
+      "userName": "lucasecapdevila",
+      "userEmail": "lcapdevila60@gmail.com",
+      "userPassword": "user12345",
+      "id": "59ff"
+    },
+    {
+      "imgUser": "https://img.freepik.com/free-photo/portrait-beautiful-young-woman-standing-grey-wall_231208-10760.jpg?t=st=1713039298~exp=1713042898~hmac=013ed5fe49d6fbf67430db13c605bf2504432ec85b5bfce6d0dd195a4f69128d&w=740",
+      "userEmail": "ana@mail.com",
+      "userPassword": "user12345",
+      "userName": "Anita",
+      "nombreUser": "Ana",
+      "apellidoUser": "Diaz",
+      "rol": "Usuario",
+      "id": "3"
+    },
+    {
+      "imgUser": "https://th.bing.com/th/id/R.472e36a1a1fb3bbcd41d8b686208a151?rik=YIcq6L%2fzhOq5vA&pid=ImgRaw&r=0",
+      "nombreUser": "Lionel Andrés",
+      "apellidoUser": "Messi",
+      "userName": "Messi",
+      "userEmail": "messi10@gmail.com",
+      "userPassword": "Mundial2023",
+      "id": "58f9"
+    },
+    {
+      "imgUser": "https://www.freepik.com/free-photo/portrait-attractive-young-man-dressed-casually-using-tablet-computer-smiling-white-background_29453563.htm#fromView=search&page=1&position=24&uuid=09ebcd54-e4ba-4692-b53c-f5c34edde2d4",
+      "nombreUser": "Juan",
+      "apellidoUser": "Perez",
+      "userName": "Juancito Perez",
+      "userEmail": "juan_perez@gmail.com",
+      "userPassword": "Contra2024",
+      "id": "999a"
+    },
+    {
+      "id": "4f01",
+      "imgUser": "https://media.ambito.com/p/4e1f12ceeff7fcfc05a27103d9c6b22c/adjuntos/239/imagenes/040/305/0040305351/lautaro-martinez-seleccionjpg.jpg",
+      "nombreUser": "Lautaro",
+      "apellidoUser": "Martinez",
+      "userName": "toritomartinez",
+      "userEmail": "lautaro@gmail.com",
+      "userPassword": "Contraseña1",
+      "userConfirmPassword": "Contraseña1"
+    },
+    {
+      "id": "21ff",
+      "imgUser": "https://laseleccionargentina.com/wp-content/uploads/2023/11/Enzo-Fernandez-1.jpg",
+      "nombreUser": "Enzo",
+      "apellidoUser": "Fernandez",
+      "userName": "enzofernandez22",
+      "userEmail": "enzo@gmail.com",
+      "userPassword": "Enzo1234",
+      "userConfirmPassword": "Enzo1234"
+    },
+    {
+      "id": "06a7",
+      "imgUser": "https://tntsports.com.ar/__export/1702567328972/sites/tntsports/img/2023/11/24/scaloni.jpg",
+      "nombreUser": "Lionel",
+      "apellidoUser": "Scaloni",
+      "userName": "lionelsc22",
+      "userEmail": "scaloni@gmail.com",
+      "userPassword": "Qatar2022",
+      "userConfirmPassword": "Qatar2022"
+    }
+    
+  ],
+  "reservas": [
+    {
+      "id": "c87b",
+      "habitacion": 10,
+      "idHabitacion": "e1e7",
+      "idUsuario": "1234",
+      "fechaEntrada": "17-04-2024",
+      "fechaSalida": "20-04-2024",
+      "precioTotal": 30000,
+      "diasTotales": 4
+    },
+    {
+      "id": "35ad",
+      "habitacion": 11,
+      "idHabitacion": "6bdb",
+      "idUsuario": "1234",
+      "fechaEntrada": "16-05-2024",
+      "fechaSalida": "19-05-2024",
+      "precioTotal": 36000,
+      "diasTotales": 4
+    },
+    {
+      "id": "fc37",
+      "habitacion": 10,
+      "idHabitacion": "e1e7",
+      "idUsuario": "1234",
+      "fechaEntrada": "23-04-2024",
+      "fechaSalida": "26-04-2024",
+      "precioTotal": 30000,
+      "diasTotales": 4
+    }
+  ]
+}
