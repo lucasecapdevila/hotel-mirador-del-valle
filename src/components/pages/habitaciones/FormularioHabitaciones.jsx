@@ -52,7 +52,7 @@ const FormularioHabitaciones = ({ editar, titulo }) => {
   const habitacionValidada = async (habitacion) => {
     try {
       if (editar) {
-        const response = await editarHabitacionAPI(id, habitacion);
+        const response = await editarHabitacionAPI(_id, habitacion);
         if (response.status === 200) {
           Swal.fire({
             title: "Habitación editada",
@@ -178,24 +178,6 @@ const FormularioHabitaciones = ({ editar, titulo }) => {
                   {errors.precioHabitacion?.message}
                 </Form.Text>
               </Form.Group>
-
-              {/* <Form.Group className="mb-3" controlId="formDisponibilidad">
-            <Form.Label>
-              Disponibilidad de habitación<span className="text-danger">*</span>
-            </Form.Label>
-            <Form.Select
-              {...register("disponibilidad", {
-                required: "La disponibilidad de la habitación es obligatoria.",
-              })}
-            >
-              <option value="">Seleccione una opción</option>
-              <option value="Si">Si</option>
-              <option value="No">No</option>
-            </Form.Select>
-            <Form.Text className="text-danger">
-              {errors.disponibilidad?.message}
-            </Form.Text>
-          </Form.Group> */}
 
               <Form.Group className="mb-3" controlId="formImagen">
                 <Form.Label>

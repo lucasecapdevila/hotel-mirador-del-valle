@@ -40,7 +40,7 @@ const CardHabitacion = ({ habitacion, fechaEntrada, fechaSalida }) => {
             {fechaEntrada && fechaSalida && (
               <Link
                 className="btn mb-3 w-100 fw-semibold mt-auto btnCardHabitacion"
-                to={`/reservas/${habitacion.id}/${fechaEntrada}/${fechaSalida}`}
+                to={`/reservas/${habitacion._id}/${fechaEntrada}/${fechaSalida}`}
               >
                 RESERVAR AHORA
               </Link>

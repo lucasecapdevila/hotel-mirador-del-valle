@@ -9,37 +9,68 @@ const Login = ({ setUsuarioLogueado }) => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm();
   const navegacion = useNavigate();
-
+  
   const onSubmit = async (usuario) => {
     try {
       const respuesta = await iniciarSesion(usuario);
-
+      console.log(usuario)
+      console.log(respuesta.status)
       if (respuesta.status === 200) {
-        const datos = await respuesta.json()
-        sessionStorage.setItem("inicioHotelMiradorDelValle", JSON.stringify({userEmail: datos.userEmail}));
-        
-        const esAdministrador = datos.role;
+        const dato = await respuesta.json();
+        console.log(dato)
+        console.log(dato.rol)
+        if (dato.rol === "Usuario") {
+          console.log(dato.rol)
 
-        if (esAdministrador==="Administrador") {
-          setUsuarioLogueado(datos);
-          Swal.fire("Bienvenido Administrador!", "", "success");
-          reset();
-          navegacion("/administrador");
-        } else {
-          setUsuarioLogueado(datos);
-          Swal.fire(`Sesión iniciada!`, `Bienvenido ${datos.userName}!`, "success");
-          reset();
+          sessionStorage.setItem('inicioHotelMiradorDelValle', JSON.stringify({email: dato.email}))
+          setUsuarioLogueado(dato);
           navegacion("/");
+          Swal.fire({
+            title: `Bienvenido ${dato.nombreUsuario}`,
+            icon: "success",
+            confirmButtonColor: '#B79B63',
+            customClass: {
+              popup: 'contenedor-sweet'
+            }
+          });
+          
+        } else if (dato.rol === "Administrador") {
+          console.log(dato.rol)
+          sessionStorage.setItem('inicioHotelMiradorDelValle', JSON.stringify({email: dato.email}))
+          setUsuarioLogueado(dato);
+          navegacion("/administrador");
+          Swal.fire({
+            title: `Bienvenido administrador`,
+            icon: "success",
+            confirmButtonColor: '#B79B63',
+            customClass: {
+              popup: 'contenedor-sweet'
+            }
+          });
+        } else {
+          Swal.fire({
+            title: "Error al loguearse!",
+            text: "Intente Nuevamente",
+            icon: "error",
+            customClass: {
+              popup: 'contenedor-sweet'
+            }
+          });
         }
-      } else {
-        Swal.fire("Error!", "El email o la contraseña son incorrectos.", "error");
+      } else{
+        Swal.fire({
+          title: "Error al loguearse!",
+          text: "Intente Nuevamente",
+          icon: "error",
+          customClass: {
+            popup: 'contenedor-sweet'
+          }
+        });
       }
     } catch (error) {
-      console.error("Error al iniciar sesión:", error);
-      Swal.fire("Error!", "Hubo un problema al iniciar sesión. Por favor, inténtalo de nuevo más tarde.", "error");
+      console.log(error);
     }
   };
 
@@ -58,7 +89,7 @@ const Login = ({ setUsuarioLogueado }) => {
                 <Form.Control
                   type="email"
                   placeholder="Ej: juan_perez@gmail.com"
-                  {...register("email", {
+                  {...register("userEmail", {
                     required: "El email es obligatorio",
                     minLength: {
                       value: 4,
@@ -77,7 +108,7 @@ const Login = ({ setUsuarioLogueado }) => {
                   })}
                 />
                 <Form.Text className="text-danger">
-                  {errors.email?.message}
+                  {errors.userEmail?.message}
                 </Form.Text>
               </Form.Group>
 
@@ -86,7 +117,7 @@ const Login = ({ setUsuarioLogueado }) => {
                 <Form.Control
                   type="password"
                   placeholder=""
-                  {...register("password", {
+                  {...register("userPassword", {
                     required: "El password es obligatorio",
                     minLength: {
                       value: 8,
@@ -104,7 +135,7 @@ const Login = ({ setUsuarioLogueado }) => {
                   })}
                 />
                 <Form.Text className="text-danger">
-                  {errors.password?.message}
+                  {errors.userPassword?.message}
                 </Form.Text>
               </Form.Group>
 
