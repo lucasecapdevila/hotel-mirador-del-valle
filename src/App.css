@@ -365,6 +365,12 @@ form .btnCrearHabitacion:hover{
   resize: none;
   height: 70px;
 }
+.textFormContacto{
+ font-size: 20px;
+}
+.textFormContacto2{
+ font-size: 21px;
+}
 @media only screen and (max-width: 767px) {
   .tituloPrincipal h1 {
     font-size: 35px;
@@ -409,6 +415,9 @@ form .btnCrearHabitacion:hover{
   }
   .carruselIMG{
     display: flex;
+    flex-direction: column;
+  }
+  .contactoPagina{
     flex-direction: column;
   }
 }
