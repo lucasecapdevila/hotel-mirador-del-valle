@@ -10,6 +10,7 @@ import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
 import Login from "./components/pages/Login";
 import Registro from "./components/pages/Registro";
+import Contacto from "./components/pages/Contacto";
 import Reservas from "./components/pages/reservas/Reservas";
 import Galeria from "./components/pages/Galeria";
 import Inicio from "./components/pages/Inicio"; // Importa el componente de inicio
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Inicio />} /> {/* Ruta para la página de inicio */}
         <Route exact path="/quienesSomos" element={<QuienesSomos />} />
+        <Route exact path="/contacto" element={<Contacto></Contacto>} />
         <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado} />} />
         <Route exact path='/registro' element={<Registro editar={false} titulo='Agrega tu Usuario!!' />} />
         <Route

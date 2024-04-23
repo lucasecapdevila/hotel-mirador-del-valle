@@ -361,6 +361,10 @@ form .btnCrearHabitacion:hover{
   font-family: "Playfair Display", serif;
   font-size: 3.5em;
 }
+#formConsulta{
+  resize: none;
+  height: 70px;
+}
 @media only screen and (max-width: 767px) {
   .tituloPrincipal h1 {
     font-size: 35px;
