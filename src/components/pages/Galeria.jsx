@@ -112,7 +112,7 @@ const Galeria = () => {
         <Container className="d-flex galeriaIMG">
           <article className="col-lg-3 mb-1 ">
             <a href="#!" onClick={() => img1Show(true)}>
-              <img 
+              <img title="Habitacion Doble"
                 className="w-100 mb-2 rounded"
                 src="https://webbox.imgix.net/images/tgvirijswhqazimw/15f2acc4-6011-42ed-9306-a55780d38ef8.jpeg?auto=format,compress&fit=crop&crop=entropy&w=1318"
                 alt="habitacion del hotel doble, con dos camas matrimoniales"
@@ -121,7 +121,7 @@ const Galeria = () => {
           </article>
           <article className="col-lg-3 mb-1 ms-2">
             <a href="#!" onClick={() => img2Show(true)}>
-              <img
+              <img title="Habitacion Deluxe"
                 className="w-100 mb-2 rounded"
                 src="https://th.bing.com/th/id/R.da812afc5e9c5249d36e06f19200601e?rik=Yang08J6h2qevg&riu=http%3a%2f%2fwww.hotelalmirante.com%2fwp-content%2fuploads%2f2016%2f09%2falmirante_alta_editadas-9160.jpg&ehk=9x%2b2pHEqZlVtei4ydS3QIPSVyuHISRi22UWP2FeNcXw%3d&risl=&pid=ImgRaw&r=0"
                 alt="habitacion del hotel deluxe, con tres camas individuales ideal para pasar con amigos"
@@ -130,7 +130,7 @@ const Galeria = () => {
           </article>
           <article className="col-lg-3 mb-1 ms-2">
             <a href="#!" onClick={() => img3Show(true)}>
-              <img
+              <img title="Habitacion Suite"
                 className="w-100 mb-2 rounded"
                 src="https://www.wyndhampolanco.com/img/galeria/HABITACIONES/2020/WHYNDHAM-POLANCO-HAB-DOB-A.jpg"
                 alt="habitaciones suite, con la mejor calidad de dos camas y un televisor de 45 pulgadas"
@@ -139,7 +139,7 @@ const Galeria = () => {
           </article>
           <article className="col-lg-3 mb-1 ms-2">
             <a href="#!" onClick={() => img4Show(true)}>
-              <img
+              <img title="Habitacion Twin"
                 className="w-100 mb-2 rounded"
                 src="https://i.pinimg.com/originals/4d/64/67/4d64679bfd445492de4e7ed92cb66873.jpg"
                 alt="habitaciones twin, individuales para amigos"
@@ -153,7 +153,7 @@ const Galeria = () => {
         <Container className="d-flex galeriaIMG">
           <article className="col-lg-3 mb-1 ">
             <a href="#!" onClick={() => img5Show(true)}>
-              <img
+              <img title="Restaurante"
                 className="w-100 mb-2 rounded"
                 src="https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="restaurante del hotel, para pasar todos tus ratos"
@@ -162,7 +162,7 @@ const Galeria = () => {
           </article>
           <article className="col-lg-3 mb-1 ms-2">
             <a href="#!" onClick={() => img6Show(true)}>
-              <img
+              <img title="Gimnasio"
                 className="w-100 mb-2 rounded"
                 src="https://images.pexels.com/photos/6796964/pexels-photo-6796964.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="gimnasio del hotel, con maquinas, pesas y todo lo necesario que tiene un gimnasio"
@@ -171,7 +171,7 @@ const Galeria = () => {
           </article>
           <article className="col-lg-3 mb-1 ms-2">
             <a href="#!" onClick={() => img7Show(true)}>
-              <img
+              <img title="Piscina"
                 className="w-100 mb-2 rounded"
                 src="https://images.pexels.com/photos/462129/pexels-photo-462129.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="piscina grande del hotel donde se reflejan palmeras de fondo y sillones para tomar sol"
@@ -180,7 +180,7 @@ const Galeria = () => {
           </article>
           <article className="col-lg-3 mb-1 ms-2">
             <a href="#!" onClick={() => img8Show(true)}>
-              <img
+              <img title="Paisajes/Vistas"
                 className="w-100 mb-2 rounded"
                 src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/47/c6/b5/hotel-waynay-killa.jpg?w=700&h=-1&s=1"
                 alt="balcon del hotel donde se ve una hermosa vista a los valles calchaquies"
