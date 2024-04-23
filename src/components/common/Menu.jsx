@@ -58,8 +58,8 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 CONTACTO
               </NavLink>
 
-              {usuarioLogueado.userEmail ? (
-                 usuarioLogueado.role === "Administrador" ? (
+              {usuarioLogueado.email ? (
+                 usuarioLogueado.rol === "Administrador" ? (
                    <>
                    <NavLink
                      end
@@ -96,3 +96,4 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
 };
 
 export default Menu;
+

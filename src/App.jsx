@@ -51,6 +51,7 @@ function App() {
               setFechaEntrada={setFechaEntrada}
               fechaSalida={fechaSalida}
               setFechaSalida={setFechaSalida}
+              usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}
             />
           }
         />
