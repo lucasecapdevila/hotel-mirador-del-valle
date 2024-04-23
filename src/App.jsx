@@ -15,11 +15,11 @@ import Galeria from "./components/pages/Galeria";
 import Inicio from "./components/pages/Inicio"; // Importa el componente de inicio
 
 function App() {
-  const usuario =
-    JSON.parse(sessionStorage.getItem("inicioHotelMiradorDelValle")) || "";
+  const usuario = JSON.parse(sessionStorage.getItem("inicioHotelMiradorDelValle")) || {};
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
-  const [fechaEntrada, setFechaEntrada] = useState();
-  const [fechaSalida, setFechaSalida] = useState();
+  const [fechaEntrada, setFechaEntrada] = useState()
+  const [fechaSalida, setFechaSalida] = useState()
+  console.log("Usuario logueado:", usuarioLogueado);
 
   return (
     <BrowserRouter>
@@ -38,6 +38,7 @@ function App() {
             </RutasProtegidas>
           }
         />
+
         <Route exact path="/galeriadeimagenes" element={<Galeria />} />
         <Route
           exact
