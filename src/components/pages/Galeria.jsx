@@ -79,7 +79,7 @@ const Galeria = () => {
 
   return (
     <>
-      <Carousel fade>
+      <Carousel id="carouselPrincipal" fade>
         <Carousel.Item>
           <img
             className="img-fluid"

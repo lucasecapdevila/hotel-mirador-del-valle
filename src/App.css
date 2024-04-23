@@ -101,7 +101,7 @@ input::-webkit-inner-spin-button {
   background-color: black;
 }
 
-/* Configuraciones de carrousel (página quienes somos) */
+/* Configuraciones de carrouseles superiores */
 #carouselPrincipal .carousel-inner .carousel-item {
   background-color: black;
 }
@@ -114,6 +114,31 @@ input::-webkit-inner-spin-button {
   overflow: hidden;
   opacity: 45%;
 }
+
+@media only screen and (min-width: 1200px) {
+  .imgQuienesSomosHotel{
+    width: 50%;
+  }
+}
+
+.contenedorImgUsuario{
+  border-radius: 50%;
+  background: black;
+  opacity: 100%;
+}
+
+.contenedorImgUsuario:hover{
+  transform: scale(1.05);
+  transition: all 500ms ease-in-out;
+  box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+  }
+
+.imgUsuario{
+  border-radius: 50%;
+}
+
 
 
 .verde {

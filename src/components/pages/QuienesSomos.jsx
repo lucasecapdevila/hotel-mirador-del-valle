@@ -1,9 +1,20 @@
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import jose from '../../assets/joseVera.webp'
+import agus from '../../assets/agusSuarez.webp'
+import nati from '../../assets/natiLopez.webp'
+import lucas from '../../assets/lucasCapdevila.webp'
+import { useEffect } from "react";
 import { Carousel, Col, Container, Row } from "react-bootstrap";
 
 const QuienesSomos = () => {
+  useEffect(() => {
+    Aos.init()
+  })
+
   return (
     <main className="mainPage">
-      <Carousel fade>
+      <Carousel id="carouselPrincipal" fade>
         <Carousel.Item>
           <img
             className="img-fluid"
@@ -79,7 +90,9 @@ const QuienesSomos = () => {
           <article className="fs-5 my-4 textoJustificado textos">
             <div className="d-flex flex-column flex-xl-row justify-content-center align-items-start">
               <img
-                className="img-fluid mb-4 me-xl-4 imgEntradaHotel"
+                data-aos="fade-right"
+                data-aos-duration="2200"
+                className="img-fluid mb-4 me-xl-4 imgQuienesSomosHotel"
                 src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/243247791.jpg?k=3c07e955c37818f415ca2e8581a04c94744f46df996ae3281ed5bcf7fff45c12&o=&hp=1"
                 alt="Nuestro hotel"
               />
@@ -105,7 +118,9 @@ const QuienesSomos = () => {
           <article className="fs-5 my-4 textoJustificado textos">
             <div className="d-flex flex-column flex-xl-row-reverse justify-content-center align-items-start">
               <img
-                className="img-fluid mb-4 ms-xl-4 imgEntradaHotel"
+                data-aos="fade-left"
+                data-aos-duration="2200"
+                className="img-fluid mb-4 ms-xl-4 imgQuienesSomosHotel"
                 src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/6836911.jpg?k=da8b3433a2b7e003fb4640c44688eae91c890900c3ad3dec440bce5bfeb23468&o=&hp=1"
                 alt="Nuestro hotel"
               />
@@ -139,7 +154,9 @@ const QuienesSomos = () => {
           <article className="fs-5 my-4 textoJustificado textos">
             <div className="d-flex flex-column flex-xl-row justify-content-center align-items-start">
               <img
-                className="img-fluid mb-4 me-xl-4 imgEntradaHotel"
+                data-aos="fade-right"
+                data-aos-duration="2200"
+                className="img-fluid mb-4 me-xl-4 imgQuienesSomosHotel"
                 src="https://tafidelvalle.net/wp-content/uploads/2023/09/Tafi_del_Valle_-_postal-1280x720-1.jpg"
                 alt="Nuestro hotel"
               />
@@ -179,50 +196,35 @@ const QuienesSomos = () => {
             esforzamos por crear un ambiente acogedor y familiar donde nuestros
             huéspedes se sientan bienvenidos y atendidos en todo momento.
           </p>
-          <Row>
-            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4">
+          <Row className="d-flex justify-content-evenly align-items-start">
+            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4"  data-aos="flip-left" data-aos-duration="2000">
               <div className="contenedorImgUsuario">
-                <img className="img-fluid imgUsuario" src="https://ssteev.gob.mx/miprestamo/assets/images/users/avatar-1.jpg" alt="" />
+                <img className="img-fluid imgUsuario" src={jose} alt="José Vera, Gerente General de Sucursal" />
+              </div>
+              <h4 className="text-center fs-3 my-3 titulos azul">José Manuel Vera</h4>
+              <p className="text-center fs-5">Gerente General de Sucursal</p>
+            </Col>
+            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4"  data-aos="flip-left" data-aos-duration="2000">
+              <div className="contenedorImgUsuario">
+                <img className="img-fluid imgUsuario" src={lucas} alt="Lucas Capdevila, Encargado de Recepción" />
               </div>
               <h4 className="text-center fs-3 my-3 titulos azul">Lucas Capdevila</h4>
-              <p className="text-center fs-5">Encargado de recepción</p>
+              <p className="text-center fs-5">Encargado de Recepción</p>
             </Col>
-            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4">
+            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4"  data-aos="flip-left" data-aos-duration="2000">
               <div className="contenedorImgUsuario">
-                <img className="img-fluid imgUsuario" src="https://ssteev.gob.mx/miprestamo/assets/images/users/avatar-1.jpg" alt="" />
+                <img className="img-fluid imgUsuario" src={nati} alt="Natalia Lopez, Coordinadora General de Excursiones" />
               </div>
-              <h4 className="text-center fs-3 my-3 titulos azul">Lucas Capdevila</h4>
-              <p className="text-center fs-5">Encargado de recepción</p>
+              <h4 className="text-center fs-3 my-3 titulos azul">Natalia G. Lopez</h4>
+              <p className="text-center fs-5">Coordinadora General de Excursiones</p>
             </Col>
-            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4">
+            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4"  data-aos="flip-left" data-aos-duration="2000">
               <div className="contenedorImgUsuario">
-                <img className="img-fluid imgUsuario" src="https://ssteev.gob.mx/miprestamo/assets/images/users/avatar-1.jpg" alt="" />
+                <img className="img-fluid imgUsuario" src={agus} alt="Agustina Suarez, Directora de Sistemas y IT" />
               </div>
-              <h4 className="text-center fs-3 my-3 titulos azul">Lucas Capdevila</h4>
-              <p className="text-center fs-5">Encargado de recepción</p>
+              <h4 className="text-center fs-3 my-3 titulos azul">Agustina Suarez</h4>
+              <p className="text-center fs-5">Directora de Sistemas y IT</p>
             </Col>
-            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4">
-              <div className="contenedorImgUsuario">
-                <img className="img-fluid imgUsuario" src="https://ssteev.gob.mx/miprestamo/assets/images/users/avatar-1.jpg" alt="" />
-              </div>
-              <h4 className="text-center fs-3 my-3 titulos azul">Lucas Capdevila</h4>
-              <p className="text-center fs-5">Encargado de recepción</p>
-            </Col>
-            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4">
-              <div className="contenedorImgUsuario">
-                <img className="img-fluid imgUsuario" src="https://ssteev.gob.mx/miprestamo/assets/images/users/avatar-1.jpg" alt="" />
-              </div>
-              <h4 className="text-center fs-3 my-3 titulos azul">Lucas Capdevila</h4>
-              <p className="text-center fs-5">Encargado de recepción</p>
-            </Col>
-            <Col sm={12} md={6} lg={4} xl={2} className="d-flex flex-column justify-content-center mb-4">
-              <div className="contenedorImgUsuario">
-                <img className="img-fluid imgUsuario" src="https://ssteev.gob.mx/miprestamo/assets/images/users/avatar-1.jpg" alt="" />
-              </div>
-              <h4 className="text-center fs-3 my-3 titulos azul">Lucas Capdevila</h4>
-              <p className="text-center fs-5">Encargado de recepción</p>
-            </Col>
-            
           </Row>
         </section>
       </Container>
