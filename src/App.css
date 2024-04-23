@@ -102,11 +102,11 @@ input::-webkit-inner-spin-button {
 }
 
 /* Configuraciones de carrousel (página quienes somos) */
-.carousel-inner .carousel-item {
+#carouselPrincipal .carousel-inner .carousel-item {
   background-color: black;
 }
 
-.carousel-inner .carousel-item img {
+#carouselPrincipal .carousel-inner .carousel-item img {
   object-fit: cover;
   object-position: center;
   height: 40vh;
@@ -114,6 +114,7 @@ input::-webkit-inner-spin-button {
   overflow: hidden;
   opacity: 45%;
 }
+
 
 .verde {
   color: #aca650;
@@ -453,3 +454,4 @@ form .btnCrearHabitacion:hover{
     width: 33% !important;
   }
 }
+
