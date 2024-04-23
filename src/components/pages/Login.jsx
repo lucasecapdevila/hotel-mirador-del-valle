@@ -17,20 +17,20 @@ const Login = ({ setUsuarioLogueado }) => {
     try {
       const respuesta = await iniciarSesion(usuario);
 
-      if (respuesta) {
-        delete respuesta.password;
-        sessionStorage.setItem("inicioHotelMiradorDelValle", JSON.stringify(respuesta));
+      if (respuesta.status === 200) {
+        const datos = await respuesta.json()
+        sessionStorage.setItem("inicioHotelMiradorDelValle", JSON.stringify({userEmail: datos.userEmail}));
+        
+        const esAdministrador = datos.role;
 
-        const esAdministrador = respuesta.rol === "Administrador";
-
-        if (esAdministrador) {
-          setUsuarioLogueado(respuesta);
+        if (esAdministrador==="Administrador") {
+          setUsuarioLogueado(datos);
           Swal.fire("Bienvenido Administrador!", "", "success");
           reset();
           navegacion("/administrador");
         } else {
-          setUsuarioLogueado(respuesta);
-          Swal.fire(`Sesión iniciada!`, `Bienvenido ${respuesta.userName}!`, "success");
+          setUsuarioLogueado(datos);
+          Swal.fire(`Sesión iniciada!`, `Bienvenido ${datos.userName}!`, "success");
           reset();
           navegacion("/");
         }
@@ -70,7 +70,7 @@ const Login = ({ setUsuarioLogueado }) => {
                         "El email debe contener como máximo 250 caracteres",
                     },
                     pattern: {
-                      value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
+                      value:  /^[a-zA-Z0-9!#$%&'*+/=?^_{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_{|}~-]+)@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-][a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,
                       message:
                         "Ingrese una dirección de correo electrónico válida",
                     },
