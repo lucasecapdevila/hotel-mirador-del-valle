@@ -14,7 +14,8 @@ const Habitaciones = ({
   setFechaEntrada,
   fechaSalida,
   setFechaSalida,
-  usuarioLogueado,
+  usuarioLogueado, 
+  setUsuarioLogueado,
 }) => {
   console.log(usuarioLogueado);
   const [listaHabitaciones, setListaHabitaciones] = useState([]);
@@ -101,7 +102,7 @@ const Habitaciones = ({
         <Row>
           {listaHabitaciones.map((habitacion) => (
             <CardHabitacion
-              key={habitacion.id}
+              key={habitacion._id}
               habitacion={habitacion}
               fechaEntrada={fechaEntrada}
               fechaSalida={fechaSalida}

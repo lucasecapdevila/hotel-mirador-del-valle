@@ -8,7 +8,8 @@ import {
 } from "../../../helpers/queries";
 import { Link } from "react-router-dom";
 
-const ItemHabitacion = ({ habitacion, setListaHabitaciones }) => {
+const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
+  console.log(habitacion)
   const borrarHabitacion = () => {
     Swal.fire({
       title: "¿Estás seguro de eliminar la habitación?",
@@ -21,11 +22,11 @@ const ItemHabitacion = ({ habitacion, setListaHabitaciones }) => {
       cancelButtonText: "Cancelar",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const response = await borrarHabitacionAPI(habitacion.id);
+        const response = await borrarHabitacionAPI(habitacion._id);
         if (response.status === 200) {
           //  Actualizo la tabla
           const listaHabitacionesActualizada = await leerHabitacionesAPI();
-          setListaHabitaciones(listaHabitacionesActualizada);
+          setHabitaciones(listaHabitacionesActualizada);
 
           Swal.fire({
             title: "Eliminado!",
@@ -48,11 +49,10 @@ const ItemHabitacion = ({ habitacion, setListaHabitaciones }) => {
       <td>{habitacion.numeroHabitacion}</td>
       <td>{habitacion.tipoHabitacion}</td>
       <td className="text-center">$ {habitacion.precioHabitacion}</td>
-      <td className="text-center">{habitacion.disponibilidad}</td>
       <td className="anchoColumna">
         <div className="d-flex align-items-center justify-content-center">
           <Link
-            to={`/administrador/editar/${habitacion.id}`}
+            to={`/administrador/editar/${habitacion._id}`}
             className="btn btn-warning ms-0 me-2"
           >
             <FontAwesomeIcon icon={faFilePen} />

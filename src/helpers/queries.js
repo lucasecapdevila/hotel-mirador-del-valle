@@ -1,5 +1,6 @@
 const URI_HABITACIONES = import.meta.env.VITE_API_HABITACIONES;
 const URI_USUARIOS = import.meta.env.VITE_API_USUARIOS;
+const URI_USUARIOS_GET = import.meta.env.VITE_API_USUARIOS_GET;
 const URI_RESERVAS = import.meta.env.VITE_API_RESERVAS;
 
 //----------------------- HABITACIONES -----------------------//
@@ -73,7 +74,7 @@ export const borrarHabitacionAPI = async (id) => {
 
 export const leerUsuarioAPI = async () => {
   try {
-    const response = await fetch(URI_USUARIOS);
+    const response = await fetch(URI_USUARIOS_GET);
     const listaUsuarios = await response.json();
     return listaUsuarios;
   } catch (error) {
@@ -92,7 +93,7 @@ export const obtenerUsuarioAPI = async (id) => {
 
 export const crearUsuarioAPI = async (nuevoUsuario) => {
   try {
-    const response = await fetch(URI_USUARIOS, {
+    const response = await fetch(URI_USUARIOS + "registrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -107,7 +108,7 @@ export const crearUsuarioAPI = async (nuevoUsuario) => {
 
 export const editarUsuarioAPI = async (id, usuario) => {
   try {
-    const response = await fetch(`${URI_USUARIOS}/${id}`, {
+    const response = await fetch(`${URI_USUARIOS_GET}/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -122,7 +123,7 @@ export const editarUsuarioAPI = async (id, usuario) => {
 
 export const borrarUsuarioAPI = async (id) => {
   try {
-    const response = await fetch(`${URI_USUARIOS}/${id}`, {
+    const response = await fetch(`${URI_USUARIOS_GET}/${id}`, {
       method: "DELETE",
     });
     return response;
@@ -193,16 +194,8 @@ export const borrarReservaAPI = async (id) => {
   }
 };
 
-
-//  Cuando tengamos backend, se realizará petición POST para el login
-const admin = {
-  email: "hotelmiradordelvalle.25.07@gmail.com",
-  password: "Grupo2Rolling",
-  rol: 'Administrador',
-  userName: 'Administrador'
-}
-
 export const iniciarSesion = async (usuario) => {
+  console.log(usuario)
   try {
     const respuesta = await fetch(URI_USUARIOS, {
       method: "POST",
@@ -211,26 +204,9 @@ export const iniciarSesion = async (usuario) => {
       },
       body: JSON.stringify(usuario),
     });
-    
-    // Verificar si la respuesta es exitosa (código de estado 200)
-    if (respuesta.ok) {
-      const datosUsuario = await respuesta.json(); // Obtener el cuerpo de la respuesta en formato JSON
-      console.log(datosUsuario)
-      return datosUsuario; // Devolver los datos del usuario
-    } else {
-      // En caso de una respuesta de error, lanzar un Error con el mensaje de error obtenido
-      throw new Error(`Error al iniciar sesión: ${respuesta.status} ${respuesta.statusText}`);
-    }
+    return respuesta;
   } catch (error) {
-    console.error("Error al iniciar sesión:", error);
-    return null; // Devolver null en caso de error
+    console.log(error);
+    return null;
   }
 };
-/*export const login = (usuario) => {
-  if(usuario.email === admin.email && usuario.password === admin.password){
-    sessionStorage.setItem('inicioHotelMiradorDelValle', JSON.stringify(usuario.email))
-    return true
-  } else{
-    return false
-  }
-}*/

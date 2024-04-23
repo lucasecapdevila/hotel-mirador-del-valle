@@ -21,20 +21,20 @@ const ItemUsuario = ({ usuario, setListaUsuarios }) => {
       cancelButtonText: "Cancelar",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const response = await borrarUsuarioAPI(usuario.id);
+        const response = await borrarUsuarioAPI(usuario._id);
         if (response.status === 200) {
           const listaUsuariosActualizada = await leerUsuarioAPI();
           setListaUsuarios(listaUsuariosActualizada);
 
           Swal.fire({
             title: "Eliminado!",
-            text: `El usuario ${usuario.userName} se eliminó exitosamente.`,
+            text: `El usuario ${usuario.nombreUser} se eliminó exitosamente.`,
             icon: "success",
           });
         } else {
           Swal.fire({
             title: "Ocurrió un error",
-            text: `No se pudo eliminar el usuario ${usuario.userName}. Vuelva a intentarlo en unos momentos.`,
+            text: `No se pudo eliminar el usuario ${usuario.nombreUser}. Vuelva a intentarlo en unos momentos.`,
             icon: "error",
           });
         }
@@ -44,7 +44,7 @@ const ItemUsuario = ({ usuario, setListaUsuarios }) => {
 
   return (
     <tr>
-      <td>{usuario.rol}</td>
+     
       <td>{usuario.userName}</td>
       <td className="text-center">{usuario.nombreUser}</td>
       <td className="text-center">{usuario.apellidoUser}</td>
@@ -52,7 +52,7 @@ const ItemUsuario = ({ usuario, setListaUsuarios }) => {
       <td className="anchoColumna">
         <div className="d-flex align-items-center justify-content-center">
           <Link
-            to={`/administrador/editarusuario/${usuario.id}`}
+            to={`/administrador/editarusuario/${usuario._id}`}
             className="btn btn-warning ms-0 me-2"
           >
             <FontAwesomeIcon icon={faFilePen} />

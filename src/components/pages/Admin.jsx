@@ -8,9 +8,8 @@ import { leerUsuarioAPI } from "../../helpers/queries";
 import { Link } from "react-router-dom";
 import ItemUsuario from "./usuarios/ItemUsuario";
 const Admin = () => {
- 
-  const [listaHabitaciones, setListaHabitaciones] = useState([]);
-
+  const [usuarios, setUsuarios] = useState([]);
+  const [habitaciones, setHabitaciones] = useState([]);
   useEffect(() => {
     traerHabitaciones();
   }, []);
@@ -18,12 +17,12 @@ const Admin = () => {
   const traerHabitaciones = async () => {
     try {
       const listaHabitacionesAPI = await leerHabitacionesAPI();
-      setListaHabitaciones(listaHabitacionesAPI);
+      console.log(listaHabitacionesAPI)
+      setHabitaciones(listaHabitacionesAPI);
     } catch (error) {
       console.log(error);
     }
   };
-  const [listaUsuarios, setListaUsuarios] = useState([]);
 
   useEffect(() => {
     traerUsuarios();
@@ -32,7 +31,7 @@ const Admin = () => {
   const traerUsuarios = async () => {
     try {
       const listaUsuariosAPI = await leerUsuarioAPI();
-      setListaUsuarios(listaUsuariosAPI);
+      setUsuarios(listaUsuariosAPI);
     } catch (error) {
       console.log(error);
     }
@@ -58,16 +57,15 @@ const Admin = () => {
                   <th>N° de Habitación</th>
                   <th>Tipo</th>
                   <th>Precio</th>
-                  <th>Disponible</th>
                   <th>Acciones</th>
                 </tr>
               </thead>
               <tbody className="fs-5">
-                {listaHabitaciones.map((habitacion) => (
+                {habitaciones.map((habitacion) => (
                   <ItemHabitacion
-                    key={habitacion.id}
+                    key={habitacion._id}
                     habitacion={habitacion}
-                    setListaHabitaciones={setListaHabitaciones}
+                    
                   />
                 ))}
               </tbody>
@@ -85,7 +83,7 @@ const Admin = () => {
             <Table striped bordered responsive>
               <thead className="fs-5">
                 <tr className="text-center">
-                  <th>Tipo de Usuario</th>
+                 
                   <th>Usuario</th>
                   <th>Nombre</th>
                   <th>Apellido</th>
@@ -94,11 +92,11 @@ const Admin = () => {
                 </tr>
               </thead>
               <tbody className=" fs-5">
-              {listaUsuarios.map((usuario) => (
+              {usuarios.map((usuario) => (
                   <ItemUsuario
-                    key={usuario.id}
+                    key={usuario._id}
                     usuario={usuario}
-                    setListaUsuarios={setListaUsuarios}
+                    
                   />
                 ))}
               </tbody>
