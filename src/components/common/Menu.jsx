@@ -2,10 +2,9 @@ import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import logo from "../../assets/iconNav.png";
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2";
-
 const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
   const navegacion = useNavigate();
-  const logout = () => {
+  const logout = ()=>{
     Swal.fire({
       title: "Cerrar sesión",
       text: "¿Estás seguro que deseas cerrar sesión?",
@@ -22,13 +21,13 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
           text: "Tu sesión se cerró exitosamente",
           icon: "success"
         });
-        sessionStorage.removeItem('inicioHotelMiradorDelValle');
+        sessionStorage.removeItem('inicioHotelMiradorDelValle')
         setUsuarioLogueado({});
         navegacion('/');
       }
     });
-  };
-
+  }
+  
   return (
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -59,18 +58,41 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 CONTACTO
               </NavLink>
 
-              <NavLink end className="nav-link " to="/administrador">
-                ADMINISTRADOR
-              </NavLink>
-              <Button className="nav-link" variant="link" onClick={logout}>
-                CERRAR SESION
-              </Button>
+              {usuarioLogueado.userEmail ? (
+                 usuarioLogueado.role === "Administrador" ? (
+                   <>
+                   <NavLink
+                     end
+                     className="nav-link "
+                     to="/administrador"
+                   >
+                     ADMINISTRADOR
+                   </NavLink>
+                   <Button className="nav-link" variant="link" onClick={logout}>CERRAR SESION</Button>
+                 </>
+                ):( 
+                    <Button className="nav-link" variant="link" onClick={logout}>CERRAR SESION</Button> 
+                  )
+                ):(
+                
+                  <>
+
+                    <NavLink
+                      end
+                      className="nav-link "
+                      to="/Login"
+                    >
+                      LOGIN
+                    </NavLink>
+                  </>
+                )}
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
     </>
   );
+
 };
 
 export default Menu;
