@@ -202,11 +202,35 @@ const admin = {
   userName: 'Administrador'
 }
 
-export const login = (usuario) => {
+export const iniciarSesion = async (usuario) => {
+  try {
+    const respuesta = await fetch(URI_USUARIOS, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+    
+    // Verificar si la respuesta es exitosa (código de estado 200)
+    if (respuesta.ok) {
+      const datosUsuario = await respuesta.json(); // Obtener el cuerpo de la respuesta en formato JSON
+      console.log(datosUsuario)
+      return datosUsuario; // Devolver los datos del usuario
+    } else {
+      // En caso de una respuesta de error, lanzar un Error con el mensaje de error obtenido
+      throw new Error(`Error al iniciar sesión: ${respuesta.status} ${respuesta.statusText}`);
+    }
+  } catch (error) {
+    console.error("Error al iniciar sesión:", error);
+    return null; // Devolver null en caso de error
+  }
+};
+/*export const login = (usuario) => {
   if(usuario.email === admin.email && usuario.password === admin.password){
     sessionStorage.setItem('inicioHotelMiradorDelValle', JSON.stringify(usuario.email))
     return true
   } else{
     return false
   }
-}
+}*/

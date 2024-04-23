@@ -167,7 +167,7 @@ input::-webkit-inner-spin-button {
   object-fit: cover;
   height: 395px;
   width: 100%;
-  filter: grayscale(30%);
+  filter: saturate(150%);
 }
 
 .tituloPrincipal {

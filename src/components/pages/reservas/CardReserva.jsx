@@ -85,9 +85,7 @@ const CardReserva = ({ id, fechaEntrada, fechaSalida }) => {
                   <li className="fs-5 textos mb-2">
                     Nombre:{" "}
                     <span className="textosAlternativos">
-                      {JSON.parse(
-                        sessionStorage.getItem("inicioHotelMiradorDelValle")
-                      )}
+                    {JSON.parse(sessionStorage.getItem("inicioHotelMiradorDelValle")).tipoHabitacion}
                     </span>
                   </li>
                   <li className="fs-5 textos mb-2">
