@@ -27,11 +27,11 @@ const Footer = () => {
           <p className="footerTexto ">
             Celular para consultas:{" "}
             <a
-              href="tel:+543816076542"
+              href="https://wa.me/543813048258?text=%C2%A1Hola,%20amigos%20de%20Hotel%20Mirador%20del%20Valle!%0ANecesito%20asesoramiento.%20"
               title="Numero de Celular/WhatsApp"
               className="text-white link-underline link-underline-opacity-0"
             >
-              3816076542
+              +5493813048258
             </a>
           </p>
           <p className="footerTexto">
@@ -54,7 +54,7 @@ const Footer = () => {
           >
             <FontAwesomeIcon
               icon={faInstagram}
-              style={{ color: "white", fontSize: "45px" }}
+              className="p-1 iconoRedes"
             />
           </a>
           <a
@@ -63,7 +63,7 @@ const Footer = () => {
           >
             <FontAwesomeIcon
               icon={faFacebook}
-              style={{ color: "white", fontSize: "45px" }}
+              className="p-1 iconoRedes"
             />
           </a>
           <p className="footerTexto">
