@@ -114,6 +114,27 @@ input::-webkit-inner-spin-button {
   overflow: hidden;
   opacity: 45%;
 }
+#carouselReseñas .carousel-inner .carousel-item img {
+  object-fit: contain;
+  max-height: 450px;
+  width: 100%;
+  background-color: transparent;
+}
+.botonVerde {
+  background-color: #aca650 !important; 
+  outline: none !important; 
+  border: none !important;
+  font-family: "Rubik", sans-serif !important;
+  color: #333333 !important;
+  font-weight: 500 !important;
+  transition: transform 0.5s;
+}
+
+.botonVerde:hover {
+  background-color: #aca650 !important;
+  transform: scale(1.05);
+
+}
 
 
 .verde {

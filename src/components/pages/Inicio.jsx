@@ -113,7 +113,7 @@ import {
             </Row>
   
             <Button
-              className="align-self-center mt-2 textos"
+              className="botonVerde align-self-center mt-2"
               onClick={() => setLgShow(true)}
             >
               Características accesibles para personas con discapacidades
@@ -222,35 +222,30 @@ import {
           <Carousel indicators={false} id="carouselReseñas">
       <Carousel.Item>
         <img
-          style={{objectFit: 'contain', maxHeight: '450px', width: '100%', backgroundColor: 'transparent'}}
           src="https://i.ibb.co/YWDrwwr/rese-a-5.png"
           alt="First slide"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
-          style={{objectFit: 'contain', maxHeight: '450px', width: '100%', backgroundColor: 'transparent'}}
           src="https://i.ibb.co/4Y8K3BX/rese-a-1.png"
           alt="Second slide"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
-          style={{objectFit: 'contain', maxHeight: '450px', width: '100%', backgroundColor: 'transparent'}}
           src="https://i.ibb.co/JFSxgjN/rese-a-2.png"
           alt="Third slide"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
-          style={{objectFit: 'contain', maxHeight: '450px', width: '100%', backgroundColor: 'transparent'}}
           src="https://i.ibb.co/SKkxx2n/rese-a-3.png"
           alt="Fourth slide"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
-          style={{objectFit: 'contain', maxHeight: '450px', width: '100%', backgroundColor: 'transparent'}}
           src="https://i.ibb.co/q5nKYzH/rese-a-4.png"
           alt="Fifth slide"
         />
