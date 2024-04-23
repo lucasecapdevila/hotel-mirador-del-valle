@@ -101,12 +101,12 @@ input::-webkit-inner-spin-button {
   background-color: black;
 }
 
-/* Configuraciones de carrousel (página quienes somos) */
-.carousel-inner .carousel-item {
+/* Configuraciones de carrouseles superiores */
+#carouselPrincipal .carousel-inner .carousel-item {
   background-color: black;
 }
 
-.carousel-inner .carousel-item img {
+#carouselPrincipal .carousel-inner .carousel-item img {
   object-fit: cover;
   object-position: center;
   height: 40vh;
@@ -114,6 +114,53 @@ input::-webkit-inner-spin-button {
   overflow: hidden;
   opacity: 45%;
 }
+#carouselReseñas .carousel-inner .carousel-item img {
+  object-fit: contain;
+  max-height: 450px;
+  width: 100%;
+  background-color: transparent;
+}
+.botonVerde {
+  background-color: #aca650 !important; 
+  outline: none !important; 
+  border: none !important;
+  font-family: "Rubik", sans-serif !important;
+  color: #333333 !important;
+  font-weight: 500 !important;
+  transition: transform 0.5s;
+}
+
+.botonVerde:hover {
+  background-color: #aca650 !important;
+  transform: scale(1.05);
+
+}
+
+@media only screen and (min-width: 1200px) {
+  .imgQuienesSomosHotel{
+    width: 50%;
+  }
+}
+
+.contenedorImgUsuario{
+  border-radius: 50%;
+  background: black;
+  opacity: 100%;
+}
+
+.contenedorImgUsuario:hover{
+  transform: scale(1.05);
+  transition: all 500ms ease-in-out;
+  box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+  }
+
+.imgUsuario{
+  border-radius: 50%;
+}
+
+
 
 .verde {
   color: #aca650;
@@ -166,7 +213,7 @@ input::-webkit-inner-spin-button {
   object-fit: cover;
   height: 395px;
   width: 100%;
-  filter: grayscale(30%);
+  filter: saturate(150%);
 }
 
 .tituloPrincipal {
@@ -343,6 +390,23 @@ form .btnCrearHabitacion:hover{
   border: #526980 0.1em solid;
   font-family: "Rubik", sans-serif;
 }
+.galeriacolor1{
+  background: #c8cbb9;
+}
+.galeriacolor2{
+  background-color: #798a99;
+}
+.galeriaIMG img{
+  height: 200px;
+  object-fit: cover;
+}
+.modalCard{
+  background-color: #bcb66c;
+}
+.tituloGaleria{
+  font-family: "Playfair Display", serif;
+  font-size: 3.5em;
+}
 @media only screen and (max-width: 767px) {
   .tituloPrincipal h1 {
     font-size: 35px;
@@ -381,6 +445,14 @@ form .btnCrearHabitacion:hover{
    text-align: center;
    margin-top: 8px;
   }
+  .galeriaIMG{
+    display: flex;
+    flex-direction: column;
+  }
+  .carruselIMG{
+    display: flex;
+    flex-direction: column;
+  }
 }
 @media (min-width: 768px) and (max-width: 1000px){
   .gmailText{
@@ -402,6 +474,16 @@ form .btnCrearHabitacion:hover{
   }
 }
 
+.iconoRedes{
+  color: white;
+  font-size: 45px;
+  transition: all 200ms;
+}
+
+.iconoRedes:hover{
+  transform: scale(1.1);
+}
+
 .imagenReserva{
   height: 25%;
   width: 100%;
@@ -418,3 +500,4 @@ form .btnCrearHabitacion:hover{
     width: 33% !important;
   }
 }
+

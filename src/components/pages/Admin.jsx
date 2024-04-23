@@ -8,6 +8,7 @@ import { leerUsuarioAPI } from "../../helpers/queries";
 import { Link } from "react-router-dom";
 import ItemUsuario from "./usuarios/ItemUsuario";
 const Admin = () => {
+ 
   const [listaHabitaciones, setListaHabitaciones] = useState([]);
 
   useEffect(() => {
@@ -78,9 +79,6 @@ const Admin = () => {
               <h2 className="fs-1 fw-bold titulos azul">
                 Administrador de Usuarios
               </h2>
-              <Link to="/registro" className="btn btn-primary">
-                <FontAwesomeIcon icon={faPlus} />
-              </Link>
             </div>
             <hr />
 

@@ -1,6 +1,6 @@
 import { Form, Button, Card } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { login } from "../../helpers/queries";
+import { iniciarSesion } from "../../helpers/queries";
 import Swal from "sweetalert2";
 import { useNavigate, Link } from "react-router-dom";
 
@@ -9,26 +9,40 @@ const Login = ({ setUsuarioLogueado }) => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
   const navegacion = useNavigate();
 
-  const onSubmit = (usuario) => {
-    if (login(usuario)) {
-      Swal.fire({
-        title: "Usuario logueado",
-        text: `El usuario ${usuario.email} fue logueado correctamente`,
-        icon: "success",
-      });
-      setUsuarioLogueado(usuario.email);
-      navegacion("/administrador");
-    } else {
-      Swal.fire({
-        title: "Error en el login",
-        text: "El email o password son incorrectos",
-        icon: "error",
-      });
+  const onSubmit = async (usuario) => {
+    try {
+      const respuesta = await iniciarSesion(usuario);
+
+      if (respuesta) {
+        delete respuesta.password;
+        sessionStorage.setItem("inicioHotelMiradorDelValle", JSON.stringify(respuesta));
+
+        const esAdministrador = respuesta.rol === "Administrador";
+
+        if (esAdministrador) {
+          setUsuarioLogueado(respuesta);
+          Swal.fire("Bienvenido Administrador!", "", "success");
+          reset();
+          navegacion("/administrador");
+        } else {
+          setUsuarioLogueado(respuesta);
+          Swal.fire(`Sesión iniciada!`, `Bienvenido ${respuesta.userName}!`, "success");
+          reset();
+          navegacion("/");
+        }
+      } else {
+        Swal.fire("Error!", "El email o la contraseña son incorrectos.", "error");
+      }
+    } catch (error) {
+      console.error("Error al iniciar sesión:", error);
+      Swal.fire("Error!", "Hubo un problema al iniciar sesión. Por favor, inténtalo de nuevo más tarde.", "error");
     }
   };
+
 
   return (
     <div className="mainPage fondoLogin">

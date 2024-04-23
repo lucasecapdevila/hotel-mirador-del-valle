@@ -1,12 +1,31 @@
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import logo from "../../assets/iconNav.png";
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import Swal from "sweetalert2";
 const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
   const navegacion = useNavigate();
   const logout = ()=>{
-    sessionStorage.removeItem('inicioHotelMiradorDelValle')
-    setUsuarioLogueado("");
-    navegacion('/');
+    Swal.fire({
+      title: "Cerrar sesión",
+      text: "¿Estás seguro que deseas cerrar sesión?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#aca650",
+      cancelButtonColor: "hsl(0, 71.42857142857143%, 66%)",
+      confirmButtonText: "Si, deseo salir",
+      cancelButtonText: "Cancelar"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Saliste !",
+          text: "Tu sesión se cerró exitosamente",
+          icon: "success"
+        });
+        sessionStorage.removeItem('inicioHotelMiradorDelValle')
+        setUsuarioLogueado({});
+        navegacion('/');
+      }
+    });
   }
   
   return (
@@ -27,7 +46,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 INICIO
               </NavLink>
               <NavLink end className="nav-link" to="/quienesSomos">
-                EL HOTEL
+                HOTEL
               </NavLink>
               <NavLink end className="nav-link" to="/galeriadeimagenes">
                 GALERIA
@@ -38,25 +57,35 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
               <NavLink end className="nav-link" to="/contacto">
                 CONTACTO
               </NavLink>
-              {usuarioLogueado.length > 0 ? (
-              <>
-                <NavLink end className="nav-link" to="/administrador">
-                  ADMINISTRADOR
-                </NavLink>
-                <Button className="nav-link" variant="link" onClick={logout}>CERRAR SESION</Button>
-              </>
-            ) : (
-              <NavLink end className="nav-link" to="/login">
-                LOGIN
-              </NavLink>
-            )}
-              <NavLink end className="nav-link" to="/registro">
-                REGISTRO
-              </NavLink>
-              <NavLink end className="nav-link" to="/reservas">
-                RESERVAS
-              </NavLink>
-            
+
+              {usuarioLogueado.email ? (
+                 usuarioLogueado.rol === "Administrador" ? (
+                   <>
+                   <NavLink
+                     end
+                     className="nav-link "
+                     to="/administrador"
+                   >
+                     ADMINISTRADOR
+                   </NavLink>
+                   <Button className="nav-link" variant="link" onClick={logout}>CERRAR SESION</Button>
+                 </>
+                ):( 
+                    <Button className="nav-link" variant="link" onClick={logout}>CERRAR SESION</Button> 
+                  )
+                ):(
+                
+                  <>
+
+                    <NavLink
+                      end
+                      className="nav-link "
+                      to="/Login"
+                    >
+                      LOGIN
+                    </NavLink>
+                  </>
+                )}
             </Nav>
           </Navbar.Collapse>
         </Container>
