@@ -17,20 +17,20 @@ const Login = ({ setUsuarioLogueado }) => {
     try {
       const respuesta = await iniciarSesion(usuario);
 
-      if (respuesta) {
-        delete respuesta.password;
-        sessionStorage.setItem("inicioHotelMiradorDelValle", JSON.stringify(respuesta));
+      if (respuesta.status === 200) {
+        const datos = await respuesta.json()
+        sessionStorage.setItem("inicioHotelMiradorDelValle", JSON.stringify({userEmail: datos.userEmail}));
+        
+        const esAdministrador = datos.role;
 
-        const esAdministrador = respuesta.rol === "Administrador";
-
-        if (esAdministrador) {
-          setUsuarioLogueado(respuesta);
+        if (esAdministrador==="Administrador") {
+          setUsuarioLogueado(datos);
           Swal.fire("Bienvenido Administrador!", "", "success");
           reset();
           navegacion("/administrador");
         } else {
-          setUsuarioLogueado(respuesta);
-          Swal.fire(`Sesión iniciada!`, `Bienvenido ${respuesta.userName}!`, "success");
+          setUsuarioLogueado(datos);
+          Swal.fire(`Sesión iniciada!`, `Bienvenido ${datos.userName}!`, "success");
           reset();
           navegacion("/");
         }
