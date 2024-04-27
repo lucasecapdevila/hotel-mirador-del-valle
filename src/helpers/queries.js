@@ -33,6 +33,7 @@ export const crearHabitacionAPI = async (nuevaHabitacion) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "x-token": JSON.parse(sessionStorage.getItem('inicioHotelMiradorDelValle')).token
       },
       body: JSON.stringify(nuevaHabitacion),
     });
@@ -49,6 +50,7 @@ export const editarHabitacionAPI = async (id, habitacion) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        "x-token": JSON.parse(sessionStorage.getItem('inicioHotelMiradorDelValle')).token
       },
       body: JSON.stringify(habitacion),
     });
@@ -63,6 +65,9 @@ export const borrarHabitacionAPI = async (id) => {
   try {
     const response = await fetch(`${URI_HABITACIONES}/${id}`, {
       method: "DELETE",
+      headers: {
+        "x-token": JSON.parse(sessionStorage.getItem('inicioHotelMiradorDelValle')).token
+      }
     });
     return response;
   } catch (error) {
@@ -112,6 +117,7 @@ export const editarUsuarioAPI = async (id, usuario) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        "x-token": JSON.parse(sessionStorage.getItem('inicioHotelMiradorDelValle')).token
       },
       body: JSON.stringify(usuario),
     });
@@ -125,6 +131,7 @@ export const borrarUsuarioAPI = async (id) => {
   try {
     const response = await fetch(`${URI_USUARIOS_GET}/${id}`, {
       method: "DELETE",
+      "x-token": JSON.parse(sessionStorage.getItem('inicioHotelMiradorDelValle')).token
     });
     return response;
   } catch (error) {
@@ -159,6 +166,7 @@ export const crearReservaAPI = async (nuevaReserva) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "x-token": JSON.parse(sessionStorage.getItem('inicioHotelMiradorDelValle')).token
       },
       body: JSON.stringify(nuevaReserva),
     });
@@ -174,6 +182,7 @@ export const editarReservaAPI = async (id, reserva) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        "x-token": JSON.parse(sessionStorage.getItem('inicioHotelMiradorDelValle')).token
       },
       body: JSON.stringify(reserva),
     });
@@ -187,6 +196,9 @@ export const borrarReservaAPI = async (id) => {
   try {
     const response = await fetch(`${URI_RESERVAS}/${id}`, {
       method: "DELETE",
+      headers: {
+        "x-token": JSON.parse(sessionStorage.getItem('inicioHotelMiradorDelValle')).token
+      }
     });
     return response;
   } catch (error) {

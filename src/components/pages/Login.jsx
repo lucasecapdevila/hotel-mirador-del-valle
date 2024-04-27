@@ -24,7 +24,7 @@ const Login = ({ setUsuarioLogueado }) => {
         if (dato.role === "Usuario") {
           console.log(dato.role)
 
-          sessionStorage.setItem('inicioHotelMiradorDelValle', JSON.stringify({email: dato.email}))
+          sessionStorage.setItem('inicioHotelMiradorDelValle', JSON.stringify({email: dato.email, userName: dato.userName, token: dato.token}))
           setUsuarioLogueado(dato);
           navegacion("/");
           Swal.fire({
