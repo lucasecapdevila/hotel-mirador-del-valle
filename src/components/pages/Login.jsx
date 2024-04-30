@@ -20,11 +20,11 @@ const Login = ({ setUsuarioLogueado }) => {
       if (respuesta.status === 200) {
         const dato = await respuesta.json();
         console.log(dato)
-        console.log(dato.rol)
-        if (dato.rol === "Usuario") {
-          console.log(dato.rol)
+        console.log(dato.role)
+        if (dato.role === "Usuario") {
+          console.log(dato.role)
 
-          sessionStorage.setItem('inicioHotelMiradorDelValle', JSON.stringify({email: dato.email}))
+          sessionStorage.setItem('inicioHotelMiradorDelValle', JSON.stringify({email: dato.email, userName: dato.userName, token: dato.token}))
           setUsuarioLogueado(dato);
           navegacion("/");
           Swal.fire({
@@ -36,8 +36,8 @@ const Login = ({ setUsuarioLogueado }) => {
             }
           });
           
-        } else if (dato.rol === "Administrador") {
-          console.log(dato.rol)
+        } else if (dato.role === "Administrador") {
+          console.log(dato.role)
           sessionStorage.setItem('inicioHotelMiradorDelValle', JSON.stringify({email: dato.email}))
           setUsuarioLogueado(dato);
           navegacion("/administrador");
