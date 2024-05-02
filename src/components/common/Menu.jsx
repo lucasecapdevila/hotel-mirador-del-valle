@@ -2,6 +2,7 @@ import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import logo from "../../assets/iconNav.png";
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2";
+
 const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
   const navegacion = useNavigate();
   const logout = ()=>{
@@ -58,18 +59,30 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 CONTACTO
               </NavLink>
 
-              {usuarioLogueado.length > 0 ? (
-              <>
-                <NavLink end className="nav-link" to="/administrador">
-                  ADMINISTRADOR
-                </NavLink>
-                <Button className="nav-link" variant="link" onClick={logout}>CERRAR SESION</Button>
-              </>
-            ) : (
-              <NavLink end className="nav-link" to="/login">
-                LOGIN
-              </NavLink>
-            )}
+              {
+                usuarioLogueado.rol === 'Administrador'
+                ? 
+                  (
+                    <>
+                      <NavLink end className="nav-link" to="/administrador">
+                        ADMINISTRADOR
+                      </NavLink>
+                      <Button className="nav-link" variant="link" onClick={logout}>CERRAR SESION</Button>
+                    </>
+                  )
+                : usuarioLogueado.rol === 'Usuario'
+                ?
+                  (
+                    <Button className="nav-link" variant="link" onClick={logout}>CERRAR SESION</Button>
+                  )
+                : 
+                  (
+                    <NavLink end className="nav-link" to="/login">
+                      LOGIN
+                    </NavLink>
+                  )
+              }
+
             </Nav>
           </Navbar.Collapse>
         </Container>

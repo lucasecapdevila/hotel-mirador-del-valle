@@ -17,7 +17,6 @@ const Admin = () => {
   const traerHabitaciones = async () => {
     try {
       const listaHabitacionesAPI = await leerHabitacionesAPI();
-      console.log(listaHabitacionesAPI)
       setHabitaciones(listaHabitacionesAPI);
     } catch (error) {
       console.log(error);
@@ -83,7 +82,6 @@ const Admin = () => {
             <Table striped bordered responsive>
               <thead className="fs-5">
                 <tr className="text-center">
-                 
                   <th>Usuario</th>
                   <th>Rol</th>
                   <th>Nombre</th>
