@@ -9,7 +9,6 @@ import {
 import { Link } from "react-router-dom";
 
 const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
-  console.log(habitacion)
   const borrarHabitacion = () => {
     Swal.fire({
       title: "¿Estás seguro de eliminar la habitación?",
