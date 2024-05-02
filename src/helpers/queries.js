@@ -78,9 +78,9 @@ export const borrarHabitacionAPI = async (id) => {
 
 //----------------------- USUARIOS -----------------------//
 
-export const leerUsuarioAPI = async () => {
+export const leerUsuariosAPI = async () => {
   try {
-    const response = await fetch(URI_USUARIOS_GET);
+    const response = await fetch(URI_USUARIOS);
     const listaUsuarios = await response.json();
     return listaUsuarios;
   } catch (error) {

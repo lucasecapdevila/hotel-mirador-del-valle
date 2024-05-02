@@ -1,10 +1,10 @@
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Container, Tab, Table, Tabs } from "react-bootstrap";
+import { Container, Tab, Table, Tabs } from "react-bootstrap";
 import ItemHabitacion from "./habitaciones/ItemHabitacion";
 import { useEffect, useState } from "react";
 import { leerHabitacionesAPI } from "../../helpers/queries";
-import { leerUsuarioAPI } from "../../helpers/queries";
+import { leerUsuariosAPI } from "../../helpers/queries";
 import { Link } from "react-router-dom";
 import ItemUsuario from "./usuarios/ItemUsuario";
 const Admin = () => {
@@ -30,7 +30,7 @@ const Admin = () => {
 
   const traerUsuarios = async () => {
     try {
-      const listaUsuariosAPI = await leerUsuarioAPI();
+      const listaUsuariosAPI = await leerUsuariosAPI();
       setUsuarios(listaUsuariosAPI);
     } catch (error) {
       console.log(error);
@@ -85,6 +85,7 @@ const Admin = () => {
                 <tr className="text-center">
                  
                   <th>Usuario</th>
+                  <th>Rol</th>
                   <th>Nombre</th>
                   <th>Apellido</th>
                   <th>Email</th>

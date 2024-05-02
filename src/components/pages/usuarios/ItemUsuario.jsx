@@ -4,11 +4,12 @@ import { Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 import {
   borrarUsuarioAPI,
-  leerUsuarioAPI,
+  leerUsuariosAPI,
 } from "../../../helpers/queries";
 import { Link } from "react-router-dom";
 
 const ItemUsuario = ({ usuario, setListaUsuarios }) => {
+  console.log(usuario);
   const borrarUsuario = () => {
     Swal.fire({
       title: "¿Estás seguro de eliminar el usuario?",
@@ -23,7 +24,7 @@ const ItemUsuario = ({ usuario, setListaUsuarios }) => {
       if (result.isConfirmed) {
         const response = await borrarUsuarioAPI(usuario._id);
         if (response.status === 200) {
-          const listaUsuariosActualizada = await leerUsuarioAPI();
+          const listaUsuariosActualizada = await leerUsuariosAPI();
           setListaUsuarios(listaUsuariosActualizada);
 
           Swal.fire({
@@ -46,6 +47,7 @@ const ItemUsuario = ({ usuario, setListaUsuarios }) => {
     <tr>
      
       <td>{usuario.userName}</td>
+      <td className="text-center">{usuario.role}</td>
       <td className="text-center">{usuario.nombreUser}</td>
       <td className="text-center">{usuario.apellidoUser}</td>
       <td className="text-center">{usuario.userEmail}</td>
