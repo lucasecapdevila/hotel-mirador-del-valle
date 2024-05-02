@@ -5,6 +5,7 @@ import {
   obtenerHabitacionAPI,
 } from "../../../helpers/queries";
 import dayjs from "dayjs";
+import Swal from "sweetalert2";
 
 const CardReserva = ({ id, fechaEntrada, fechaSalida }) => {
   const [habitacion, setHabitacion] = useState({});
@@ -35,7 +36,7 @@ const CardReserva = ({ id, fechaEntrada, fechaSalida }) => {
   const reservarHabitacion = async () => {
     const detallesReserva = {
       habitacion: habitacion.numeroHabitacion,
-      idHabitacion: habitacion._id,
+      idHabitacion: habitacion.id,
       idUsuario: "1234",
       fechaEntrada,
       fechaSalida,

@@ -62,7 +62,7 @@ const Admin = () => {
               <tbody className="fs-5">
                 {habitaciones.map((habitacion) => (
                   <ItemHabitacion
-                    key={habitacion._id}
+                    key={habitacion.id}
                     habitacion={habitacion}
                     
                   />
@@ -93,7 +93,7 @@ const Admin = () => {
               <tbody className=" fs-5">
               {usuarios.map((usuario) => (
                   <ItemUsuario
-                    key={usuario._id}
+                    key={usuario.id}
                     usuario={usuario}
                     
                   />

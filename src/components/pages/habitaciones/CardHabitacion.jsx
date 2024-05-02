@@ -21,6 +21,8 @@ const CardHabitacion = ({ habitacion, fechaEntrada, fechaSalida }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  console.log(habitacion);
+
   return (
     <Col md={4} className="mb-3">
       <Card className="my-3 cardCategoria">

@@ -17,7 +17,6 @@ const Habitaciones = ({
   usuarioLogueado, 
   setUsuarioLogueado,
 }) => {
-  console.log(usuarioLogueado);
   const [listaHabitaciones, setListaHabitaciones] = useState([]);
   const [listaHabitacionesPorFiltrar, setListaHabitacionesPorFiltrar] =
     useState([]);
@@ -93,8 +92,6 @@ const Habitaciones = ({
       <Container className="mainPage">
         {usuarioLogueado && usuarioLogueado.email ? (
           <Space className="mb-5" direction="vertical" size={12}>
-            {console.log(usuarioLogueado)}{" "}
-            {/* Agregar esta línea para verificar usuarioLogueado */}
             <RangePicker format="DD-MM-YYYY" onChange={filtrarPorFecha} />
           </Space>
         ) : null}
@@ -102,7 +99,7 @@ const Habitaciones = ({
         <Row>
           {listaHabitaciones.map((habitacion) => (
             <CardHabitacion
-              key={habitacion._id}
+              key={habitacion.id}
               habitacion={habitacion}
               fechaEntrada={fechaEntrada}
               fechaSalida={fechaSalida}

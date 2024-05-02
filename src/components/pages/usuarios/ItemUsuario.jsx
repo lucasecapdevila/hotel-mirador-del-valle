@@ -28,7 +28,7 @@ const ItemUsuario = ({ usuario, setListaUsuarios }) => {
         cancelButtonText: "Cancelar",
       }).then(async (result) => {
         if (result.isConfirmed) {
-          const response = await borrarUsuarioAPI(usuario._id);
+          const response = await borrarUsuarioAPI(usuario.id);
           if (response.status === 200) {
             const listaUsuariosActualizada = await leerUsuariosAPI();
             setListaUsuarios(listaUsuariosActualizada);
@@ -60,7 +60,7 @@ const ItemUsuario = ({ usuario, setListaUsuarios }) => {
       <td className="anchoColumna">
         <div className="d-flex align-items-center justify-content-center">
           <Link
-            to={`/administrador/editarusuario/${usuario._id}`}
+            to={`/administrador/editarusuario/${usuario.id}`}
             className="btn btn-warning ms-0 me-2"
           >
             <FontAwesomeIcon icon={faFilePen} />

@@ -21,7 +21,7 @@ const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
       cancelButtonText: "Cancelar",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const response = await borrarHabitacionAPI(habitacion._id);
+        const response = await borrarHabitacionAPI(habitacion.id);
         if (response.status === 200) {
           //  Actualizo la tabla
           const listaHabitacionesActualizada = await leerHabitacionesAPI();
@@ -51,7 +51,7 @@ const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
       <td className="anchoColumna">
         <div className="d-flex align-items-center justify-content-center">
           <Link
-            to={`/administrador/editar/${habitacion._id}`}
+            to={`/administrador/editar/${habitacion.id}`}
             className="btn btn-warning ms-0 me-2"
           >
             <FontAwesomeIcon icon={faFilePen} />
