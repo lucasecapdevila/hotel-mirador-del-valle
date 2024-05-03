@@ -36,21 +36,13 @@ const CardReserva = ({ id, fechaEntrada, fechaSalida }) => {
   const reservarHabitacion = async () => {
     const detallesReserva = {
       habitacion: habitacion.numeroHabitacion,
-      idHabitacion: habitacion.id,
+      idHabitacion: habitacion._id,
       idUsuario: "1234",
       fechaEntrada,
       fechaSalida,
       precioTotal,
       diasTotales,
     };
-
-    habitacion.reservasActuales.push({
-      idReserva: "1234",
-      fechaEntrada,
-      fechaSalida,
-      idUsuario: "1234",
-      estado: "Confirmado",
-    });
     console.log(habitacion.reservasActuales);
 
     try {
