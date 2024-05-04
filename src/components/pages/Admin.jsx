@@ -1,10 +1,10 @@
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Container, Tab, Table, Tabs } from "react-bootstrap";
+import { Container, Tab, Table, Tabs } from "react-bootstrap";
 import ItemHabitacion from "./habitaciones/ItemHabitacion";
 import { useEffect, useState } from "react";
 import { leerHabitacionesAPI } from "../../helpers/queries";
-import { leerUsuarioAPI } from "../../helpers/queries";
+import { leerUsuariosAPI } from "../../helpers/queries";
 import { Link } from "react-router-dom";
 import ItemUsuario from "./usuarios/ItemUsuario";
 const Admin = () => {
@@ -17,7 +17,6 @@ const Admin = () => {
   const traerHabitaciones = async () => {
     try {
       const listaHabitacionesAPI = await leerHabitacionesAPI();
-      console.log(listaHabitacionesAPI)
       setHabitaciones(listaHabitacionesAPI);
     } catch (error) {
       console.log(error);
@@ -30,7 +29,7 @@ const Admin = () => {
 
   const traerUsuarios = async () => {
     try {
-      const listaUsuariosAPI = await leerUsuarioAPI();
+      const listaUsuariosAPI = await leerUsuariosAPI();
       setUsuarios(listaUsuariosAPI);
     } catch (error) {
       console.log(error);
@@ -63,7 +62,7 @@ const Admin = () => {
               <tbody className="fs-5">
                 {habitaciones.map((habitacion) => (
                   <ItemHabitacion
-                    key={habitacion._id}
+                    key={habitacion.id}
                     habitacion={habitacion}
                     
                   />
@@ -83,8 +82,8 @@ const Admin = () => {
             <Table striped bordered responsive>
               <thead className="fs-5">
                 <tr className="text-center">
-                 
                   <th>Usuario</th>
+                  <th>Rol</th>
                   <th>Nombre</th>
                   <th>Apellido</th>
                   <th>Email</th>
@@ -94,7 +93,7 @@ const Admin = () => {
               <tbody className=" fs-5">
               {usuarios.map((usuario) => (
                   <ItemUsuario
-                    key={usuario._id}
+                    key={usuario.id}
                     usuario={usuario}
                     
                   />

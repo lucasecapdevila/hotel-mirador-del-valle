@@ -52,7 +52,7 @@ const FormularioHabitaciones = ({ editar, titulo }) => {
   const habitacionValidada = async (habitacion) => {
     try {
       if (editar) {
-        const response = await editarHabitacionAPI(_id, habitacion);
+        const response = await editarHabitacionAPI(id, habitacion);
         if (response.status === 200) {
           Swal.fire({
             title: "Habitación editada",

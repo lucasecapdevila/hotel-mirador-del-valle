@@ -5,6 +5,7 @@ import {
   obtenerHabitacionAPI,
 } from "../../../helpers/queries";
 import dayjs from "dayjs";
+import Swal from "sweetalert2";
 
 const CardReserva = ({ id, fechaEntrada, fechaSalida }) => {
   const [habitacion, setHabitacion] = useState({});
@@ -42,14 +43,6 @@ const CardReserva = ({ id, fechaEntrada, fechaSalida }) => {
       precioTotal,
       diasTotales,
     };
-
-    habitacion.reservasActuales.push({
-      idReserva: "1234",
-      fechaEntrada,
-      fechaSalida,
-      idUsuario: "1234",
-      estado: "Confirmado",
-    });
     console.log(habitacion.reservasActuales);
 
     try {

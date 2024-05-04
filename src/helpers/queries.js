@@ -1,6 +1,7 @@
 const URI_HABITACIONES = import.meta.env.VITE_API_HABITACIONES;
 const URI_USUARIOS = import.meta.env.VITE_API_USUARIOS;
 const URI_USUARIOS_GET = import.meta.env.VITE_API_USUARIOS_GET;
+const URI_LOGIN = import.meta.env.VITE_API_LOGIN;
 const URI_RESERVAS = import.meta.env.VITE_API_RESERVAS;
 
 //----------------------- HABITACIONES -----------------------//
@@ -77,9 +78,9 @@ export const borrarHabitacionAPI = async (id) => {
 
 //----------------------- USUARIOS -----------------------//
 
-export const leerUsuarioAPI = async () => {
+export const leerUsuariosAPI = async () => {
   try {
-    const response = await fetch(URI_USUARIOS_GET);
+    const response = await fetch(URI_USUARIOS);
     const listaUsuarios = await response.json();
     return listaUsuarios;
   } catch (error) {
@@ -209,7 +210,7 @@ export const borrarReservaAPI = async (id) => {
 export const iniciarSesion = async (usuario) => {
   console.log(usuario)
   try {
-    const respuesta = await fetch(URI_USUARIOS, {
+    const respuesta = await fetch(URI_LOGIN, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
