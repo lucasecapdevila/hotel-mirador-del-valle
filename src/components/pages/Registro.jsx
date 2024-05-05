@@ -80,7 +80,7 @@ const Registro = ({ editar, titulo }) => {
         } else {
           Swal.fire({
             title: "Ocurrió un error",
-            text: "Intente modificar los datos en unos minutos.",
+            text: "Intente realizar esta acción en unos minutos.",
             icon: "error",
           });
         }
@@ -107,8 +107,7 @@ const Registro = ({ editar, titulo }) => {
                   <div className="d-flex flex-column col-lg-7 cardText">
                     <Form.Group className="mb-3" controlId="formBasicImg">
                       <Form.Label className="textos fw-bold">
-                        Imagen para el Perfil:
-                        <span className="text-danger">*</span>
+                        Imagen para el Perfil <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
                         type="text"
@@ -131,7 +130,7 @@ const Registro = ({ editar, titulo }) => {
 
                     <Form.Group className="mb-3" controlId="formBasicName">
                       <Form.Label className="textos fw-bold">
-                        Nombre:<span className="text-danger">*</span>
+                        Nombre <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
                         type="text"
@@ -158,7 +157,7 @@ const Registro = ({ editar, titulo }) => {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicUserName">
                       <Form.Label className="textos fw-bold">
-                        Apellido:<span className="text-danger">*</span>
+                        Apellido <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
                         type="text"
@@ -186,7 +185,7 @@ const Registro = ({ editar, titulo }) => {
 
                     <Form.Group className="mb-3" controlId="userName">
                       <Form.Label className="textos fw-bold">
-                        Nombre de usuario:<span className="text-danger">*</span>
+                        Nombre de usuario <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
                         type="text"
@@ -218,7 +217,7 @@ const Registro = ({ editar, titulo }) => {
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                      <Form.Label className="textos fw-bold">Email</Form.Label>
+                      <Form.Label className="textos fw-bold">Email <span className="text-danger">*</span></Form.Label>
                       <Form.Control
                         type="email"
                         placeholder="Ej: juan_perez@gmail.com"
@@ -256,7 +255,7 @@ const Registro = ({ editar, titulo }) => {
                       ) : (
                         <>
                           <Form.Label className="textos fw-bold">
-                            Contraseña
+                            Contraseña <span className="text-danger">*</span>
                           </Form.Label>
                           <Form.Control
                             type="password"
@@ -294,7 +293,7 @@ const Registro = ({ editar, titulo }) => {
                         controlId="userConfirmPassword"
                       >
                         <Form.Label className="textos fw-bold">
-                          Ingrese nuevamente su contraseña
+                          Ingrese nuevamente su contraseña <span className="text-danger">*</span>
                         </Form.Label>
                         <Form.Control
                           type="password"
