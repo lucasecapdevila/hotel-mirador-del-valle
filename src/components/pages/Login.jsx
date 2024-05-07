@@ -58,7 +58,7 @@ const Login = ({ setUsuarioLogueado }) => {
         } else {
           Swal.fire({
             title: "Error al loguearse!",
-            text: "Intente Nuevamente",
+            text: "Intente nuevamente",
             icon: "error",
             customClass: {
               popup: 'contenedor-sweet'
@@ -68,7 +68,7 @@ const Login = ({ setUsuarioLogueado }) => {
       } else{
         Swal.fire({
           title: "Error al loguearse!",
-          text: "Intente Nuevamente",
+          text: "Intente nuevamente",
           icon: "error",
           customClass: {
             popup: 'contenedor-sweet'
@@ -76,6 +76,14 @@ const Login = ({ setUsuarioLogueado }) => {
         });
       }
     } catch (error) {
+      Swal.fire({
+        title: "Error al loguearse!",
+        text: "Intente nuevamente",
+        icon: "error",
+        customClass: {
+          popup: 'contenedor-sweet'
+        }
+      });
       console.log(error);
     }
   };

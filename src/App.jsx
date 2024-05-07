@@ -20,7 +20,6 @@ function App() {
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
   const [fechaEntrada, setFechaEntrada] = useState()
   const [fechaSalida, setFechaSalida] = useState()
-  console.log(usuarioLogueado);
 
   return (
     <BrowserRouter>

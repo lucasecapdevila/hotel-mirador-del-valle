@@ -15,6 +15,7 @@ const FormularioHabitaciones = ({ editar, titulo }) => {
   const navegacion = useNavigate();
 
   const [loading, setLoading] = useState()
+  const [error, setError] = useState()
 
   useEffect(() => {
     if (editar) {
@@ -95,16 +96,22 @@ const FormularioHabitaciones = ({ editar, titulo }) => {
       }
     } catch (error) {
       console.log(error);
+      setLoading(false)
+      Swal.fire({
+        title: "Ocurrió un error",
+        text: "Intente agregar la habitación en unos minutos.",
+        icon: "error",
+      });
     }
   };
 
   return (
     <main className="mainPage fondoCrearHab">
       <section className="container">
-        <Card className="cardRegistro p-md-1" sm={12}>
         {loading ? (
           <Loader />
         ) : (
+        <Card className="cardRegistro p-md-1" sm={12}>
           <>
             <Card.Header className="titulos fs-2" as="h5">
               {titulo}
@@ -282,8 +289,8 @@ const FormularioHabitaciones = ({ editar, titulo }) => {
               </Form>
             </Card.Body>
           </>
-        )}
         </Card>
+        )}
       </section>
     </main>
   );
