@@ -7,6 +7,7 @@ import isBetween from "dayjs/plugin/isBetween";
 import { Container, Row } from "react-bootstrap";
 import CardHabitacion from "./habitaciones/CardHabitacion";
 import { leerHabitacionesAPI } from "../../helpers/queries";
+import Loader from "../common/Loader";
 dayjs.extend(isBetween);
 
 const Habitaciones = ({
@@ -18,8 +19,8 @@ const Habitaciones = ({
   setUsuarioLogueado,
 }) => {
   const [listaHabitaciones, setListaHabitaciones] = useState([]);
-  const [listaHabitacionesPorFiltrar, setListaHabitacionesPorFiltrar] =
-    useState([]);
+  const [listaHabitacionesPorFiltrar, setListaHabitacionesPorFiltrar] = useState([]);
+  const [loading, setLoading] = useState()
 
   useEffect(() => {
     traerHabitaciones();
@@ -30,11 +31,15 @@ const Habitaciones = ({
 
   const traerHabitaciones = async () => {
     try {
+      setLoading(true)
       const listaHabitacionesAPI = await leerHabitacionesAPI();
       setListaHabitaciones(listaHabitacionesAPI);
       setListaHabitacionesPorFiltrar(listaHabitacionesAPI);
+      setLoading(false)
     } catch (error) {
+      setLoading(true)
       console.log(error);
+      setLoading(false)
     }
   };
 
@@ -46,43 +51,43 @@ const Habitaciones = ({
 
   const filtrarPorFecha = (fechas) => {
     console.log('Función');
-  //   setFechaEntrada(dayjs(fechas[0]).format("DD-MM-YYYY"));
-  //   setFechaSalida(dayjs(fechas[1]).format("DD-MM-YYYY"));
+  setFechaEntrada(dayjs(fechas[0]).format("DD-MM-YYYY"));
+  setFechaSalida(dayjs(fechas[1]).format("DD-MM-YYYY"));
 
-  //   let habitacionesTemporales = [];
-  //   let disponible = false;
-  //   listaHabitacionesPorFiltrar.map((habitacionTemporal) => {
-  //     if (habitacionTemporal.reservasActuales.length > 0) {
-  //       habitacionTemporal.reservasActuales.map((reserva) => {
-  //         if (
-  //           dayjs(dayjs(fechas[0]).format("DD-MM-YYYY")).isBetween(
-  //             reserva.fechaEntrada,
-  //             reserva.fechaSalida
-  //           ) &&
-  //           dayjs(dayjs(fechas[1]).format("DD-MM-YYYY")).isBetween(
-  //             reserva.fechaEntrada,
-  //             reserva.fechaSalida
-  //           )
-  //         ) {
-  //           if (
-  //             dayjs(fechas[0]).format("DD-MM-YYYY") !== reserva.fechaEntrada &&
-  //             dayjs(fechas[0]).format("DD-MM-YYYY") !== reserva.fechaSalida &&
-  //             dayjs(fechas[1]).format("DD-MM-YYYY") !== reserva.fechaEntrada &&
-  //             dayjs(fechas[1]).format("DD-MM-YYYY") !== reserva.fechaSalida
-  //           ) {
-  //             disponible = true;
-  //           }
-  //         }
-  //       });
-  //     }
-  //     if (
-  //       disponible === true ||
-  //       habitacionTemporal.reservasActuales.length == 0
-  //     ) {
-  //       habitacionesTemporales.push(habitacionTemporal);
-  //     }
-  //     setListaHabitaciones(habitacionesTemporales);
-  //   });
+  let habitacionesTemporales = [];
+  let disponible = false;
+  listaHabitacionesPorFiltrar.map((habitacionTemporal) => {
+    if (habitacionTemporal.reservasActuales.length > 0) {
+      habitacionTemporal.reservasActuales.map((reserva) => {
+        if (
+          dayjs(dayjs(fechas[0]).format("DD-MM-YYYY")).isBetween(
+            reserva.fechaEntrada,
+            reserva.fechaSalida
+          ) &&
+          dayjs(dayjs(fechas[1]).format("DD-MM-YYYY")).isBetween(
+            reserva.fechaEntrada,
+            reserva.fechaSalida
+          )
+        ) {
+          if (
+            dayjs(fechas[0]).format("DD-MM-YYYY") !== reserva.fechaEntrada &&
+            dayjs(fechas[0]).format("DD-MM-YYYY") !== reserva.fechaSalida &&
+            dayjs(fechas[1]).format("DD-MM-YYYY") !== reserva.fechaEntrada &&
+            dayjs(fechas[1]).format("DD-MM-YYYY") !== reserva.fechaSalida
+          ) {
+            disponible = true;
+          }
+        }
+      });
+    }
+    if (
+      disponible === true ||
+      habitacionTemporal.reservasActuales.length == 0
+    ) {
+      habitacionesTemporales.push(habitacionTemporal);
+    }
+    setListaHabitaciones(habitacionesTemporales);
+  });
   };
 
   return (
@@ -104,14 +109,18 @@ const Habitaciones = ({
         ) : null}
 
         <Row>
-          {listaHabitaciones.map((habitacion) => (
-            <CardHabitacion
-              key={habitacion._id}
-              habitacion={habitacion}
-              fechaEntrada={fechaEntrada}
-              fechaSalida={fechaSalida}
-            />
-          ))}
+          {loading ? (
+            <Loader />
+          ) : (
+            listaHabitaciones.map((habitacion) => (
+              <CardHabitacion
+                key={habitacion._id}
+                habitacion={habitacion}
+                fechaEntrada={fechaEntrada}
+                fechaSalida={fechaSalida}
+              />
+            ))
+          )}
         </Row>
       </Container>
     </ConfigProvider>

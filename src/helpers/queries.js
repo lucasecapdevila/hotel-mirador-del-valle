@@ -1,6 +1,5 @@
 const URI_HABITACIONES = import.meta.env.VITE_API_HABITACIONES;
 const URI_USUARIOS = import.meta.env.VITE_API_USUARIOS;
-const URI_USUARIOS_GET = import.meta.env.VITE_API_USUARIOS_GET;
 const URI_LOGIN = import.meta.env.VITE_API_LOGIN;
 const URI_RESERVAS = import.meta.env.VITE_API_RESERVAS;
 

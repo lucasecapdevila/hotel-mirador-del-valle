@@ -6,9 +6,11 @@ import {
 } from "../../../helpers/queries";
 import dayjs from "dayjs";
 import Swal from "sweetalert2";
+import Loader from "../../common/Loader";
 
 const CardReserva = ({ id, fechaEntrada, fechaSalida }) => {
   const [habitacion, setHabitacion] = useState({});
+  const [loading, setLoading] = useState()
 
   useEffect(() => {
     cargarDetalle();
@@ -20,16 +22,19 @@ const CardReserva = ({ id, fechaEntrada, fechaSalida }) => {
   const precioTotal = diasTotales * habitacion.precioHabitacion;
 
   const cargarDetalle = async () => {
+    setLoading(true)
     const respuesta = await obtenerHabitacionAPI(id);
     if (respuesta.status === 200) {
       const datoHabitacion = await respuesta.json();
       setHabitacion(datoHabitacion);
+      setLoading(false)
     } else {
       Swal.fire({
         title: "Ocurrio un error",
         text: "Intente realizar esta operacion en unos minutos",
         icon: "error",
       });
+      setLoading(false)
     }
   };
 
@@ -46,17 +51,27 @@ const CardReserva = ({ id, fechaEntrada, fechaSalida }) => {
     console.log(habitacion.reservasActuales);
 
     try {
+      setLoading(true)
       const response = await crearReservaAPI(detallesReserva);
       if (response.status === 201) {
+        setLoading(false)
         console.log("Se reservó la habitación exitosamente");
       } else {
+        setLoading(false)
         console.log("Ocurrió un error");
       }
-    } catch (error) {}
+    } catch (error) {
+      setLoading(true)
+      console.error(error);
+      setLoading(false)
+    }
   };
 
   return (
     <Col className="mb-3 mx-2 mx-md-0">
+      {loading ? (
+        <Loader />
+      ) : (
       <Card className="my-3 bgReserva">
         <CardHeader className="cabeceraReserva">
           <Card.Title className="text-center text-md-start my-2 titulos ">
@@ -126,6 +141,8 @@ const CardReserva = ({ id, fechaEntrada, fechaSalida }) => {
           </div>
         </Card.Body>
       </Card>
+
+      )}
     </Col>
   );
 };

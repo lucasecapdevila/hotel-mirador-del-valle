@@ -3,8 +3,11 @@ import { useForm } from "react-hook-form";
 import { iniciarSesion } from "../../helpers/queries";
 import Swal from "sweetalert2";
 import { useNavigate, Link } from "react-router-dom";
+import { useState } from "react";
 
 const Login = ({ setUsuarioLogueado }) => {
+  const [loading, setLoading] = useState()
+
   const {
     register,
     handleSubmit,
@@ -14,6 +17,7 @@ const Login = ({ setUsuarioLogueado }) => {
   
   const onSubmit = async (usuario) => {
     try {
+      setLoading(true)
       const respuesta = await iniciarSesion(usuario);
       console.log(usuario)
       console.log(respuesta.status)
@@ -26,6 +30,7 @@ const Login = ({ setUsuarioLogueado }) => {
 
           sessionStorage.setItem('inicioHotelMiradorDelValle', JSON.stringify({email: dato.email, userName: dato.userName, token: dato.token}))
           setUsuarioLogueado(dato);
+          setLoading(false)
           navegacion("/");
           Swal.fire({
             title: `Bienvenido ${dato.nombreUsuario}`,
@@ -40,6 +45,7 @@ const Login = ({ setUsuarioLogueado }) => {
           console.log(dato.rol)
           sessionStorage.setItem('inicioHotelMiradorDelValle', JSON.stringify({email: dato.email}))
           setUsuarioLogueado(dato);
+          setLoading(false)
           navegacion("/administrador");
           Swal.fire({
             title: `Bienvenido administrador`,
