@@ -1,6 +1,5 @@
 const URI_HABITACIONES = import.meta.env.VITE_API_HABITACIONES;
 const URI_USUARIOS = import.meta.env.VITE_API_USUARIOS;
-const URI_USUARIOS_GET = import.meta.env.VITE_API_USUARIOS_GET;
 const URI_LOGIN = import.meta.env.VITE_API_LOGIN;
 const URI_RESERVAS = import.meta.env.VITE_API_RESERVAS;
 
@@ -99,13 +98,14 @@ export const obtenerUsuarioAPI = async (id) => {
 
 export const crearUsuarioAPI = async (nuevoUsuario) => {
   try {
-    const response = await fetch(URI_USUARIOS + "registrar", {
+    const response = await fetch(URI_USUARIOS + "/registrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(nuevoUsuario),
     });
+    console.log(response.statusText);
     return response;
   } catch (error) {
     console.log(error);
@@ -114,7 +114,7 @@ export const crearUsuarioAPI = async (nuevoUsuario) => {
 
 export const editarUsuarioAPI = async (id, usuario) => {
   try {
-    const response = await fetch(`${URI_USUARIOS_GET}/${id}`, {
+    const response = await fetch(`${URI_USUARIOS}/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -130,7 +130,7 @@ export const editarUsuarioAPI = async (id, usuario) => {
 
 export const borrarUsuarioAPI = async (id) => {
   try {
-    const response = await fetch(`${URI_USUARIOS_GET}/${id}`, {
+    const response = await fetch(`${URI_USUARIOS}/${id}`, {
       method: "DELETE",
       "x-token": JSON.parse(sessionStorage.getItem('inicioHotelMiradorDelValle')).token
     });
