@@ -15,6 +15,7 @@ import {
   faSquareParking,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const CardHabitacion = ({ habitacion, fechaEntrada, fechaSalida }) => {
   const [show, setShow] = useState(false);
 

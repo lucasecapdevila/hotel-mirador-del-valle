@@ -86,6 +86,14 @@ const Registro = ({ editar, titulo }) => {
         }
       }
     } catch (error) {
+      Swal.fire({
+        title: "Error al registrarse!",
+        text: "Intente nuevamente",
+        icon: "error",
+        customClass: {
+          popup: 'contenedor-sweet'
+        }
+      });
       console.log(error);
     }
   };
