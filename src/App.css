@@ -407,7 +407,7 @@ form .btnCrearHabitacion:hover{
   font-family: "Playfair Display", serif;
   font-size: 3.5em;
 }
-#formConsulta{
+.formConsulta{
   resize: none;
   height: 70px;
 }
