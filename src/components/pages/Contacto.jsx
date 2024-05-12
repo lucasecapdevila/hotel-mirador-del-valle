@@ -6,7 +6,7 @@ import {
   faInstagram,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
@@ -147,11 +147,7 @@ const Contacto = () => {
                   {errors.user_name?.message}
                 </Form.Text>
               </Form.Group>
-
-
-
-              {/* /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/ */}
-
+              
               <Form.Group className="mb-3" controlId="user_email">
                 <Form.Label className="textos fw-bold">Email:</Form.Label>
                 <Form.Control
