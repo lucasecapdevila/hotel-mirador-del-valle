@@ -9,36 +9,44 @@ import {
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from "sweetalert2";
+import { useForm } from "react-hook-form";
 
 const Contacto = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      user_name: '',
+      user_email: '',
+      consulta: '',
+    },
+  })
 
   const form = useRef();
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-
+  const sendEmail = () => {
     emailjs
       .sendForm('service_58pt40w', 'template_wpbthn6', form.current, {
         publicKey: 'rjGqT4RLJZlCmkRSd',
       })
-      .then(
-        () => {
-          Swal.fire({
-            title: "Consulta Enviada!!",
-            text: `Su consulta ya fue enviada, responderemos a la brevedad!!.`,
-            icon: "success",
-          });
-          form.current.reset()
-        },
-        () => {
-          Swal.fire({
-            title: "Lo siento, ocurrio un error",
-            text: `Su consulta NO fue enviada, intentalo mas tarde. Gracias y Disculpa!.`,
-            icon: "error",
-          });
-        },
-      );
-      console.log(mensajeEnviado);
+      .then(() => {
+        Swal.fire({
+          title: "Consulta Enviada!!",
+          text: `Su consulta ya fue enviada, responderemos a la brevedad!!.`,
+          icon: "success",
+        });
+        reset()
+      })
+      .catch((error) => {
+        Swal.fire({
+          title: "Lo sentimos, ocurrió un error",
+          text: `Su consulta NO fue enviada, intentelo mas tarde. Gracias y disculpa!.`,
+          icon: "error",
+        });
+      });
   };
 
   return (
@@ -109,47 +117,92 @@ const Contacto = () => {
             <h2 className="titulos">CONTACTANOS</h2>
             <hr className="mt-0 w-50 border-3 azul solid opacity-100" />
 
-            <Form ref={form} onSubmit={sendEmail}>
-              <Form.Group className="mb-3" controlId="userName">
+            <Form ref={form} onSubmit={handleSubmit(sendEmail)}>
+              <Form.Group className="mb-3" controlId="user_name">
                 <Form.Label className="textos fw-bold">
                   Nombre Completo:
                 </Form.Label>
                 <Form.Control
-                name="user_name"
                   type="text"
                   placeholder="Ej: Juan Perez"
-                  as="textarea"
-                  className="textareaForm"
-                  required
-                  minLength={5}
-                  maxLength={45}
+                  {...register("user_name", {
+                    required:
+                      'El nombre completo es obligatorio.',
+                    minLength: {
+                      value: 5,
+                      message: 'Debe ingresar como mínimo 5 carácteres para el nombre.',
+                    },
+                    maxLength: {
+                      value: 45,
+                      message: 'Debe ingresar como mínimo 5 carácteres para el nombre.',
+                    },
+                    pattern: {
+                      value:
+                      /^[a-zA-Z ]+$/gm,
+                      message: 'El nombre no puede llevar carácteres ni números.',
+                    }
+                  })}
                 />
+                <Form.Text className="text-danger">
+                  {errors.user_name?.message}
+                </Form.Text>
               </Form.Group>
-
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              
+              <Form.Group className="mb-3" controlId="user_email">
                 <Form.Label className="textos fw-bold">Email:</Form.Label>
                 <Form.Control
-                 name="user_email"
                   type="email"
                   placeholder="Ej: juan_perez@gmail.com"
-                  required
-                  minLength={4}
-                  maxLength={200}
+                  {...register("user_email", {
+                    required: "El email es obligatorio",
+                    minLength: {
+                      value: 4,
+                      message:
+                        "El email debe contener al menos 4 carácteres",
+                    },
+                    maxLength: {
+                      value: 250,
+                      message:
+                        "El email debe contener como máximo 250 carácteres",
+                    },
+                    pattern: {
+                      value:
+                        /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
+                      message:
+                        "Ingrese una dirección de correo electrónico válida",
+                    },
+                  })}
                 />
+                <Form.Text className="text-danger">
+                  {errors.user_email?.message}
+                </Form.Text>
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="userName">
+              <Form.Group className="mb-3" controlId="consulta">
                 <Form.Label className="textos fw-bold">Consulta:</Form.Label>
                 <Form.Control
-                 name="message"
-                  id="formConsulta"
+                  className="formConsulta"
                   type="text"
-                  placeholder="Ej: Quiero consultar sobre si..."
+                  placeholder="Ej: Quiero consultar sobre..."
                   as="textarea"
-                  required
-                  minLength={10}
-                  maxLength={500}
+                  {...register("consulta", {
+                    required:
+                      "La consulta es obligatoria.",
+                    minLength: {
+                      value: 10,
+                      message:
+                        "Debe ingresar como mínimo 10 carácteres para la consulta.",
+                    },
+                    maxLength: {
+                      value: 200,
+                      message:
+                        "Debe ingresar como máximo 200 carácteres para la consulta.",
+                    },
+                  })}
                 />
+                <Form.Text className="text-danger">
+                  {errors.consulta?.message}
+                </Form.Text>
               </Form.Group>
 
               <Button className="btnLogin w-100 fw-bold textos mb-3" type="submit" value="Send">
@@ -157,7 +210,6 @@ const Contacto = () => {
               </Button>
             </Form>
           </article>
-
         </section>
       </Container>
     </>
