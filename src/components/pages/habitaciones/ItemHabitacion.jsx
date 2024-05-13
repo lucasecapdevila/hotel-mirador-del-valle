@@ -21,7 +21,7 @@ const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
       cancelButtonText: "Cancelar",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const response = await borrarHabitacionAPI(habitacion.id);
+        const response = await borrarHabitacionAPI(habitacion._id);
         if (response.status === 200) {
           //  Actualizo la tabla
           const listaHabitacionesActualizada = await leerHabitacionesAPI();

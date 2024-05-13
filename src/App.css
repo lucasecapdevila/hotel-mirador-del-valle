@@ -203,7 +203,7 @@ input::-webkit-inner-spin-button {
   transform: scale(1.1);
 }
 
-/*Catalogo Habitaciones*/
+/*****************Catalogo Habitaciones************************/
 .portadaHabitaciones {
   position: relative;
   top: 0px;
@@ -280,6 +280,46 @@ border: #485c70 0.1em solid;
 }
 #iconerror{
   width: 90px;
+}
+.buscarHabitacion{
+  color: #eeeeee;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+.contenedorFechas{
+  background: #aca650;
+}
+
+:where(.css-dev-only-do-not-override-1kuana8).ant-picker .ant-picker-separator{
+  color: #aca650;
+  font-size: 30px;
+  vertical-align: baseline;
+  margin-right: 10px;
+}
+:where(.css-dev-only-do-not-override-1kuana8).ant-picker .ant-picker-suffix{
+  color:#aca650;
+  font-size: 30px;
+}
+:where(.css-dev-only-do-not-override-1kuana8).ant-picker .ant-picker-input >input {
+  
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+}
+
+:where(.css-dev-only-do-not-override-1kuana8).ant-picker .ant-picker-input >input::placeholder{
+  color:#aca650;
+}
+:where(.css-dev-only-do-not-override-1kuana8).ant-picker .ant-picker-input >input::-webkit-input-placeholder{
+  color:#aca650;
+}
+:where(.css-dev-only-do-not-override-1kuana8).ant-picker .ant-picker-input >input::-moz-placeholder{
+  color:#aca650;
+}
+:where(.css-dev-only-do-not-override-1kuana8).ant-picker .ant-picker-input >input::-ms-input-placeholder {
+  color:#aca650;
 }
 
 /************* Login ******************/
@@ -469,6 +509,20 @@ form .btnCrearHabitacion:hover{
   .contactoPagina{
     flex-direction: column;
   }
+  :where(.css-dev-only-do-not-override-1kuana8).ant-picker .ant-picker-separator{
+ 
+    font-size: 20px;
+
+  }
+  :where(.css-dev-only-do-not-override-1kuana8).ant-picker .ant-picker-suffix{
+    font-size: 15px;
+  }
+  :where(.css-dev-only-do-not-override-1kuana8).ant-picker .ant-picker-input >input {
+  
+    font-size: 15px;
+
+  }
+  
 }
 @media (min-width: 768px) and (max-width: 1000px){
   .gmailText{

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ConfigProvider, DatePicker, Space } from "antd";
+import { Col, ConfigProvider, DatePicker, Space } from "antd";
 import locale from "antd/locale/es_ES";
 import dayjs from "dayjs";
 import "dayjs/locale/es";
@@ -39,8 +39,8 @@ const Habitaciones = ({
       setListaHabitaciones(listaHabitacionesAPI);
       setListaHabitacionesPorFiltrar(listaHabitacionesAPI);
       setLoading(false);
-      if(!listaHabitacionesAPI){
-        return setListaHabitaciones([]) && setListaHabitacionesPorFiltrar([])
+      if (!listaHabitacionesAPI) {
+        return setListaHabitaciones([]) && setListaHabitacionesPorFiltrar([]);
       }
     } catch (error) {
       setError(true);
@@ -98,7 +98,7 @@ const Habitaciones = ({
 
   return (
     <ConfigProvider locale={locale}>
-      <div className="portadaHabitaciones mb-5 text-center">
+      <div className="portadaHabitaciones text-center">
         <img
           className="banner"
           src="https://tafidelvalle.com/imagenes/album/tafi-del-valle_099.jpg"
@@ -107,30 +107,46 @@ const Habitaciones = ({
           <h1 className="">HABITACIONES</h1>
         </div>
       </div>
-      <Container className="mainPage">
+      <div className="mainPage">
         {usuarioLogueado && usuarioLogueado.email ? (
-          <Space className="mb-5" direction="vertical" size={12}>
-            <RangePicker format="DD-MM-YYYY" onChange={filtrarPorFecha} />
-          </Space>
+          <Row className="contenedorFechas justify-content-center mb-md-3">
+            <Col  md={12} lg={6} className="text-center">
+              <p className="buscarHabitacion m-4 mt-lg-4">Buscar Habitacion</p>
+            </Col>
+            <Col md={12} lg={6} className="text-center">
+              {" "}
+              <Space
+                className="fw-bold m-4 mt-md-4"
+                direction="vertical"
+              >
+                <RangePicker
+                  className=" p-2"
+                  format="DD-MM-YYYY"
+                  onChange={filtrarPorFecha}
+                />
+              </Space>
+            </Col>
+          </Row>
         ) : null}
-
-        <Row>
-          {loading ? (
-            <Loader />
-          ) : listaHabitaciones.length > 0 ? (
-            listaHabitaciones.map((habitacion) => (
-              <CardHabitacion
-                key={habitacion._id}
-                habitacion={habitacion}
-                fechaEntrada={fechaEntrada}
-                fechaSalida={fechaSalida}
-              />
-            ))
-          ) : (
-            <Error />
-          )}
-        </Row>
-      </Container>
+        <Container>
+          <Row>
+            {loading ? (
+              <Loader />
+            ) : listaHabitaciones.length > 0 ? (
+              listaHabitaciones.map((habitacion) => (
+                <CardHabitacion
+                  key={habitacion._id}
+                  habitacion={habitacion}
+                  fechaEntrada={fechaEntrada}
+                  fechaSalida={fechaSalida}
+                />
+              ))
+            ) : (
+              <Error />
+            )}
+          </Row>
+        </Container>
+      </div>
     </ConfigProvider>
   );
 };
