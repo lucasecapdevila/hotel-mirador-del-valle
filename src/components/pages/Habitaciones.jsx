@@ -128,7 +128,7 @@ const Habitaciones = ({
             </Col>
           </Row>
         ) : null}
-        <Container>
+        <Container className="mt-5">
           <Row>
             {loading ? (
               <Loader />

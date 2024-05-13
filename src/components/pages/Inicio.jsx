@@ -64,51 +64,55 @@ import {
         <Container>
             
           <section className="container d-flex flex-column my-4">
-            <h3 className="text-center titulos">Nuestros servicios</h3>
-            <Row>
+            <h3 className="text-center titulos azulOscuro fs-2 my-4">Nuestros servicios</h3>
+            <Row className="my-3">
               <Col
                 sm={12}
                 md={6}
                 lg={3}
-                className="d-flex flex-column align-items-center my-2"
+                className="d-flex flex-column align-items-center my-3"
               >
-                <FontAwesomeIcon className="fs-3 verde" icon={faUtensils} />
-                <h5 className="titulos">Restaurantes</h5>
-                <p className="m-0 textosAlternativos">Restaurante en el hotel</p>
-                <p className="m-0 textosAlternativos">Servicio a la habitación</p>
+                 <div className="serviciosInicio">
+                <FontAwesomeIcon className="fs-3 m-5" icon={faUtensils} /></div>
+                <h5 className="titulos azulOscuro mt-3">Restaurantes</h5>
+                <p className="m-0 textosAlternativos azulOscuro">Restaurante en el hotel</p>
+                <p className="m-0 textosAlternativos azulOscuro">Servicio a la habitación</p>
               </Col>
               <Col
                 sm={12}
                 md={6}
                 lg={3}
-                className="d-flex flex-column align-items-center my-2"
+                className="d-flex flex-column align-items-center my-3"
               >
-                <FontAwesomeIcon className="fs-3 verde" icon={faDumbbell} />
-                <h5 className="titulos">Gimnasio y recreación</h5>
-                <p className="m-0 textosAlternativos">Gimnasio</p>
-                <p className="m-0 textosAlternativos">Piscina al aire libre</p>
+                <div className="serviciosInicio">
+                <FontAwesomeIcon className="fs-3 m-5" icon={faDumbbell} /></div>
+                <h5 className="titulos azulOscuro mt-3">Gimnasio y recreación</h5>
+                <p className="m-0 textosAlternativos azulOscuro">Gimnasio</p>
+                <p className="m-0 textosAlternativos azulOscuro">Piscina al aire libre</p>
               </Col>
               <Col
                 sm={12}
                 md={6}
                 lg={3}
-                className="d-flex flex-column align-items-center my-2"
+                className="d-flex flex-column align-items-center my-3"
               >
-                <FontAwesomeIcon className="fs-3 verde" icon={faBriefcase} />
-                <h5 className="titulos">Negocios y trabajo</h5>
-                <p className="m-0 textosAlternativos">Centro de negocios</p>
-                <p className="m-0 textosAlternativos">Salas de Reuniones</p>
+                 <div className="serviciosInicio">
+                <FontAwesomeIcon className="fs-3 m-5" icon={faBriefcase} /></div>
+                <h5 className="titulos azulOscuro mt-3">Negocios y trabajo</h5>
+                <p className="m-0 textosAlternativos azulOscuro">Centro de negocios</p>
+                <p className="m-0 textosAlternativos azulOscuro">Salas de Reuniones</p>
               </Col>
               <Col
                 sm={12}
                 md={6}
                 lg={3}
-                className="d-flex flex-column align-items-center my-2"
+                className="d-flex flex-column align-items-center my-3"
               >
-                <FontAwesomeIcon className="fs-3 verde" icon={faFaceSmile} />
-                <h5 className="titulos">Comodidades</h5>
-                <p className="m-0 textosAlternativos">Estacionamiento gratis</p>
-                <p className="m-0 textosAlternativos">Wi-Fi gratis</p>
+                <div className="serviciosInicio">
+                <FontAwesomeIcon className="fs-3 m-5" icon={faFaceSmile} /></div>
+                <h5 className="titulos azulOscuro mt-3">Comodidades</h5>
+                <p className="m-0 textosAlternativos azulOscuro">Estacionamiento gratis</p>
+                <p className="m-0 textosAlternativos azulOscuro">Wi-Fi gratis</p>
               </Col>
             </Row>
   
