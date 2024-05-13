@@ -1,7 +1,6 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 #root {
   display: flex;
@@ -80,24 +79,24 @@ input::-webkit-inner-spin-button {
   object-fit: cover;
 }
 
-.bgFooter{
+.bgFooter {
   background: #485c70;
 }
-.footerTitulo{
+.footerTitulo {
   font-family: "Playfair Display", serif;
   font-size: 25px;
 }
-.footerTitulo2{
+.footerTitulo2 {
   font-family: "Playfair Display", serif;
   font-size: 20px;
 }
-.footerTexto{
+.footerTexto {
   font-family: "Poppins", sans-serif;
 }
-.footerimg{
+.footerimg {
   width: 100%;
 }
-.button .footerIcon{
+.button .footerIcon {
   background-color: black;
 }
 
@@ -121,8 +120,8 @@ input::-webkit-inner-spin-button {
   background-color: transparent;
 }
 .botonVerde {
-  background-color: #aca650 !important; 
-  outline: none !important; 
+  background-color: #aca650 !important;
+  outline: none !important;
   border: none !important;
   font-family: "Rubik", sans-serif !important;
   color: #333333 !important;
@@ -133,44 +132,44 @@ input::-webkit-inner-spin-button {
 .botonVerde:hover {
   background-color: #aca650 !important;
   transform: scale(1.05);
-
 }
 
 @media only screen and (min-width: 1200px) {
-  .imgQuienesSomosHotel{
+  .imgQuienesSomosHotel {
     width: 50%;
   }
 }
 
-.contenedorImgUsuario{
+.contenedorImgUsuario {
   border-radius: 50%;
   background: black;
   opacity: 100%;
 }
 
-.contenedorImgUsuario:hover{
+.contenedorImgUsuario:hover {
   transform: scale(1.05);
   transition: all 500ms ease-in-out;
-  box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
-  -webkit-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
-  }
-
-.imgUsuario{
-  border-radius: 50%;
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
 }
 
-
+.imgUsuario {
+  border-radius: 50%;
+}
 
 .verde {
   color: #aca650;
 }
 
-.rojo{
-  color: #8F6A74;
+.rojo {
+  color: #8f6a74;
 }
-.azul{
-  color:#485c70;
+.azul {
+  color: #485c70;
+}
+.azulOscuro{
+  color: #374757;
 }
 .contenedor {
   position: relative;
@@ -203,7 +202,7 @@ input::-webkit-inner-spin-button {
   transform: scale(1.1);
 }
 
-/*Catalogo Habitaciones*/
+/*****************Catalogo Habitaciones************************/
 .portadaHabitaciones {
   position: relative;
   top: 0px;
@@ -238,19 +237,19 @@ input::-webkit-inner-spin-button {
 .fondoModal {
   background: #c8cbb9;
 }
-.modalHabitacionTexto{
-  color:#485c70;
+.modalHabitacionTexto {
+  color: #485c70;
 }
-.modal-footer .btnCerrarModal{
+.modal-footer .btnCerrarModal {
   background: #485c70;
   color: white;
   border: #485c70 0.1em solid;
   font-family: "Rubik", sans-serif;
 }
-.modal-footer .btnCerrarModal:hover{
-background: #485c70;
-color: white;
-border: #485c70 0.1em solid;
+.modal-footer .btnCerrarModal:hover {
+  background: #485c70;
+  color: white;
+  border: #485c70 0.1em solid;
 }
 .cardCategoria {
   min-height: 450px;
@@ -263,23 +262,72 @@ border: #485c70 0.1em solid;
   -o-transform: translateY(-3%);
   transform: translateY(-3%);
 }
-.contenedorError{
+.contenedorError {
   background: #b0b696;
   color: #485c70;
   height: 400px;
 }
-.imagenError{
+.imagenError {
   height: 400px;
   width: 100%;
   object-fit: cover;
 }
-.tituloError{
+.tituloError {
   font-family: "Playfair Display", serif;
   font-size: 35px;
   text-align: center;
 }
-#iconerror{
+#iconerror {
   width: 90px;
+}
+.buscarHabitacion {
+  color: #eeeeee;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+.contenedorFechas {
+  background: #aca650;
+}
+
+:where(.css-dev-only-do-not-override-1kuana8).ant-picker .ant-picker-separator {
+  color: #aca650;
+  font-size: 30px;
+  vertical-align: baseline;
+  margin-right: 10px;
+}
+:where(.css-dev-only-do-not-override-1kuana8).ant-picker .ant-picker-suffix {
+  color: #aca650;
+  font-size: 30px;
+}
+:where(.css-dev-only-do-not-override-1kuana8).ant-picker
+  .ant-picker-input
+  > input {
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+}
+
+:where(.css-dev-only-do-not-override-1kuana8).ant-picker
+  .ant-picker-input
+  > input::placeholder {
+  color: #aca650;
+}
+:where(.css-dev-only-do-not-override-1kuana8).ant-picker
+  .ant-picker-input
+  > input::-webkit-input-placeholder {
+  color: #aca650;
+}
+:where(.css-dev-only-do-not-override-1kuana8).ant-picker
+  .ant-picker-input
+  > input::-moz-placeholder {
+  color: #aca650;
+}
+:where(.css-dev-only-do-not-override-1kuana8).ant-picker
+  .ant-picker-input
+  > input::-ms-input-placeholder {
+  color: #aca650;
 }
 
 /************* Login ******************/
@@ -287,13 +335,13 @@ border: #485c70 0.1em solid;
   width: 50% !important;
   margin-top: 10%;
 }
-.cardLogin .card-header{
+.cardLogin .card-header {
   background: #b0b696;
-  color:#485c70;
+  color: #485c70;
 }
-.cardLogin .card-body{
+.cardLogin .card-body {
   background: #b0b696;
-  color:#485c70;
+  color: #485c70;
 }
 button.btnLogin {
   background: #485c70;
@@ -301,51 +349,51 @@ button.btnLogin {
   color: #eeeeee;
   width: 50%;
 }
-button.btnLogin:hover{
+button.btnLogin:hover {
   background: #526980;
   border: #485c70 0.1em solid;
   color: #eeeeee;
   width: 50%;
 }
-.fondoLogin{
+.fondoLogin {
   height: 900px;
   background-image: url("../src/assets/fondo-login.png");
-  background-size:cover;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
 /*********** Registro *****************/
-a.linkRegistro{
+a.linkRegistro {
   color: #485c70;
   text-decoration: none;
 }
-#imgRegistro{
+#imgRegistro {
   margin-left: 10px;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 .card.cardRegistro {
-  width: 80% ;
+  width: 80%;
   margin-top: 20px;
   margin-bottom: 25px;
-  background: #EFF1EA;
+  background: #eff1ea;
   color: #485c70;
 }
-.textareaForm{
+.textareaForm {
   height: 30px;
   width: 100%;
   resize: none;
 }
-.registroBg{
+.registroBg {
   background: #798a99;
 }
 /*********** Crear Habitaciones *****************/
 
-.fondoCrearHab{
+.fondoCrearHab {
   background: #798a99;
 }
-form .btnCrearHabitacion{
+form .btnCrearHabitacion {
   background: #526980;
   color: white;
   width: 25%;
@@ -353,7 +401,7 @@ form .btnCrearHabitacion{
   font-family: "Rubik", sans-serif;
   margin-right: 0;
 }
-form .btnCrearHabitacion:hover{
+form .btnCrearHabitacion:hover {
   background: #5b7188;
   color: white;
   border: #526980 0.1em solid;
@@ -361,19 +409,19 @@ form .btnCrearHabitacion:hover{
 }
 /*********** Tabla Admin *****************/
 
-.table-responsive .table>:not(caption)>*>* {
- color: #485c70;
- font-family: "Poppins", sans-serif;
+.table-responsive .table > :not(caption) > * > * {
+  color: #485c70;
+  font-family: "Poppins", sans-serif;
 }
 
 /*********** Reservas *****************/
-.card .bodyCardReserva{
+.card .bodyCardReserva {
   color: #485c70;
 }
-.card .cabeceraReserva{
+.card .cabeceraReserva {
   background: #c8cbb9;
 }
-.bgReserva .card-body{
+.bgReserva .card-body {
   background: #c8cbb9;
 }
 .card-body .btnCardReserva {
@@ -390,35 +438,48 @@ form .btnCrearHabitacion:hover{
   border: #526980 0.1em solid;
   font-family: "Rubik", sans-serif;
 }
-.galeriacolor1{
+.galeriacolor1 {
   background: #c8cbb9;
 }
-.galeriacolor2{
+.galeriacolor2 {
   background-color: #798a99;
 }
-.galeriaIMG img{
+.galeriaIMG img {
   height: 200px;
   object-fit: cover;
 }
-.modalCard{
+.modalCard {
   background-color: #bcb66c;
 }
-.tituloGaleria{
+.tituloGaleria {
   font-family: "Playfair Display", serif;
   font-size: 3.5em;
 }
-.formConsulta{
+.formConsulta {
   resize: none;
   height: 70px;
 }
-.textFormContacto{
- font-size: 20px;
+.textFormContacto {
+  font-size: 20px;
 }
-.textFormContacto2{
- font-size: 21px;
+.textFormContacto2 {
+  font-size: 21px;
 }
-.carruselModal{
+.carruselModal {
   height: 400px;
+}
+.serviciosInicio {
+  color: #eeeeee;
+  border-radius: 50%;
+  background: #aca650;
+  opacity: 100%;
+}
+.serviciosInicio:hover {
+  transform: scale(1.05);
+  transition: all 500ms ease-in-out;
+  box-shadow: 0px 0px 20px 5px rgb(172, 166, 80, 0.75);
+  -webkit-box-shadow: 0px 0px 20px 5px  rgb(172, 166, 80, 0.75);
+  -moz-box-shadow: 0px 0px 20px 5px  rgb(172, 166, 80, 0.75);
 }
 @media only screen and (max-width: 767px) {
   .tituloPrincipal h1 {
@@ -429,91 +490,101 @@ form .btnCrearHabitacion:hover{
     -o-transform: none;
     transform: none;
   }
-  .footerdiv{
+  .footerdiv {
     display: flex;
     flex-direction: column;
     text-align: center;
   }
-  .footerdiv div{
+  .footerdiv div {
     width: 100%;
     margin-top: 15px;
   }
-  .footerimg{
+  .footerimg {
     width: 65%;
   }
-  .descripcionerror{
+  .descripcionerror {
     margin-bottom: 0px;
   }
   .card.cardLogin {
     width: 100% !important;
-    
   }
-  .fondoLogin{
+  .fondoLogin {
     height: 500px;
   }
-  .cardRegistrosm{
+  .cardRegistrosm {
     flex-direction: column;
   }
-  #imgRegistro{
-   text-align: center;
-   margin-top: 8px;
+  #imgRegistro {
+    text-align: center;
+    margin-top: 8px;
   }
-  .galeriaIMG{
+  .galeriaIMG {
     display: flex;
     flex-direction: column;
   }
-  .carruselIMG{
+  .carruselIMG {
     display: flex;
     flex-direction: column;
   }
-  .contactoPagina{
+  .contactoPagina {
     flex-direction: column;
+  }
+  :where(.css-dev-only-do-not-override-1kuana8).ant-picker
+    .ant-picker-separator {
+    font-size: 20px;
+  }
+  :where(.css-dev-only-do-not-override-1kuana8).ant-picker .ant-picker-suffix {
+    font-size: 15px;
+  }
+  :where(.css-dev-only-do-not-override-1kuana8).ant-picker
+    .ant-picker-input
+    > input {
+    font-size: 15px;
   }
 }
-@media (min-width: 768px) and (max-width: 1000px){
-  .gmailText{
+@media (min-width: 768px) and (max-width: 1000px) {
+  .gmailText {
     font-size: 12px;
   }
-  .cardRegistrosm{
+  .cardRegistrosm {
     flex-direction: column;
     text-align: center;
   }
-  #imgRegistro{
-   text-align: center;
+  #imgRegistro {
+    text-align: center;
   }
-  .cardText{
+  .cardText {
     margin: 0 auto;
     width: 100%;
   }
-  .btnLogin{
+  .btnLogin {
     margin-bottom: 15px;
   }
 }
 
-.iconoRedes{
+.iconoRedes {
   color: white;
   font-size: 45px;
   transition: all 200ms;
 }
 
-.iconoRedes:hover{
+.iconoRedes:hover {
   transform: scale(1.1);
 }
 
-.imagenReserva{
+.imagenReserva {
   height: 25%;
   width: 100%;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 990px) {
-  .imagenReserva{
+  .imagenReserva {
     width: 50% !important;
   }
 }
 
 @media only screen and (min-width: 991px) {
-  .imagenReserva{
+  .imagenReserva {
     width: 33% !important;
   }
 }
-
