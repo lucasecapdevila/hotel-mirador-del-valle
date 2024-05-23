@@ -9,6 +9,7 @@ import CardHabitacion from "./habitaciones/CardHabitacion";
 import { leerHabitacionesAPI } from "../../helpers/queries";
 import Loader from "../common/Loader";
 import Error from "../common/Error";
+import { Link } from "react-router-dom";
 dayjs.extend(isBetween);
 
 const Habitaciones = ({
@@ -118,7 +119,14 @@ const Habitaciones = ({
               </Space>
             </Col>
           </Row>
-        ) : null}
+        ) : <>
+              <Row className="contenedorFechas justify-content-center mb-md-3 me-0">
+                <Col className="text-center">
+                  <p className="buscarHabitacion m-4 mt-lg-4">Para reservar una habitación debes 
+                  <Link to={'/login'} className="buscarHabitacion text-decoration-none"> iniciar sesión</Link></p>
+                </Col>
+              </Row>
+            </>}
         <Container className="mt-5">
           <Row>
             {loading ? (
