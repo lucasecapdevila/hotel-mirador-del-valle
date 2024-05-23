@@ -51,7 +51,7 @@ const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
       <td className="anchoColumna">
         <div className="d-flex align-items-center justify-content-center">
           <Link
-            to={`/administrador/editar/${habitacion.id}`}
+            to={`/administrador/editar/${habitacion._id}`}
             className="btn btn-warning ms-0 me-2"
           >
             <FontAwesomeIcon icon={faFilePen} />

@@ -208,7 +208,6 @@ export const borrarReservaAPI = async (id) => {
 };
 
 export const iniciarSesion = async (usuario) => {
-  console.log(usuario)
   try {
     const respuesta = await fetch(URI_LOGIN, {
       method: "POST",

@@ -23,12 +23,6 @@ const CardReserva = ({ id, fechaEntrada, fechaSalida }) => {
   const diasTotales = fechaS.diff(fechaE, "day") + 1;
   const precioTotal = diasTotales * habitacion.precioHabitacion;
 
-  
-  
-  console.log();
-  
-  
-  
   const cargarDetalle = async () => {
     try {
       setLoading(true)
@@ -68,7 +62,6 @@ const CardReserva = ({ id, fechaEntrada, fechaSalida }) => {
       precioTotal,
       diasTotales,
     };
-    console.log(habitacion.reservasActuales);
 
     try {
       setLoading(true)
@@ -82,7 +75,6 @@ const CardReserva = ({ id, fechaEntrada, fechaSalida }) => {
         });
       } else {
         setLoading(false)
-        console.log("Ocurrió un error");
       }
     } catch (error) {
       setLoading(true)

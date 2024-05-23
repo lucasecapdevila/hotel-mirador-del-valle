@@ -19,16 +19,10 @@ const Login = ({ setUsuarioLogueado }) => {
     try {
       setLoading(true)
       const respuesta = await iniciarSesion(usuario);
-      console.log(usuario)
-      console.log(respuesta.status)
       if (respuesta.status === 200) {
         const dato = await respuesta.json();
-        console.log(dato)
-        console.log(dato.rol)
         if (dato.rol === "Usuario") {
-          console.log(dato.rol)
-
-          sessionStorage.setItem('inicioHotelMiradorDelValle', JSON.stringify({email: dato.email, userName: dato.userName, token: dato.token}))
+          sessionStorage.setItem('inicioHotelMiradorDelValle', JSON.stringify({email: dato.email}))
           setUsuarioLogueado(dato);
           setLoading(false)
           navegacion("/");
@@ -42,8 +36,7 @@ const Login = ({ setUsuarioLogueado }) => {
           });
           
         } else if (dato.rol === "Administrador") {
-          console.log(dato.rol)
-          sessionStorage.setItem('inicioHotelMiradorDelValle', JSON.stringify({email: dato.email}))
+          sessionStorage.setItem('inicioHotelMiradorDelValle', JSON.stringify({email: dato.email, userName: dato.userName, token: dato.token}))
           setUsuarioLogueado(dato);
           setLoading(false)
           navegacion("/administrador");

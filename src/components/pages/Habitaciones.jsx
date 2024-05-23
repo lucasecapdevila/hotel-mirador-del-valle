@@ -49,19 +49,12 @@ const Habitaciones = ({
     }
   };
 
-  //! ESTA FUNCIÓN NO SE ESTÁ HACIENDO LO QUE DEBERÍA:
-  //* Debería filtrar las habitaciones en base a las fechas de las reservas
-  //* Ej: Si una habitación tiene una reserva en las fechas 23/5 al 25/5, no debería mostrarse si quiero reservar en las mismas fechas o en otros períodos que contengan los días 23/5, 24/5 y/o 25/5
-
-  //* En cambio, está ocultando todas las habitaciones que tengan una reserva (sin importar la fecha de dicha reserva)
-
   const filtrarPorFecha = (fechas) => {
-    console.log("Función");
     setFechaEntrada(dayjs(fechas[0]).format("DD-MM-YYYY"));
     setFechaSalida(dayjs(fechas[1]).format("DD-MM-YYYY"));
 
     let habitacionesTemporales = [];
-    let disponible = false;
+    let disponible = true;
     listaHabitacionesPorFiltrar.map((habitacionTemporal) => {
       if (habitacionTemporal.reservasActuales.length > 0) {
         habitacionTemporal.reservasActuales.map((reserva) => {
@@ -87,9 +80,7 @@ const Habitaciones = ({
         });
       }
       if (
-        disponible === true ||
-        habitacionTemporal.reservasActuales.length == 0
-      ) {
+        disponible === true) {
         habitacionesTemporales.push(habitacionTemporal);
       }
       setListaHabitaciones(habitacionesTemporales);
@@ -109,7 +100,7 @@ const Habitaciones = ({
       </div>
       <div className="mainPage">
         {usuarioLogueado && usuarioLogueado.email ? (
-          <Row className="contenedorFechas justify-content-center mb-md-3">
+          <Row className="contenedorFechas justify-content-center mb-md-3 me-0">
             <Col  md={12} lg={6} className="text-center">
               <p className="buscarHabitacion m-4 mt-lg-4">Buscar Habitacion</p>
             </Col>
