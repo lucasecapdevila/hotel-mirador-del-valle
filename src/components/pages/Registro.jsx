@@ -256,10 +256,22 @@ const Registro = ({ editar, titulo }) => {
 
                     <Form.Group className="mb-3" controlId="userPassword">
                       {editar ? (
-                        <Form.Label className="textos fw-bold">
-                          El administrador no puede cambiar la contraseña del
-                          usuario
-                        </Form.Label>
+                        <>
+                          <Form.Label className="textos fw-bold">
+                            Contraseña <span className="text-danger">*</span>
+                          </Form.Label>
+                          <Form.Control
+                            disabled
+                            type="password"
+                            placeholder="El administrador no puede cambiar la contraseña del usuario"
+                            {...register("userPassword", {
+                              
+                            })}
+                          />
+                          <Form.Text className="text-danger">
+                            El administrador no puede cambiar la contraseña del usuario.
+                          </Form.Text>
+                        </>
                       ) : (
                         <>
                           <Form.Label className="textos fw-bold">
@@ -271,16 +283,12 @@ const Registro = ({ editar, titulo }) => {
                             {...register("userPassword", {
                               required: "El password es obligatorio",
                               minLength: {
-                                value: 8,
-                                message: "el minimo es de 8 caracteres",
-                              },
-                              maxLength: {
-                                value: 20,
-                                message: "el maximo es de 20 caracteres",
+                                value: 10,
+                                message: "El password debe tener al menos 10 carácteres.",
                               },
                               pattern: {
                                 value:
-                                  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/,
+                                /^\S*$/,
                                 message:
                                   "El password debe contener al menos una letra mayúscula, una letra minúscula y un número",
                               },

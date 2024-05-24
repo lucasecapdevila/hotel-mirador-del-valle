@@ -158,6 +158,10 @@ input::-webkit-inner-spin-button {
   border-radius: 50%;
 }
 
+#userPassword:disabled{
+  cursor: not-allowed;
+}
+
 .verde {
   color: #aca650;
 }

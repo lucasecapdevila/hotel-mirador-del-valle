@@ -42,7 +42,7 @@ Para el Front-end del proyecto se utilizaron las siguientes librerías y tecnolo
 - [Netlify](https://hotelmiradordelvalle.netlify.app/)
 
 **Backend del proyecto**
-- [GitHub](cuando lo tenga)
+- [GitHub](https://github.com/lucasecapdevila/hotel-mirador-del-valle-backend)
 
 ##  Instalación ⚙️
 1. Clonar el repositorio usando el comando `git clone`.
