@@ -8,7 +8,7 @@ import {
 } from "../../../helpers/queries";
 import { Link } from "react-router-dom";
 
-const ItemUsuario = ({ usuario, setListaUsuarios }) => {
+const ItemUsuario = ({ usuario, setUsuarios }) => {
   const borrarUsuario = () => {
     if(usuario.role==='Administrador'){
       Swal.fire({
@@ -31,7 +31,7 @@ const ItemUsuario = ({ usuario, setListaUsuarios }) => {
           const response = await borrarUsuarioAPI(usuario._id);
           if (response.status === 200) {
             const listaUsuariosActualizada = await leerUsuariosAPI();
-            setListaUsuarios(listaUsuariosActualizada);
+            setUsuarios(listaUsuariosActualizada);
   
             Swal.fire({
               title: "Eliminado!",

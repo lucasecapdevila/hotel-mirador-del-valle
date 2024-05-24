@@ -123,7 +123,7 @@ const Admin = () => {
                   </thead>
                   <tbody className=" fs-5">
                     {usuarios.map((usuario) => (
-                      <ItemUsuario key={usuario._id} usuario={usuario} />
+                      <ItemUsuario key={usuario._id} usuario={usuario} setUsuarios={setUsuarios} />
                     ))}
                   </tbody>
                 </Table>
