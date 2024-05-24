@@ -21,7 +21,6 @@ const Login = ({ setUsuarioLogueado }) => {
       const respuesta = await iniciarSesion(usuario);
       if (respuesta.status === 200) {
         const dato = await respuesta.json();
-        console.log(dato.token)
         if (dato.rol === "Usuario") {
           sessionStorage.setItem('inicioHotelMiradorDelValle', JSON.stringify({email: dato.email}))
           setUsuarioLogueado(dato);
