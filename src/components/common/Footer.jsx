@@ -3,17 +3,20 @@ import logo from "../../assets/iconWhite.png";
 import grupo2 from "../../assets/diseñoweb-grupo2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="bgFooter text-light py-3 d-flex justify-content-center">
       <Container className="footerdiv row">
         <div className="col-lg-3 col-md-3">
-          <img
-            src={logo}
-            alt="logo mirador del valle hotel"
-            className="mt-lg-4 footerimg"
-          />
+          <Link to='/'>
+            <img
+              src={logo}
+              alt="logo mirador del valle hotel"
+              className="mt-lg-4 footerimg"
+            />
+          </Link>
         </div>
         <div className="col-lg-4 mx-lg-auto col-md-4 mx-md-auto">
           <h4 className="footerTitulo mt-2">CONTÁCTANOS</h4>
