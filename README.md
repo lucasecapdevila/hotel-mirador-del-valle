@@ -62,4 +62,4 @@ Si desea contribuir a mejorar nuestra página web, puede seguir estos pasos:
 - Vera Rodríguez José Manuel: [GitHub](https://github.com/jomanuelvr) 
 - Lopez Natalia Gabriela: [GitHub](https://github.com/NataliaGabriela) 
 - Suarez Agustina Del Milagro: [GitHub](https://github.com/suarezagustina) 
-- Capdevila Lucas: [GitHub](https://github.com/suarezagustina) 
+- Capdevila Lucas: [GitHub](https://github.com/lucasecapdevila)
